@@ -9,5 +9,5 @@
 import Foundation
 
 struct WorkoutPropertyDurationPickerCellViewModel {
-    let date: Date
+    let countDownDuration: TimeInterval
 }

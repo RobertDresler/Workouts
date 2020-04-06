@@ -14,8 +14,46 @@ final class WorkoutPropertyDescriptionCell: BCell, Configurable, DynamicHeightVi
 
     static var estimatedHeight: CGFloat = 64
 
-    func configure(for viewModel: WorkoutPropertyDescriptionCellViewModel) {
+    let titleLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
+        return label
+    }()
 
+    let descriptionLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.setContentCompressionResistancePriority(.defaultHigh, for: .horizontal)
+        label.textAlignment = .right
+        return label
+    }()
+
+    private lazy var contentStackView = [
+        titleLabel, descriptionLabel
+    ].stacked(.horizontal, spacing: .large)
+
+    override func addSubviews() {
+        super.addSubviews()
+        contentView.addSubview(contentStackView)
+    }
+
+    override func setupSubviews() {
+        super.setupSubviews()
+        contentView.backgroundColor = Color.cellBackground
+    }
+
+    override func setupConstraints() {
+        super.setupConstraints()
+        contentStackView.snp.makeConstraints { make in
+            make.top.bottom.equalToSuperview().inset(Padding.large)
+            make.leading.trailing.equalTo(readableContentGuide)
+        }
+    }
+
+    func configure(for viewModel: WorkoutPropertyDescriptionCellViewModel) {
+        titleLabel.text = viewModel.title
+        descriptionLabel.text = viewModel.description
     }
 
 }

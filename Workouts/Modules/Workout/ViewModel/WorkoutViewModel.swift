@@ -50,10 +50,6 @@ final class WorkoutViewModel: BViewModel {
 
     var repositoryType: RepositoryType = .realm
 
-    private var durationAsDate: Date {
-        return Date(timeIntervalSince1970: tempWorkout.duration)
-    }
-
     private var titleItem: DataSourceItem {
         return .title(
             WorkoutPropertyTextFieldCellViewModel(
@@ -74,13 +70,36 @@ final class WorkoutViewModel: BViewModel {
         )
     }
 
+    var durationItemIndexPath: IndexPath? {
+        var indexPath: IndexPath?
+        dataSource.enumerated().forEach { sectionIndex, section in
+            section.enumerated().forEach { rowIndex, item in
+                guard case .duration = item else { return }
+                indexPath = IndexPath(row: rowIndex, section: sectionIndex)
+            }
+        }
+        return indexPath
+    }
+
     private var durationItem: DataSourceItem {
+        let durationAsDate = Date(timeIntervalSince1970: tempWorkout.duration)
         return .duration(
             WorkoutPropertyDescriptionCellViewModel(
                 title: R.string.localizable.workoutDurationItemTitle(),
-                description: "\(DateFormatter.Hmm.string(from: durationAsDate))"
+                description: "\(DateFormatter.HmmInterval.string(from: durationAsDate))"
             )
         )
+    }
+
+    var durationPickerItemIndexPath: IndexPath? {
+        var indexPath: IndexPath?
+        dataSource.enumerated().forEach { sectionIndex, section in
+            section.enumerated().forEach { rowIndex, item in
+                guard case .durationPicker = item else { return }
+                indexPath = IndexPath(row: rowIndex, section: sectionIndex)
+            }
+        }
+        return indexPath
     }
 
     private var durationPickerItem: DataSourceItem?
@@ -108,11 +127,12 @@ final class WorkoutViewModel: BViewModel {
 
     func toogleDurationPickerItem() {
         durationPickerItem = durationPickerItem == nil ? makeDurationPickerItem() : nil
+        loadData()
     }
 
     private func makeDurationPickerItem() -> DataSourceItem {
         return .durationPicker(
-            WorkoutPropertyDurationPickerCellViewModel(date: durationAsDate)
+            WorkoutPropertyDurationPickerCellViewModel(countDownDuration: tempWorkout.duration)
         )
     }
 

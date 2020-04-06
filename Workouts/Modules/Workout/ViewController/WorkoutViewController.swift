@@ -123,26 +123,65 @@ extension WorkoutViewController: UITableViewDelegate, UITableViewDataSource {
         switch item {
         case .title(let viewModel):
             let cell: WorkoutPropertyTextFieldCell = tableView.dequeueReusableCell(for: indexPath)
-            cell.textField.rx.text.orEmpty.bind { [weak self] title in
-                self?.viewModel.tempWorkout.title = title
-            }.disposed(by: cell.bag)
+            bindTitleWorkoutPropertyTextFieldCell(cell)
             return cell.configured(for: viewModel)
         case .place(let viewModel):
             let cell: WorkoutPropertyTextFieldCell = tableView.dequeueReusableCell(for: indexPath)
-            cell.textField.rx.text.orEmpty.bind { [weak self] place in
-                self?.viewModel.tempWorkout.place = place
-            }.disposed(by: cell.bag)
+            bindPlaceWorkoutPropertyTextFieldCell(cell)
             return cell.configured(for: viewModel)
         case .duration(let viewModel):
             let cell: WorkoutPropertyDescriptionCell = tableView.dequeueReusableCell(for: indexPath)
             return cell.configured(for: viewModel)
         case .durationPicker(let viewModel):
             let cell: WorkoutPropertyDurationPickerCell = tableView.dequeueReusableCell(for: indexPath)
+            bindWorkoutPropertyDurationPickerCell(cell)
             return cell.configured(for: viewModel)
         case .repository(let viewModel):
             let cell: WorkoutPropertyRepositoryCell = tableView.dequeueReusableCell(for: indexPath)
             return cell.configured(for: viewModel)
 
+        }
+    }
+
+    private func bindTitleWorkoutPropertyTextFieldCell(_ cell: WorkoutPropertyTextFieldCell) {
+        cell.textField.rx.text.orEmpty.bind { [weak self] title in
+            self?.viewModel.tempWorkout.title = title
+        }.disposed(by: cell.bag)
+    }
+
+    private func bindPlaceWorkoutPropertyTextFieldCell(_ cell: WorkoutPropertyTextFieldCell) {
+        cell.textField.rx.text.orEmpty.bind { [weak self] place in
+            self?.viewModel.tempWorkout.place = place
+        }.disposed(by: cell.bag)
+    }
+
+    private func bindWorkoutPropertyDurationPickerCell(_ cell: WorkoutPropertyDurationPickerCell) {
+        cell.datePicker.rx.countDownDuration.bind { [weak self] duration in
+            self?.viewModel.tempWorkout.duration = duration
+            if let durationItemIndexPath = self?.viewModel.durationItemIndexPath {
+                self?.tableView.reloadRows(at: [durationItemIndexPath], with: .fade)
+            }
+        }.disposed(by: cell.bag)
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let item = viewModel.dataSource[safe: indexPath.section]?[safe: indexPath.row] else {
+            fatalError("Bad manipulating with data source.")
+        }
+        switch item {
+        case .place:
+            break // TODO: -RD- show search table view controller
+        case .duration:
+            if let durationPickerItemIndexPath = viewModel.durationPickerItemIndexPath {
+                viewModel.toogleDurationPickerItem()
+                tableView.deleteRows(at: [durationPickerItemIndexPath], with: .top)
+            } else {
+                viewModel.toogleDurationPickerItem()
+                guard let durationPickerItemIndexPath = viewModel.durationPickerItemIndexPath else { return }
+                tableView.insertRows(at: [durationPickerItemIndexPath], with: .top)
+            }
+        default:
+            break
         }
     }
 
@@ -161,12 +200,4 @@ extension WorkoutViewController: UITableViewDelegate, UITableViewDataSource {
             return WorkoutPropertyRepositoryCell.estimatedHeight
         }
     }
-
-    // TODO: -RD- implement
-    /*func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let model = self.viewModel.dataSource[safe: indexPath.row]?.model else {
-            return assertionFailure("Bad manipulating with data source.")
-        }
-        delegate?.didSelectWorkout(model)
-    }*/
 }
