@@ -20,7 +20,7 @@ final class WorkoutsListViewController: BViewController<WorkoutsListViewModel, W
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        addNewWorkoutBarButtonItem()
+        addBarButtonItems()
         viewModel.loadData()
     }
 
@@ -32,6 +32,25 @@ final class WorkoutsListViewController: BViewController<WorkoutsListViewModel, W
         viewModel.state.filter { $0 == .loaded }.bind { [weak self] _ in
             self?.tableView.reloadData()
         }.disposed(by: bag)
+    }
+
+    private func addBarButtonItems() {
+        addFilterBarButtonItem()
+        addNewWorkoutBarButtonItem()
+    }
+
+    private func addFilterBarButtonItem() {
+        let item = UIBarButtonItem(
+            title: "Vše", // TODO: -RD- localize + inject
+            style: .plain,
+            target: self,
+            action: #selector(filterBarButtonItemPressed)
+        )
+        navigationItem.leftBarButtonItem = item
+    }
+
+    @objc private func filterBarButtonItemPressed() {
+        // TODO: -RD- change filter
     }
 
     private func addNewWorkoutBarButtonItem() {
