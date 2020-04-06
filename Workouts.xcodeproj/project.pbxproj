@@ -11,6 +11,8 @@
 		D0037302243B74FB00108E2E /* core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D0037300243B74FB00108E2E /* core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D003731F243B754100108E2E /* service.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D003731E243B754100108E2E /* service.framework */; };
 		D0037320243B754100108E2E /* service.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D003731E243B754100108E2E /* service.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D0037337243B773B00108E2E /* WorkoutsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0037336243B773B00108E2E /* WorkoutsUI.framework */; };
+		D0037338243B773B00108E2E /* WorkoutsUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D0037336243B773B00108E2E /* WorkoutsUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D0FC64B7243B6E74009D0958 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FC64B6243B6E74009D0958 /* AppDelegate.swift */; };
 		D0FC64B9243B6E74009D0958 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FC64B8243B6E74009D0958 /* SceneDelegate.swift */; };
 		D0FC64BB243B6E74009D0958 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FC64BA243B6E74009D0958 /* ViewController.swift */; };
@@ -27,6 +29,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				D0037320243B754100108E2E /* service.framework in Embed Frameworks */,
+				D0037338243B773B00108E2E /* WorkoutsUI.framework in Embed Frameworks */,
 				D0037302243B74FB00108E2E /* core.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -42,6 +45,7 @@
 		6CF9034A95724AA15BC48BBD /* Pods-SaveIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaveIt.release.xcconfig"; path = "Target Support Files/Pods-SaveIt/Pods-SaveIt.release.xcconfig"; sourceTree = "<group>"; };
 		D0037300243B74FB00108E2E /* core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D003731E243B754100108E2E /* service.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = service.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0037336243B773B00108E2E /* WorkoutsUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WorkoutsUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0FC64B3243B6E74009D0958 /* Workouts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Workouts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0FC64B6243B6E74009D0958 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0FC64B8243B6E74009D0958 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0037337243B773B00108E2E /* WorkoutsUI.framework in Frameworks */,
 				FD918A03D0A3D3ED65B1F50D /* Pods_Workouts.framework in Frameworks */,
 				D003731F243B754100108E2E /* service.framework in Frameworks */,
 				D0037301243B74FB00108E2E /* core.framework in Frameworks */,
@@ -79,6 +84,7 @@
 		B5E0851DECF25D57439EDB19 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D0037336243B773B00108E2E /* WorkoutsUI.framework */,
 				D003731E243B754100108E2E /* service.framework */,
 				D0037300243B74FB00108E2E /* core.framework */,
 				29A57B442E78388C5CF5FC3D /* Pods_Workouts.framework */,

@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:WorkoutsUI/WorkoutsUI.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:core/core.xcodeproj">
    </FileRef>
    <FileRef
