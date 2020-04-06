@@ -17,6 +17,7 @@ final class WorkoutPropertyDurationPickerCell: WorkoutPropertyCell, Configurable
     let datePicker: UIDatePicker = {
         let datePicker = UIDatePicker()
         datePicker.datePickerMode = .countDownTimer
+        datePicker.timeZone = TimeZone(secondsFromGMT: 0)
         return datePicker
     }()
 
@@ -33,8 +34,7 @@ final class WorkoutPropertyDurationPickerCell: WorkoutPropertyCell, Configurable
     }
 
     func configure(for viewModel: WorkoutPropertyDurationPickerCellViewModel) {
-        datePicker.countDownDuration = viewModel.countDownDuration
-        datePicker.sendActions(for: .valueChanged)
+        datePicker.setDate(viewModel.date, animated: true)
     }
 
 }

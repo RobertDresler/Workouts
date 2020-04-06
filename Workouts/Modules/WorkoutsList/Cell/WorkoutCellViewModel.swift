@@ -10,5 +10,7 @@ import UIKit
 
 struct WorkoutCellViewModel {
     let title: String
+    let place: String
+    let duration: String
     let backgroundColor: UIColor?
 }

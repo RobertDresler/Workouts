@@ -72,6 +72,10 @@ final class WorkoutsListViewModel: BViewModel {
     private func viewModel(for workout: Workout) -> WorkoutCellViewModel {
         return WorkoutCellViewModel(
             title: workout.title,
+            place: workout.place,
+            duration: R.string.localizable.workoutCellDuration(
+                DateFormatter.HmmInterval.string(from: Date(timeIntervalSince1970: workout.duration))
+            ),
             backgroundColor: (workout is RealmWorkout)
                 ? Color.realmWorkoutCellBackground
                 : Color.firebaseWorkoutCellBackground

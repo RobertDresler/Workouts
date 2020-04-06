@@ -50,6 +50,10 @@ final class WorkoutViewModel: BViewModel {
 
     var repositoryType: RepositoryType = .realm
 
+    var durationAsDate: Date {
+        return Date(timeIntervalSince1970: tempWorkout.duration)
+    }
+
     private var titleItem: DataSourceItem {
         return .title(
             WorkoutPropertyTextFieldCellViewModel(
@@ -82,7 +86,6 @@ final class WorkoutViewModel: BViewModel {
     }
 
     private var durationItem: DataSourceItem {
-        let durationAsDate = Date(timeIntervalSince1970: tempWorkout.duration)
         return .duration(
             WorkoutPropertyDescriptionCellViewModel(
                 title: R.string.localizable.workoutDurationItemTitle(),
@@ -132,7 +135,7 @@ final class WorkoutViewModel: BViewModel {
 
     private func makeDurationPickerItem() -> DataSourceItem {
         return .durationPicker(
-            WorkoutPropertyDurationPickerCellViewModel(countDownDuration: tempWorkout.duration)
+            WorkoutPropertyDurationPickerCellViewModel(date: durationAsDate)
         )
     }
 

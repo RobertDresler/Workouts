@@ -17,13 +17,28 @@ final class WorkoutCell: BCell, Configurable, DynamicHeightView {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
+        label.font = .preferredFont(forTextStyle: .headline)
+        label.textColor = Color.standardText
+        return label
+    }()
+
+    private let placeLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.textColor = Color.standardText
+        return label
+    }()
+
+    private let durationLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
         label.textColor = Color.standardText
         return label
     }()
 
     private lazy var contentStackView = [
-        titleLabel
-    ].stacked(.vertical, spacing: .large)
+        titleLabel, placeLabel, durationLabel
+    ].stacked(.vertical, spacing: .xsmall)
 
     private let wrapperView: UIView = {
         let view = UIView()
@@ -62,6 +77,8 @@ final class WorkoutCell: BCell, Configurable, DynamicHeightView {
 
     func configure(for viewModel: WorkoutCellViewModel) {
         titleLabel.text = viewModel.title
+        placeLabel.text = viewModel.place
+        durationLabel.text = viewModel.duration
         wrapperView.backgroundColor = viewModel.backgroundColor
     }
 

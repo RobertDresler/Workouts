@@ -11,6 +11,7 @@
 "workouts list mode all" = "Vše";
 "workouts list mode realm" = "Lokální";
 "workouts list mode firebase" = "Vzdálené";
+"workout cell duration" = "Délka trvání: %@";
 
 // MARK: Workout
 "workout title" = "Nové cvičení";

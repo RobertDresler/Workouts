@@ -160,7 +160,7 @@ extension WorkoutViewController: UITableViewDelegate, UITableViewDataSource {
         cell.datePicker.rx.countDownDuration.bind { [weak self] duration in
             self?.viewModel.tempWorkout.duration = duration
             if let durationItemIndexPath = self?.viewModel.durationItemIndexPath {
-                self?.tableView.reloadRows(at: [durationItemIndexPath], with: .fade)
+                self?.tableView.reloadRows(at: [durationItemIndexPath], with: .none)
             }
         }.disposed(by: cell.bag)
     }
