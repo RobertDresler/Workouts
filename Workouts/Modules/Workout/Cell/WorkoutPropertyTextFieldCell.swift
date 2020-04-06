@@ -34,6 +34,7 @@ final class WorkoutPropertyTextFieldCell: WorkoutPropertyCell, Configurable, Dyn
 
     func configure(for viewModel: WorkoutPropertyTextFieldCellViewModel) {
         textField.text = viewModel.title
+        textField.sendActions(for: .editingChanged)
         textField.placeholder = viewModel.placeholder
         textField.isEnabled = viewModel.isTextFieldEnabled
     }

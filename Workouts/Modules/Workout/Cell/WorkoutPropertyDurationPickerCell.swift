@@ -34,6 +34,7 @@ final class WorkoutPropertyDurationPickerCell: WorkoutPropertyCell, Configurable
 
     func configure(for viewModel: WorkoutPropertyDurationPickerCellViewModel) {
         datePicker.countDownDuration = viewModel.countDownDuration
+        datePicker.sendActions(for: .valueChanged)
     }
 
 }

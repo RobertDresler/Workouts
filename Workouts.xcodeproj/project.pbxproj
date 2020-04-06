@@ -201,6 +201,7 @@
 				D0037351243B79E400108E2E /* App */,
 				D0037353243B79F900108E2E /* WorkoutsList */,
 				D03F3E08243BAEB600AEEFEC /* Workout */,
+				D03F3E36243BE7CB00AEEFEC /* PlaceSelector */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -390,6 +391,45 @@
 				D03F3E2E243BCA6500AEEFEC /* WorkoutPropertyRepositoryCellViewModel.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		D03F3E36243BE7CB00AEEFEC /* PlaceSelector */ = {
+			isa = PBXGroup;
+			children = (
+				D03F3E37243BE7E000AEEFEC /* Factory */,
+				D03F3E38243BE7E500AEEFEC /* ViewController */,
+				D03F3E39243BE7EB00AEEFEC /* View */,
+				D03F3E3A243BE7EE00AEEFEC /* ViewModel */,
+			);
+			path = PlaceSelector;
+			sourceTree = "<group>";
+		};
+		D03F3E37243BE7E000AEEFEC /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		D03F3E38243BE7E500AEEFEC /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		D03F3E39243BE7EB00AEEFEC /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D03F3E3A243BE7EE00AEEFEC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		D0FC64AA243B6E74009D0958 = {
