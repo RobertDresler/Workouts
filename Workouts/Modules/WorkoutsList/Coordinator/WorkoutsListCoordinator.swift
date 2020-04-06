@@ -34,6 +34,10 @@ final class WorkoutsListCoordinator: BaseCoordinator {
 }
 
 extension WorkoutsListCoordinator: WorkoutsListViewDelegate {
+    func newWorkoutButtonPressed() {
+        // TODO: -RD- implement
+    }
+
     func didSelectWorkout(_ workout: Workout) {
         // TODO: -RD- implement
     }

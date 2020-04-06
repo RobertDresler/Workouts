@@ -42,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func setupIQKeyboardManager() {
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
-        //IQKeyboardManager.shared.toolbarTintColor = Color.iqKeyboardManagerToolbar
+        IQKeyboardManager.shared.toolbarTintColor = Color.globalTint
     }
 
 }

@@ -9,6 +9,7 @@
 import core
 
 protocol WorkoutsListViewDelegate: class {
+    func newWorkoutButtonPressed()
     func didSelectWorkout(_ workout: Workout)
 }
 

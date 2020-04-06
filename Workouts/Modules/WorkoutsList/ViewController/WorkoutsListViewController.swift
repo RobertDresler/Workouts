@@ -20,6 +20,7 @@ final class WorkoutsListViewController: BViewController<WorkoutsListViewModel, W
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        addNewWorkoutBarButtonItem()
         viewModel.loadData()
     }
 
@@ -31,6 +32,19 @@ final class WorkoutsListViewController: BViewController<WorkoutsListViewModel, W
         viewModel.state.filter { $0 == .loaded }.bind { [weak self] _ in
             self?.tableView.reloadData()
         }.disposed(by: bag)
+    }
+
+    private func addNewWorkoutBarButtonItem() {
+        let item = UIBarButtonItem(
+            barButtonSystemItem: .add,
+            target: self,
+            action: #selector(newWorkoutBarButtonItemPressed)
+        )
+        navigationItem.rightBarButtonItem = item
+    }
+
+    @objc private func newWorkoutBarButtonItemPressed() {
+        delegate?.newWorkoutButtonPressed()
     }
 
 }
