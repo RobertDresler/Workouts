@@ -7,3 +7,6 @@
 */
 
 "workouts list title" = "Cvičení";
+"workouts list mode all" = "Vše";
+"workouts list mode realm" = "Lokální";
+"workouts list mode firebase" = "Vzdálené";

@@ -6,9 +6,16 @@
 //  Copyright © 2020 Robert Dresler. All rights reserved.
 //
 
+import service
+
 extension ModuleFactoryImp: WorkoutsListFactory {
     func makeWorkoutsListView() -> WorkoutsListView {
-        let viewModel = WorkoutsListViewModel()
+        let viewModel = WorkoutsListViewModel(
+            workoutsProvider: WorkoutsProvider(
+                realmRepository: RealmWorkoutsRepository(),
+                firebaseRepository: FirebaseWorkoutsRepository()
+            )
+        )
         let viewController = WorkoutsListViewController(viewModel: viewModel)
         return viewController
     }

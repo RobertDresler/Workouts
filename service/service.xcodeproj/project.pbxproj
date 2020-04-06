@@ -11,6 +11,8 @@
 		D003731B243B753B00108E2E /* core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D003731A243B753B00108E2E /* core.framework */; };
 		D003731C243B753B00108E2E /* core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D003731A243B753B00108E2E /* core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D0037345243B78E000108E2E /* WorkoutsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0037344243B78E000108E2E /* WorkoutsProvider.swift */; };
+		D00373DB243BA14300108E2E /* WorkoutsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373DA243BA14300108E2E /* WorkoutsRepository.swift */; };
+		D00373DD243BA4DC00108E2E /* RealmWorkoutsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373DC243BA4DC00108E2E /* RealmWorkoutsRepository.swift */; };
 		D2CF11103082F967AFD9DDF8 /* Pods_service.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF19AE28A3BD7B34ADC9FB6B /* Pods_service.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +39,8 @@
 		D0037312243B752D00108E2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D003731A243B753B00108E2E /* core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0037344243B78E000108E2E /* WorkoutsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsProvider.swift; sourceTree = "<group>"; };
+		D00373DA243BA14300108E2E /* WorkoutsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsRepository.swift; sourceTree = "<group>"; };
+		D00373DC243BA4DC00108E2E /* RealmWorkoutsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmWorkoutsRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 		D0037341243B78B900108E2E /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				D00373DA243BA14300108E2E /* WorkoutsRepository.swift */,
+				D00373DC243BA4DC00108E2E /* RealmWorkoutsRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -242,6 +248,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0037345243B78E000108E2E /* WorkoutsProvider.swift in Sources */,
+				D00373DD243BA4DC00108E2E /* RealmWorkoutsRepository.swift in Sources */,
+				D00373DB243BA14300108E2E /* WorkoutsRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

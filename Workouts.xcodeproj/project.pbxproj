@@ -38,6 +38,7 @@
 		D00373D3243B8E8B00108E2E /* WorkoutsListFactoryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373D2243B8E8B00108E2E /* WorkoutsListFactoryExtension.swift */; };
 		D00373D5243B8ED400108E2E /* CoordinatorFactory+WorkoutsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373D4243B8ED400108E2E /* CoordinatorFactory+WorkoutsList.swift */; };
 		D00373D7243B8F0A00108E2E /* WorkoutsListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373D6243B8F0A00108E2E /* WorkoutsListCoordinator.swift */; };
+		D00373E0243BA62000108E2E /* FirebaseWorkoutsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373DF243BA62000108E2E /* FirebaseWorkoutsProvider.swift */; };
 		D0FC64B7243B6E74009D0958 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FC64B6243B6E74009D0958 /* AppDelegate.swift */; };
 		D0FC64C0243B6E78009D0958 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0FC64BF243B6E78009D0958 /* Assets.xcassets */; };
 		D0FC64C3243B6E78009D0958 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0FC64C1243B6E78009D0958 /* LaunchScreen.storyboard */; };
@@ -95,6 +96,7 @@
 		D00373D2243B8E8B00108E2E /* WorkoutsListFactoryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsListFactoryExtension.swift; sourceTree = "<group>"; };
 		D00373D4243B8ED400108E2E /* CoordinatorFactory+WorkoutsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoordinatorFactory+WorkoutsList.swift"; sourceTree = "<group>"; };
 		D00373D6243B8F0A00108E2E /* WorkoutsListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsListCoordinator.swift; sourceTree = "<group>"; };
+		D00373DF243BA62000108E2E /* FirebaseWorkoutsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseWorkoutsProvider.swift; sourceTree = "<group>"; };
 		D0FC64B3243B6E74009D0958 /* Workouts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Workouts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0FC64B6243B6E74009D0958 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0FC64BF243B6E78009D0958 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				D0037385243B82AA00108E2E /* ViewController */,
 				D0037388243B82BD00108E2E /* View */,
 				D0037389243B82C300108E2E /* ViewModel */,
+				D00373DE243BA60E00108E2E /* Service */,
 				D00373A1243B84F900108E2E /* Cell */,
 			);
 			path = WorkoutsList;
@@ -286,6 +289,14 @@
 				D00373A4243B851100108E2E /* WorkoutCellViewModel.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		D00373DE243BA60E00108E2E /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				D00373DF243BA62000108E2E /* FirebaseWorkoutsProvider.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		D0FC64AA243B6E74009D0958 = {
@@ -501,6 +512,7 @@
 				D00373CF243B871000108E2E /* BCell.swift in Sources */,
 				D00373D3243B8E8B00108E2E /* WorkoutsListFactoryExtension.swift in Sources */,
 				D0037348243B794E00108E2E /* R.generated.swift in Sources */,
+				D00373E0243BA62000108E2E /* FirebaseWorkoutsProvider.swift in Sources */,
 				D0037366243B7CDC00108E2E /* AppCoordinator.swift in Sources */,
 				D003736F243B7D5800108E2E /* CoordinatorFactory.swift in Sources */,
 			);

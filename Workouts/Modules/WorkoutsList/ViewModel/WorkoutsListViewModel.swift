@@ -9,6 +9,7 @@
 import core
 import RxCocoa
 import RxSwift
+import service
 import WorkoutsUI
 
 final class WorkoutsListViewModel: BViewModel {
@@ -28,22 +29,44 @@ final class WorkoutsListViewModel: BViewModel {
     let bag = DisposeBag()
     let state = BehaviorRelay<State>(value: .initial)
     var dataSource = [DataSourceItem]()
+    let isActivityIndicatorLoading = BehaviorRelay<Bool>(value: false)
 
-    init() {}
-
-    func loadData() {
-        guard state.value != .loading else { return }
-        state.accept(.loading)
-        // TODO: -RD- real loading logic
-        let models = (1...20).map { randomTestWorkout(with: $0) }
-        dataSource = models.map { ($0, viewModel(for: $0)) }
-        state.accept(.loaded)
+    var modeBarButtonTitle: String {
+        switch workoutsProvider.mode {
+        case .all:
+            return R.string.localizable.workoutsListModeAll()
+        case .realm:
+            return R.string.localizable.workoutsListModeRealm()
+        case .firebase:
+            return R.string.localizable.workoutsListModeFirebase()
+        }
     }
 
-    private func randomTestWorkout(with id: Int) -> Workout {
-        return Bool.random()
-            ? RealmWorkout(id: id, title: "Realm Test")
-            : FirebaseWorkout(id: id, title: "Firebase Test")
+    private let workoutsProvider: WorkoutsProvider
+
+    init(workoutsProvider: WorkoutsProvider) {
+        self.workoutsProvider = workoutsProvider
+        setupBinding()
+    }
+
+    private func setupBinding() {
+        state.map { $0 == .loading }.bind(to: isActivityIndicatorLoading).disposed(by: bag)
+
+        workoutsProvider.workouts.bind { [weak self] workouts in
+            guard let self = self else { return }
+            self.dataSource = workouts.map { ($0, self.viewModel(for: $0)) }
+            self.state.accept(.loaded)
+        }.disposed(by: bag)
+    }
+
+    func loadData() {
+        state.accept(.loading)
+        workoutsProvider.loadData()
+    }
+
+    func changeMode() {
+        state.accept(.loading)
+        workoutsProvider.changeMode()
     }
 
     private func viewModel(for workout: Workout) -> WorkoutCellViewModel {

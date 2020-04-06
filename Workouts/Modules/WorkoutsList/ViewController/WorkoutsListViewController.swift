@@ -6,6 +6,7 @@
 //  Copyright © 2020 Robert Dresler. All rights reserved.
 //
 
+import Toast_Swift
 import UIKit
 
 final class WorkoutsListViewController: BViewController<WorkoutsListViewModel, WorkoutsListContentView>,
@@ -24,6 +25,13 @@ final class WorkoutsListViewController: BViewController<WorkoutsListViewModel, W
         viewModel.loadData()
     }
 
+    override func bindViewModel() {
+        super.bindViewModel()
+        viewModel.isActivityIndicatorLoading
+            .bind { [weak self] in $0 ? self?.view.makeToastActivity(.center) : self?.view.hideToastActivity() }
+            .disposed(by: bag)
+    }
+
     private func setupTableView() {
         tableView.register(WorkoutCell.self)
         tableView.delegate = self
@@ -35,22 +43,27 @@ final class WorkoutsListViewController: BViewController<WorkoutsListViewModel, W
     }
 
     private func addBarButtonItems() {
-        addFilterBarButtonItem()
+        addModeBarButtonItem()
         addNewWorkoutBarButtonItem()
     }
 
-    private func addFilterBarButtonItem() {
+    private func addModeBarButtonItem() {
         let item = UIBarButtonItem(
-            title: "Vše", // TODO: -RD- localize + inject
+            title: viewModel.modeBarButtonTitle,
             style: .plain,
             target: self,
-            action: #selector(filterBarButtonItemPressed)
+            action: #selector(modeBarButtonItemPressed)
         )
         navigationItem.leftBarButtonItem = item
     }
 
-    @objc private func filterBarButtonItemPressed() {
-        // TODO: -RD- change filter
+    @objc private func modeBarButtonItemPressed() {
+        viewModel.changeMode()
+        setupModeBarButtonItemTitle()
+    }
+
+    private func setupModeBarButtonItemTitle() {
+        navigationItem.leftBarButtonItem?.title = viewModel.modeBarButtonTitle
     }
 
     private func addNewWorkoutBarButtonItem() {
