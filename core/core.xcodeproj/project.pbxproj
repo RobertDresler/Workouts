@@ -30,6 +30,7 @@
 		D00373C9243B859200108E2E /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373C1243B859200108E2E /* UITableView+Extension.swift */; };
 		D00373CB243B86CC00108E2E /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373CA243B86CC00108E2E /* Configurable.swift */; };
 		D00373CD243B86D600108E2E /* DynamicHeightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373CC243B86D600108E2E /* DynamicHeightView.swift */; };
+		D03F3E3C243BEFCB00AEEFEC /* RepositoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03F3E3B243BEFCB00AEEFEC /* RepositoryType.swift */; };
 		D06A5053243B745D00736DFA /* core.h in Headers */ = {isa = PBXBuildFile; fileRef = D06A5051243B745D00736DFA /* core.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 		D00373C1243B859200108E2E /* UITableView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		D00373CA243B86CC00108E2E /* Configurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurable.swift; sourceTree = "<group>"; };
 		D00373CC243B86D600108E2E /* DynamicHeightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightView.swift; sourceTree = "<group>"; };
+		D03F3E3B243BEFCB00AEEFEC /* RepositoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryType.swift; sourceTree = "<group>"; };
 		D06A504E243B745D00736DFA /* core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D06A5051243B745D00736DFA /* core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = core.h; sourceTree = "<group>"; };
 		D06A5052243B745D00736DFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				D003733F243B78B400108E2E /* Workout.swift */,
 				D0037355243B7A2700108E2E /* RealmWorkout.swift */,
 				D0037357243B7A2F00108E2E /* FirebaseWorkout.swift */,
+				D03F3E3B243BEFCB00AEEFEC /* RepositoryType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0037360243B7B7000108E2E /* Router.swift in Sources */,
+				D03F3E3C243BEFCB00AEEFEC /* RepositoryType.swift in Sources */,
 				D00373B2243B858700108E2E /* Optional+Extension.swift in Sources */,
 				D00373B4243B858700108E2E /* StaticDateFormatters.swift in Sources */,
 				D00373B8243B858700108E2E /* Realm+Extension.swift in Sources */,

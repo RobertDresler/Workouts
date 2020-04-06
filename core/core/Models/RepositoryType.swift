@@ -6,4 +6,7 @@
 //  Copyright © 2020 Robert Dresler. All rights reserved.
 //
 
-import Foundation
+public enum RepositoryType: Int, CaseIterable {
+    case realm
+    case firebase
+}

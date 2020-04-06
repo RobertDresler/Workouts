@@ -6,6 +6,8 @@
 //  Copyright © 2020 Robert Dresler. All rights reserved.
 //
 
+import core
+
 struct WorkoutPropertyRepositoryCellViewModel {
     let repositoryType: RepositoryType
 }
