@@ -9,6 +9,15 @@
 /* Begin PBXBuildFile section */
 		C98B7427A39FD9DB33989E4B /* Pods_core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 141D8AB5E4AA2023663F0A96 /* Pods_core.framework */; };
 		D0037340243B78B400108E2E /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D003733F243B78B400108E2E /* Workout.swift */; };
+		D0037356243B7A2700108E2E /* RealmWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0037355243B7A2700108E2E /* RealmWorkout.swift */; };
+		D0037358243B7A2F00108E2E /* FirebaseWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0037357243B7A2F00108E2E /* FirebaseWorkout.swift */; };
+		D0037360243B7B7000108E2E /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = D003735F243B7B7000108E2E /* Router.swift */; };
+		D0037362243B7B8400108E2E /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0037361243B7B8400108E2E /* Presentable.swift */; };
+		D0037364243B7C9E00108E2E /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0037363243B7C9E00108E2E /* BaseView.swift */; };
+		D0037375243B7DF500108E2E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0037374243B7DF500108E2E /* Coordinator.swift */; };
+		D003737F243B7E9100108E2E /* ViewSetupable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D003737E243B7E9100108E2E /* ViewSetupable.swift */; };
+		D0037381243B803800108E2E /* BackHandleable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0037380243B803800108E2E /* BackHandleable.swift */; };
+		D0037384243B809000108E2E /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0037383243B809000108E2E /* UINavigationController+Extension.swift */; };
 		D06A5053243B745D00736DFA /* core.h in Headers */ = {isa = PBXBuildFile; fileRef = D06A5051243B745D00736DFA /* core.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -16,6 +25,15 @@
 		141D8AB5E4AA2023663F0A96 /* Pods_core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDCE52F9366373369D8DE26F /* Pods-core.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-core.debug.xcconfig"; path = "Target Support Files/Pods-core/Pods-core.debug.xcconfig"; sourceTree = "<group>"; };
 		D003733F243B78B400108E2E /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
+		D0037355243B7A2700108E2E /* RealmWorkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmWorkout.swift; sourceTree = "<group>"; };
+		D0037357243B7A2F00108E2E /* FirebaseWorkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseWorkout.swift; sourceTree = "<group>"; };
+		D003735F243B7B7000108E2E /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		D0037361243B7B8400108E2E /* Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presentable.swift; sourceTree = "<group>"; };
+		D0037363243B7C9E00108E2E /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		D0037374243B7DF500108E2E /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		D003737E243B7E9100108E2E /* ViewSetupable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSetupable.swift; sourceTree = "<group>"; };
+		D0037380243B803800108E2E /* BackHandleable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackHandleable.swift; sourceTree = "<group>"; };
+		D0037383243B809000108E2E /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
 		D06A504E243B745D00736DFA /* core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D06A5051243B745D00736DFA /* core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = core.h; sourceTree = "<group>"; };
 		D06A5052243B745D00736DFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,8 +74,31 @@
 			isa = PBXGroup;
 			children = (
 				D003733F243B78B400108E2E /* Workout.swift */,
+				D0037355243B7A2700108E2E /* RealmWorkout.swift */,
+				D0037357243B7A2F00108E2E /* FirebaseWorkout.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		D003735E243B7B6400108E2E /* BaseProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				D003735F243B7B7000108E2E /* Router.swift */,
+				D0037361243B7B8400108E2E /* Presentable.swift */,
+				D0037363243B7C9E00108E2E /* BaseView.swift */,
+				D0037374243B7DF500108E2E /* Coordinator.swift */,
+				D003737E243B7E9100108E2E /* ViewSetupable.swift */,
+				D0037380243B803800108E2E /* BackHandleable.swift */,
+			);
+			path = BaseProtocols;
+			sourceTree = "<group>";
+		};
+		D0037382243B808000108E2E /* UIExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				D0037383243B809000108E2E /* UINavigationController+Extension.swift */,
+			);
+			path = UIExtensions;
 			sourceTree = "<group>";
 		};
 		D06A5044243B745D00736DFA = {
@@ -82,6 +123,8 @@
 			isa = PBXGroup;
 			children = (
 				D003733E243B78AC00108E2E /* Models */,
+				D003735E243B7B6400108E2E /* BaseProtocols */,
+				D0037382243B808000108E2E /* UIExtensions */,
 				D06A5051243B745D00736DFA /* core.h */,
 				D06A5052243B745D00736DFA /* Info.plist */,
 			);
@@ -213,7 +256,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0037360243B7B7000108E2E /* Router.swift in Sources */,
 				D0037340243B78B400108E2E /* Workout.swift in Sources */,
+				D0037358243B7A2F00108E2E /* FirebaseWorkout.swift in Sources */,
+				D0037364243B7C9E00108E2E /* BaseView.swift in Sources */,
+				D0037362243B7B8400108E2E /* Presentable.swift in Sources */,
+				D0037356243B7A2700108E2E /* RealmWorkout.swift in Sources */,
+				D003737F243B7E9100108E2E /* ViewSetupable.swift in Sources */,
+				D0037384243B809000108E2E /* UINavigationController+Extension.swift in Sources */,
+				D0037375243B7DF500108E2E /* Coordinator.swift in Sources */,
+				D0037381243B803800108E2E /* BackHandleable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
