@@ -6,4 +6,78 @@
 //  Copyright © 2020 Robert Dresler. All rights reserved.
 //
 
-import Foundation
+import core
+import RxCocoa
+import RxSwift
+
+// TODO: -RD- error handling
+
+public final class WorkoutsProvider {
+
+    public enum Mode: CaseIterable {
+        case all
+        case realm
+        case firebase
+    }
+
+    public var mode: Mode = .all
+    public let workouts = BehaviorRelay<[Workout]>(value: [])
+
+    private var operations = 0
+    private var completedOperations = 0
+    private var bag = DisposeBag()
+    private var tempWorkouts = [Workout]()
+
+    private let realmRepository: WorkoutsRepository
+    private let firebaseRepository: WorkoutsRepository
+
+    public init(realmRepository: WorkoutsRepository, firebaseRepository: WorkoutsRepository) {
+        self.realmRepository = realmRepository
+        self.firebaseRepository = firebaseRepository
+    }
+
+    public func changeMode() {
+        guard let currentModeIndex = Mode.allCases.firstIndex(of: mode) else { return }
+        mode = Mode.allCases[safe: currentModeIndex + 1] ?? .all
+        loadData()
+    }
+
+    public func loadData() {
+        bag = DisposeBag()
+        operations = mode == .all ? 2 : 1
+        completedOperations = 0
+        tempWorkouts = []
+
+        if [.all, .realm].contains(mode) {
+            realmRepository.getAll().subscribe(
+                onSuccess: { [weak self] in self?.process(with: $0) },
+                onError: { [weak self] in self?.process(with: $0) }
+            ).disposed(by: bag)
+        }
+
+        if [.all, .firebase].contains(mode) {
+            firebaseRepository.getAll().subscribe(
+                onSuccess: { [weak self] in self?.process(with: $0) },
+                onError: { [weak self] in self?.process(with: $0) }
+            ).disposed(by: bag)
+        }
+    }
+
+    private func process(with workouts: [Workout]) {
+        completedOperations += 1
+        tempWorkouts.append(contentsOf: workouts)
+        processAfterCompletedOperation()
+    }
+
+    private func process(with error: Error) {
+        completedOperations += 1
+        processAfterCompletedOperation()
+
+    }
+
+    private func processAfterCompletedOperation() {
+        guard completedOperations == operations else { return }
+        workouts.accept(tempWorkouts.sorted { $0.id < $1.id })
+    }
+
+}

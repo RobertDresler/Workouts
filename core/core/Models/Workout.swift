@@ -6,4 +6,7 @@
 //  Copyright © 2020 Robert Dresler. All rights reserved.
 //
 
-import Foundation
+public protocol Workout {
+    var id: Int { get set }
+    var title: String { get set }
+}

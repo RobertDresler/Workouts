@@ -6,4 +6,7 @@
   Copyright © 2020 Robert Dresler. All rights reserved.
 */
 
-"hello world" = "Hello World!";
+"workouts list title" = "Cvičení";
+"workouts list mode all" = "Vše";
+"workouts list mode realm" = "Lokální";
+"workouts list mode firebase" = "Vzdálené";

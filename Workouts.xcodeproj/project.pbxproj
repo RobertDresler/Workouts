@@ -27,8 +27,19 @@
 		D0037379243B7E3B00108E2E /* BViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0037378243B7E3B00108E2E /* BViewController.swift */; };
 		D003737B243B7E5800108E2E /* BView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D003737A243B7E5800108E2E /* BView.swift */; };
 		D003737D243B7E6100108E2E /* BViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D003737C243B7E6100108E2E /* BViewModel.swift */; };
+		D003738B243B82DE00108E2E /* WorkoutsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D003738A243B82DE00108E2E /* WorkoutsListView.swift */; };
+		D003738F243B830C00108E2E /* WorkoutsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D003738E243B830C00108E2E /* WorkoutsListViewController.swift */; };
+		D0037391243B836000108E2E /* WorkoutsListContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0037390243B836000108E2E /* WorkoutsListContentView.swift */; };
+		D0037393243B836A00108E2E /* WorkoutsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0037392243B836A00108E2E /* WorkoutsListViewModel.swift */; };
+		D00373A3243B850A00108E2E /* WorkoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373A2243B850A00108E2E /* WorkoutCell.swift */; };
+		D00373A5243B851100108E2E /* WorkoutCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373A4243B851100108E2E /* WorkoutCellViewModel.swift */; };
+		D00373CF243B871000108E2E /* BCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373CE243B871000108E2E /* BCell.swift */; };
+		D00373D1243B8E6D00108E2E /* WorkoutsListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373D0243B8E6D00108E2E /* WorkoutsListFactory.swift */; };
+		D00373D3243B8E8B00108E2E /* WorkoutsListFactoryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373D2243B8E8B00108E2E /* WorkoutsListFactoryExtension.swift */; };
+		D00373D5243B8ED400108E2E /* CoordinatorFactory+WorkoutsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373D4243B8ED400108E2E /* CoordinatorFactory+WorkoutsList.swift */; };
+		D00373D7243B8F0A00108E2E /* WorkoutsListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373D6243B8F0A00108E2E /* WorkoutsListCoordinator.swift */; };
+		D00373E0243BA62000108E2E /* FirebaseWorkoutsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373DF243BA62000108E2E /* FirebaseWorkoutsProvider.swift */; };
 		D0FC64B7243B6E74009D0958 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FC64B6243B6E74009D0958 /* AppDelegate.swift */; };
-		D0FC64BB243B6E74009D0958 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FC64BA243B6E74009D0958 /* ViewController.swift */; };
 		D0FC64C0243B6E78009D0958 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0FC64BF243B6E78009D0958 /* Assets.xcassets */; };
 		D0FC64C3243B6E78009D0958 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0FC64C1243B6E78009D0958 /* LaunchScreen.storyboard */; };
 		FD918A03D0A3D3ED65B1F50D /* Pods_Workouts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A57B442E78388C5CF5FC3D /* Pods_Workouts.framework */; };
@@ -74,9 +85,20 @@
 		D0037378243B7E3B00108E2E /* BViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BViewController.swift; sourceTree = "<group>"; };
 		D003737A243B7E5800108E2E /* BView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BView.swift; sourceTree = "<group>"; };
 		D003737C243B7E6100108E2E /* BViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BViewModel.swift; sourceTree = "<group>"; };
+		D003738A243B82DE00108E2E /* WorkoutsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsListView.swift; sourceTree = "<group>"; };
+		D003738E243B830C00108E2E /* WorkoutsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsListViewController.swift; sourceTree = "<group>"; };
+		D0037390243B836000108E2E /* WorkoutsListContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsListContentView.swift; sourceTree = "<group>"; };
+		D0037392243B836A00108E2E /* WorkoutsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsListViewModel.swift; sourceTree = "<group>"; };
+		D00373A2243B850A00108E2E /* WorkoutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCell.swift; sourceTree = "<group>"; };
+		D00373A4243B851100108E2E /* WorkoutCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCellViewModel.swift; sourceTree = "<group>"; };
+		D00373CE243B871000108E2E /* BCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCell.swift; sourceTree = "<group>"; };
+		D00373D0243B8E6D00108E2E /* WorkoutsListFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsListFactory.swift; sourceTree = "<group>"; };
+		D00373D2243B8E8B00108E2E /* WorkoutsListFactoryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsListFactoryExtension.swift; sourceTree = "<group>"; };
+		D00373D4243B8ED400108E2E /* CoordinatorFactory+WorkoutsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoordinatorFactory+WorkoutsList.swift"; sourceTree = "<group>"; };
+		D00373D6243B8F0A00108E2E /* WorkoutsListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsListCoordinator.swift; sourceTree = "<group>"; };
+		D00373DF243BA62000108E2E /* FirebaseWorkoutsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseWorkoutsProvider.swift; sourceTree = "<group>"; };
 		D0FC64B3243B6E74009D0958 /* Workouts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Workouts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0FC64B6243B6E74009D0958 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D0FC64BA243B6E74009D0958 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D0FC64BF243B6E78009D0958 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0FC64C2243B6E78009D0958 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0FC64C4243B6E78009D0958 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -155,6 +177,7 @@
 				D003737C243B7E6100108E2E /* BViewModel.swift */,
 				D0037372243B7DD900108E2E /* BaseCoordinator.swift */,
 				D0037376243B7E2000108E2E /* RouterImp.swift */,
+				D00373CE243B871000108E2E /* BCell.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -179,6 +202,13 @@
 		D0037353243B79F900108E2E /* WorkoutsList */ = {
 			isa = PBXGroup;
 			children = (
+				D003738C243B82E100108E2E /* Factory */,
+				D003738D243B82E600108E2E /* Coordinator */,
+				D0037385243B82AA00108E2E /* ViewController */,
+				D0037388243B82BD00108E2E /* View */,
+				D0037389243B82C300108E2E /* ViewModel */,
+				D00373DE243BA60E00108E2E /* Service */,
+				D00373A1243B84F900108E2E /* Cell */,
 			);
 			path = WorkoutsList;
 			sourceTree = "<group>";
@@ -209,6 +239,66 @@
 			path = Factory;
 			sourceTree = "<group>";
 		};
+		D0037385243B82AA00108E2E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D003738A243B82DE00108E2E /* WorkoutsListView.swift */,
+				D003738E243B830C00108E2E /* WorkoutsListViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		D0037388243B82BD00108E2E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D0037390243B836000108E2E /* WorkoutsListContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D0037389243B82C300108E2E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D0037392243B836A00108E2E /* WorkoutsListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D003738C243B82E100108E2E /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				D00373D0243B8E6D00108E2E /* WorkoutsListFactory.swift */,
+				D00373D2243B8E8B00108E2E /* WorkoutsListFactoryExtension.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		D003738D243B82E600108E2E /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				D00373D4243B8ED400108E2E /* CoordinatorFactory+WorkoutsList.swift */,
+				D00373D6243B8F0A00108E2E /* WorkoutsListCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		D00373A1243B84F900108E2E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D00373A2243B850A00108E2E /* WorkoutCell.swift */,
+				D00373A4243B851100108E2E /* WorkoutCellViewModel.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		D00373DE243BA60E00108E2E /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				D00373DF243BA62000108E2E /* FirebaseWorkoutsProvider.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		D0FC64AA243B6E74009D0958 = {
 			isa = PBXGroup;
 			children = (
@@ -231,7 +321,6 @@
 			isa = PBXGroup;
 			children = (
 				D0FC64B6243B6E74009D0958 /* AppDelegate.swift */,
-				D0FC64BA243B6E74009D0958 /* ViewController.swift */,
 				D003734E243B798F00108E2E /* Localizable.strings */,
 				D0FC64BF243B6E78009D0958 /* Assets.xcassets */,
 				D0FC64C1243B6E78009D0958 /* LaunchScreen.storyboard */,
@@ -400,19 +489,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D00373D7243B8F0A00108E2E /* WorkoutsListCoordinator.swift in Sources */,
 				D003735B243B7A5700108E2E /* WorkoutViewUsage.swift in Sources */,
 				D003737B243B7E5800108E2E /* BView.swift in Sources */,
 				D003736B243B7D0600108E2E /* CoordinatorFactoryImp.swift in Sources */,
 				D003735D243B7B2400108E2E /* NavigationController.swift in Sources */,
 				D003736D243B7D0F00108E2E /* ModuleFactoryImp.swift in Sources */,
-				D0FC64BB243B6E74009D0958 /* ViewController.swift in Sources */,
+				D00373D5243B8ED400108E2E /* CoordinatorFactory+WorkoutsList.swift in Sources */,
+				D0037391243B836000108E2E /* WorkoutsListContentView.swift in Sources */,
+				D00373A5243B851100108E2E /* WorkoutCellViewModel.swift in Sources */,
+				D003738B243B82DE00108E2E /* WorkoutsListView.swift in Sources */,
 				D0FC64B7243B6E74009D0958 /* AppDelegate.swift in Sources */,
+				D003738F243B830C00108E2E /* WorkoutsListViewController.swift in Sources */,
+				D0037393243B836A00108E2E /* WorkoutsListViewModel.swift in Sources */,
+				D00373A3243B850A00108E2E /* WorkoutCell.swift in Sources */,
 				D0037377243B7E2000108E2E /* RouterImp.swift in Sources */,
 				D0037379243B7E3B00108E2E /* BViewController.swift in Sources */,
 				D003737D243B7E6100108E2E /* BViewModel.swift in Sources */,
 				D0037373243B7DD900108E2E /* BaseCoordinator.swift in Sources */,
+				D00373D1243B8E6D00108E2E /* WorkoutsListFactory.swift in Sources */,
 				D0037371243B7D7A00108E2E /* CoordinatorFactory+AppCoordinator.swift in Sources */,
+				D00373CF243B871000108E2E /* BCell.swift in Sources */,
+				D00373D3243B8E8B00108E2E /* WorkoutsListFactoryExtension.swift in Sources */,
 				D0037348243B794E00108E2E /* R.generated.swift in Sources */,
+				D00373E0243BA62000108E2E /* FirebaseWorkoutsProvider.swift in Sources */,
 				D0037366243B7CDC00108E2E /* AppCoordinator.swift in Sources */,
 				D003736F243B7D5800108E2E /* CoordinatorFactory.swift in Sources */,
 			);

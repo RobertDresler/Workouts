@@ -8,6 +8,7 @@
 
 import IQKeyboardManagerSwift
 import UIKit
+import WorkoutsUI
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationController = NavigationController()
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
+        window?.tintColor = Color.globalTint
         return navigationController
     }
 
@@ -40,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func setupIQKeyboardManager() {
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
-        //IQKeyboardManager.shared.toolbarTintColor = Color.iqKeyboardManagerToolbar
+        IQKeyboardManager.shared.toolbarTintColor = Color.globalTint
     }
 
 }

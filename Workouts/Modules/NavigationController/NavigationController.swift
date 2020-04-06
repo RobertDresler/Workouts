@@ -6,6 +6,7 @@
 //  Copyright © 2020 Robert Dresler. All rights reserved.
 //
 
+import SnapKit
 import UIKit
 import WorkoutsUI
 
@@ -19,23 +20,9 @@ final class NavigationController: UINavigationController {
 
     private var duringPushAnimation = false
 
-    func makeDefault() {
-        makeDefaultBar()
-        /*navigationBar.titleTextAttributes = [
-            .foregroundColor: Color.navigationBarTint,
-            .font: Font.montserrat(.medium, size: 12)
-        ]*/
-        //navigationBar.shadowImage = UIImage()
-        //navigationBar.isTranslucent = false
-    }
-
-    func makeDefaultBar() {
-        //navigationBar.barTintColor = Color.navigationBarBackground
-        //navigationBar.tintColor = Color.navigationBarTint
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationBar.prefersLargeTitles = true
         delegate = self
         interactivePopGestureRecognizer?.delegate = self
     }

@@ -6,4 +6,25 @@
 //  Copyright © 2020 Robert Dresler. All rights reserved.
 //
 
-import Foundation
+import RealmSwift
+
+public final class RealmWorkout: Object, Workout {
+
+    @objc public dynamic var id = 0
+    @objc public dynamic var title = ""
+
+    public init(
+        id: Int,
+        title: String
+    ) {
+        self.id = id
+        self.title = title
+    }
+
+    required init() {}
+
+    override public class func primaryKey() -> String? {
+        return "id"
+    }
+
+}
