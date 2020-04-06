@@ -6,6 +6,9 @@
 //  Copyright © 2020 Robert Dresler. All rights reserved.
 //
 
+import core
+
 protocol CoordinatorFactory {
     func makeAppCoordinator(with rootController: NavigationController) -> AppCoordinator
+    func makeWorkoutsListCoordinator(with router: Router) -> Coordinator
 }

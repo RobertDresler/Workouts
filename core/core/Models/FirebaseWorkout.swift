@@ -6,4 +6,14 @@
 //  Copyright © 2020 Robert Dresler. All rights reserved.
 //
 
-import Foundation
+public struct FirebaseWorkout: Workout {
+
+    public var id: Int
+    public var title: String
+
+    public init(id: Int, title: String) {
+        self.id = id
+        self.title = title
+    }
+
+}

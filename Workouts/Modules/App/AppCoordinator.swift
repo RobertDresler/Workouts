@@ -7,40 +7,26 @@
 //
 
 import core
-import service
 import UIKit
 
 final class AppCoordinator: BaseCoordinator {
 
     private let router: Router
-    //private let factory: ActivityIndicatorFactory
     private let coordinatorFactory: CoordinatorFactory
 
-    init(
-        router: Router,
-       // factory: ActivityIndicatorFactory,
-        coordinatorFactory: CoordinatorFactory
-    ) {
+    init(router: Router, coordinatorFactory: CoordinatorFactory) {
         self.router = router
-        //self.factory = factory
         self.coordinatorFactory = coordinatorFactory
     }
 
     override func start() {
-
-        router.setRootModule(ViewController())
+        runWorkoutsListCoordinator()
     }
 
-    /*private func runTabBarCoordinator() {
-        let coordinator = coordinatorFactory.makeTabBarCoordinator(with: router)
+    private func runWorkoutsListCoordinator() {
+        let coordinator = coordinatorFactory.makeWorkoutsListCoordinator(with: router)
         addChild(coordinator)
         coordinator.start()
     }
-
-    private func runFirstLaunchCoordinator() {
-        let coordinator = coordinatorFactory.makeFirstLaunchCoordinator(with: router)
-        addChild(coordinator)
-        coordinator.start()
-    }*/
 
 }
