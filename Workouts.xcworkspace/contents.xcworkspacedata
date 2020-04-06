@@ -2,10 +2,13 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:../core/core.xcodeproj">
+      location = "group:WorkoutsUI/WorkoutsUI.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:../service/service.xcodeproj">
+      location = "group:core/core.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:service/service.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Workouts.xcodeproj">

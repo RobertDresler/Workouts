@@ -35,4 +35,17 @@ target 'Workouts' do
   pod 'IQKeyboardManagerSwift', '6.5.0'
 end
 
+target 'core' do
+  project 'core/core.xcodeproj'
+  base_rx_pods
+  swiftlint
+  realm
+  snap_kit
+end
 
+target 'service' do
+  project 'service/service.xcodeproj'
+  base_rx_pods
+  swiftlint
+  realm
+end

@@ -11,9 +11,35 @@
 		D0037302243B74FB00108E2E /* core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D0037300243B74FB00108E2E /* core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D003731F243B754100108E2E /* service.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D003731E243B754100108E2E /* service.framework */; };
 		D0037320243B754100108E2E /* service.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D003731E243B754100108E2E /* service.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D0037337243B773B00108E2E /* WorkoutsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0037336243B773B00108E2E /* WorkoutsUI.framework */; };
+		D0037338243B773B00108E2E /* WorkoutsUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D0037336243B773B00108E2E /* WorkoutsUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D0037348243B794E00108E2E /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0037347243B794E00108E2E /* R.generated.swift */; };
+		D003734C243B798F00108E2E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D003734E243B798F00108E2E /* Localizable.strings */; };
+		D003735B243B7A5700108E2E /* WorkoutViewUsage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D003735A243B7A5700108E2E /* WorkoutViewUsage.swift */; };
+		D003735D243B7B2400108E2E /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D003735C243B7B2400108E2E /* NavigationController.swift */; };
+		D0037366243B7CDC00108E2E /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0037365243B7CDC00108E2E /* AppCoordinator.swift */; };
+		D003736B243B7D0600108E2E /* CoordinatorFactoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D003736A243B7D0600108E2E /* CoordinatorFactoryImp.swift */; };
+		D003736D243B7D0F00108E2E /* ModuleFactoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D003736C243B7D0F00108E2E /* ModuleFactoryImp.swift */; };
+		D003736F243B7D5800108E2E /* CoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D003736E243B7D5800108E2E /* CoordinatorFactory.swift */; };
+		D0037371243B7D7A00108E2E /* CoordinatorFactory+AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0037370243B7D7A00108E2E /* CoordinatorFactory+AppCoordinator.swift */; };
+		D0037373243B7DD900108E2E /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0037372243B7DD900108E2E /* BaseCoordinator.swift */; };
+		D0037377243B7E2000108E2E /* RouterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0037376243B7E2000108E2E /* RouterImp.swift */; };
+		D0037379243B7E3B00108E2E /* BViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0037378243B7E3B00108E2E /* BViewController.swift */; };
+		D003737B243B7E5800108E2E /* BView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D003737A243B7E5800108E2E /* BView.swift */; };
+		D003737D243B7E6100108E2E /* BViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D003737C243B7E6100108E2E /* BViewModel.swift */; };
+		D003738B243B82DE00108E2E /* WorkoutsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D003738A243B82DE00108E2E /* WorkoutsListView.swift */; };
+		D003738F243B830C00108E2E /* WorkoutsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D003738E243B830C00108E2E /* WorkoutsListViewController.swift */; };
+		D0037391243B836000108E2E /* WorkoutsListContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0037390243B836000108E2E /* WorkoutsListContentView.swift */; };
+		D0037393243B836A00108E2E /* WorkoutsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0037392243B836A00108E2E /* WorkoutsListViewModel.swift */; };
+		D00373A3243B850A00108E2E /* WorkoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373A2243B850A00108E2E /* WorkoutCell.swift */; };
+		D00373A5243B851100108E2E /* WorkoutCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373A4243B851100108E2E /* WorkoutCellViewModel.swift */; };
+		D00373CF243B871000108E2E /* BCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373CE243B871000108E2E /* BCell.swift */; };
+		D00373D1243B8E6D00108E2E /* WorkoutsListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373D0243B8E6D00108E2E /* WorkoutsListFactory.swift */; };
+		D00373D3243B8E8B00108E2E /* WorkoutsListFactoryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373D2243B8E8B00108E2E /* WorkoutsListFactoryExtension.swift */; };
+		D00373D5243B8ED400108E2E /* CoordinatorFactory+WorkoutsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373D4243B8ED400108E2E /* CoordinatorFactory+WorkoutsList.swift */; };
+		D00373D7243B8F0A00108E2E /* WorkoutsListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373D6243B8F0A00108E2E /* WorkoutsListCoordinator.swift */; };
+		D00373E0243BA62000108E2E /* FirebaseWorkoutsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373DF243BA62000108E2E /* FirebaseWorkoutsProvider.swift */; };
 		D0FC64B7243B6E74009D0958 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FC64B6243B6E74009D0958 /* AppDelegate.swift */; };
-		D0FC64B9243B6E74009D0958 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FC64B8243B6E74009D0958 /* SceneDelegate.swift */; };
-		D0FC64BB243B6E74009D0958 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FC64BA243B6E74009D0958 /* ViewController.swift */; };
 		D0FC64C0243B6E78009D0958 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0FC64BF243B6E78009D0958 /* Assets.xcassets */; };
 		D0FC64C3243B6E78009D0958 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0FC64C1243B6E78009D0958 /* LaunchScreen.storyboard */; };
 		FD918A03D0A3D3ED65B1F50D /* Pods_Workouts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A57B442E78388C5CF5FC3D /* Pods_Workouts.framework */; };
@@ -27,6 +53,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				D0037320243B754100108E2E /* service.framework in Embed Frameworks */,
+				D0037338243B773B00108E2E /* WorkoutsUI.framework in Embed Frameworks */,
 				D0037302243B74FB00108E2E /* core.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -42,10 +69,36 @@
 		6CF9034A95724AA15BC48BBD /* Pods-SaveIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaveIt.release.xcconfig"; path = "Target Support Files/Pods-SaveIt/Pods-SaveIt.release.xcconfig"; sourceTree = "<group>"; };
 		D0037300243B74FB00108E2E /* core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D003731E243B754100108E2E /* service.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = service.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0037336243B773B00108E2E /* WorkoutsUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WorkoutsUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0037347243B794E00108E2E /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		D0037349243B796D00108E2E /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		D003734D243B798F00108E2E /* cs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = cs; path = cs.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D003735A243B7A5700108E2E /* WorkoutViewUsage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewUsage.swift; sourceTree = "<group>"; };
+		D003735C243B7B2400108E2E /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		D0037365243B7CDC00108E2E /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		D003736A243B7D0600108E2E /* CoordinatorFactoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFactoryImp.swift; sourceTree = "<group>"; };
+		D003736C243B7D0F00108E2E /* ModuleFactoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleFactoryImp.swift; sourceTree = "<group>"; };
+		D003736E243B7D5800108E2E /* CoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFactory.swift; sourceTree = "<group>"; };
+		D0037370243B7D7A00108E2E /* CoordinatorFactory+AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoordinatorFactory+AppCoordinator.swift"; sourceTree = "<group>"; };
+		D0037372243B7DD900108E2E /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		D0037376243B7E2000108E2E /* RouterImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterImp.swift; sourceTree = "<group>"; };
+		D0037378243B7E3B00108E2E /* BViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BViewController.swift; sourceTree = "<group>"; };
+		D003737A243B7E5800108E2E /* BView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BView.swift; sourceTree = "<group>"; };
+		D003737C243B7E6100108E2E /* BViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BViewModel.swift; sourceTree = "<group>"; };
+		D003738A243B82DE00108E2E /* WorkoutsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsListView.swift; sourceTree = "<group>"; };
+		D003738E243B830C00108E2E /* WorkoutsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsListViewController.swift; sourceTree = "<group>"; };
+		D0037390243B836000108E2E /* WorkoutsListContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsListContentView.swift; sourceTree = "<group>"; };
+		D0037392243B836A00108E2E /* WorkoutsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsListViewModel.swift; sourceTree = "<group>"; };
+		D00373A2243B850A00108E2E /* WorkoutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCell.swift; sourceTree = "<group>"; };
+		D00373A4243B851100108E2E /* WorkoutCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCellViewModel.swift; sourceTree = "<group>"; };
+		D00373CE243B871000108E2E /* BCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BCell.swift; sourceTree = "<group>"; };
+		D00373D0243B8E6D00108E2E /* WorkoutsListFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsListFactory.swift; sourceTree = "<group>"; };
+		D00373D2243B8E8B00108E2E /* WorkoutsListFactoryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsListFactoryExtension.swift; sourceTree = "<group>"; };
+		D00373D4243B8ED400108E2E /* CoordinatorFactory+WorkoutsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoordinatorFactory+WorkoutsList.swift"; sourceTree = "<group>"; };
+		D00373D6243B8F0A00108E2E /* WorkoutsListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsListCoordinator.swift; sourceTree = "<group>"; };
+		D00373DF243BA62000108E2E /* FirebaseWorkoutsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseWorkoutsProvider.swift; sourceTree = "<group>"; };
 		D0FC64B3243B6E74009D0958 /* Workouts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Workouts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0FC64B6243B6E74009D0958 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D0FC64B8243B6E74009D0958 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D0FC64BA243B6E74009D0958 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D0FC64BF243B6E78009D0958 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0FC64C2243B6E78009D0958 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0FC64C4243B6E78009D0958 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0037337243B773B00108E2E /* WorkoutsUI.framework in Frameworks */,
 				FD918A03D0A3D3ED65B1F50D /* Pods_Workouts.framework in Frameworks */,
 				D003731F243B754100108E2E /* service.framework in Frameworks */,
 				D0037301243B74FB00108E2E /* core.framework in Frameworks */,
@@ -79,11 +133,170 @@
 		B5E0851DECF25D57439EDB19 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D0037336243B773B00108E2E /* WorkoutsUI.framework */,
 				D003731E243B754100108E2E /* service.framework */,
 				D0037300243B74FB00108E2E /* core.framework */,
 				29A57B442E78388C5CF5FC3D /* Pods_Workouts.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D003733C243B782100108E2E /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				D003733D243B783200108E2E /* Generated files */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		D003733D243B783200108E2E /* Generated files */ = {
+			isa = PBXGroup;
+			children = (
+				D0037347243B794E00108E2E /* R.generated.swift */,
+			);
+			path = "Generated files";
+			sourceTree = "<group>";
+		};
+		D003734F243B79D100108E2E /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				D0037350243B79DF00108E2E /* Base */,
+				D0037352243B79EF00108E2E /* NavigationController */,
+				D0037351243B79E400108E2E /* App */,
+				D0037353243B79F900108E2E /* WorkoutsList */,
+				D0037354243B7A0100108E2E /* Workout */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		D0037350243B79DF00108E2E /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				D0037378243B7E3B00108E2E /* BViewController.swift */,
+				D003737A243B7E5800108E2E /* BView.swift */,
+				D003737C243B7E6100108E2E /* BViewModel.swift */,
+				D0037372243B7DD900108E2E /* BaseCoordinator.swift */,
+				D0037376243B7E2000108E2E /* RouterImp.swift */,
+				D00373CE243B871000108E2E /* BCell.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		D0037351243B79E400108E2E /* App */ = {
+			isa = PBXGroup;
+			children = (
+				D0037370243B7D7A00108E2E /* CoordinatorFactory+AppCoordinator.swift */,
+				D0037365243B7CDC00108E2E /* AppCoordinator.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		D0037352243B79EF00108E2E /* NavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				D003735C243B7B2400108E2E /* NavigationController.swift */,
+			);
+			path = NavigationController;
+			sourceTree = "<group>";
+		};
+		D0037353243B79F900108E2E /* WorkoutsList */ = {
+			isa = PBXGroup;
+			children = (
+				D003738C243B82E100108E2E /* Factory */,
+				D003738D243B82E600108E2E /* Coordinator */,
+				D0037385243B82AA00108E2E /* ViewController */,
+				D0037388243B82BD00108E2E /* View */,
+				D0037389243B82C300108E2E /* ViewModel */,
+				D00373DE243BA60E00108E2E /* Service */,
+				D00373A1243B84F900108E2E /* Cell */,
+			);
+			path = WorkoutsList;
+			sourceTree = "<group>";
+		};
+		D0037354243B7A0100108E2E /* Workout */ = {
+			isa = PBXGroup;
+			children = (
+				D0037359243B7A3C00108E2E /* Model */,
+			);
+			path = Workout;
+			sourceTree = "<group>";
+		};
+		D0037359243B7A3C00108E2E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D003735A243B7A5700108E2E /* WorkoutViewUsage.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D0037367243B7CED00108E2E /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				D003736E243B7D5800108E2E /* CoordinatorFactory.swift */,
+				D003736A243B7D0600108E2E /* CoordinatorFactoryImp.swift */,
+				D003736C243B7D0F00108E2E /* ModuleFactoryImp.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		D0037385243B82AA00108E2E /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D003738A243B82DE00108E2E /* WorkoutsListView.swift */,
+				D003738E243B830C00108E2E /* WorkoutsListViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		D0037388243B82BD00108E2E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D0037390243B836000108E2E /* WorkoutsListContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D0037389243B82C300108E2E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D0037392243B836A00108E2E /* WorkoutsListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D003738C243B82E100108E2E /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				D00373D0243B8E6D00108E2E /* WorkoutsListFactory.swift */,
+				D00373D2243B8E8B00108E2E /* WorkoutsListFactoryExtension.swift */,
+			);
+			path = Factory;
+			sourceTree = "<group>";
+		};
+		D003738D243B82E600108E2E /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				D00373D4243B8ED400108E2E /* CoordinatorFactory+WorkoutsList.swift */,
+				D00373D6243B8F0A00108E2E /* WorkoutsListCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		D00373A1243B84F900108E2E /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D00373A2243B850A00108E2E /* WorkoutCell.swift */,
+				D00373A4243B851100108E2E /* WorkoutCellViewModel.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		D00373DE243BA60E00108E2E /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				D00373DF243BA62000108E2E /* FirebaseWorkoutsProvider.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 		D0FC64AA243B6E74009D0958 = {
@@ -108,11 +321,13 @@
 			isa = PBXGroup;
 			children = (
 				D0FC64B6243B6E74009D0958 /* AppDelegate.swift */,
-				D0FC64B8243B6E74009D0958 /* SceneDelegate.swift */,
-				D0FC64BA243B6E74009D0958 /* ViewController.swift */,
+				D003734E243B798F00108E2E /* Localizable.strings */,
 				D0FC64BF243B6E78009D0958 /* Assets.xcassets */,
 				D0FC64C1243B6E78009D0958 /* LaunchScreen.storyboard */,
 				D0FC64C4243B6E78009D0958 /* Info.plist */,
+				D003734F243B79D100108E2E /* Modules */,
+				D0037367243B7CED00108E2E /* Factory */,
+				D003733C243B782100108E2E /* Supporting files */,
 			);
 			path = Workouts;
 			sourceTree = "<group>";
@@ -125,9 +340,11 @@
 			buildConfigurationList = D0FC64C7243B6E78009D0958 /* Build configuration list for PBXNativeTarget "Workouts" */;
 			buildPhases = (
 				E8D308400D1790BD96FE9ED7 /* [CP] Check Pods Manifest.lock */,
+				D0037346243B791100108E2E /* R.swift */,
 				D0FC64AF243B6E74009D0958 /* Sources */,
 				D0FC64B0243B6E74009D0958 /* Frameworks */,
 				D0FC64B1243B6E74009D0958 /* Resources */,
+				D0037339243B779E00108E2E /* SwiftLint */,
 				6B3A70D1CC3CD15CE03091ED /* [CP] Embed Pods Frameworks */,
 				D0037303243B74FB00108E2E /* Embed Frameworks */,
 			);
@@ -162,6 +379,7 @@
 			knownRegions = (
 				en,
 				Base,
+				cs,
 			);
 			mainGroup = D0FC64AA243B6E74009D0958;
 			productRefGroup = D0FC64B4243B6E74009D0958 /* Products */;
@@ -179,6 +397,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0FC64C3243B6E78009D0958 /* LaunchScreen.storyboard in Resources */,
+				D003734C243B798F00108E2E /* Localizable.strings in Resources */,
 				D0FC64C0243B6E78009D0958 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -202,6 +421,44 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Workouts/Pods-Workouts-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		D0037339243B779E00108E2E /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		D0037346243B791100108E2E /* R.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			name = R.swift;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$SRCROOT/Workouts/Supporting files/Generated files/R.generated.swift",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/Workouts/Supporting files/Generated files/R.generated.swift\"\n";
 		};
 		E8D308400D1790BD96FE9ED7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -232,19 +489,51 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0FC64BB243B6E74009D0958 /* ViewController.swift in Sources */,
+				D00373D7243B8F0A00108E2E /* WorkoutsListCoordinator.swift in Sources */,
+				D003735B243B7A5700108E2E /* WorkoutViewUsage.swift in Sources */,
+				D003737B243B7E5800108E2E /* BView.swift in Sources */,
+				D003736B243B7D0600108E2E /* CoordinatorFactoryImp.swift in Sources */,
+				D003735D243B7B2400108E2E /* NavigationController.swift in Sources */,
+				D003736D243B7D0F00108E2E /* ModuleFactoryImp.swift in Sources */,
+				D00373D5243B8ED400108E2E /* CoordinatorFactory+WorkoutsList.swift in Sources */,
+				D0037391243B836000108E2E /* WorkoutsListContentView.swift in Sources */,
+				D00373A5243B851100108E2E /* WorkoutCellViewModel.swift in Sources */,
+				D003738B243B82DE00108E2E /* WorkoutsListView.swift in Sources */,
 				D0FC64B7243B6E74009D0958 /* AppDelegate.swift in Sources */,
-				D0FC64B9243B6E74009D0958 /* SceneDelegate.swift in Sources */,
+				D003738F243B830C00108E2E /* WorkoutsListViewController.swift in Sources */,
+				D0037393243B836A00108E2E /* WorkoutsListViewModel.swift in Sources */,
+				D00373A3243B850A00108E2E /* WorkoutCell.swift in Sources */,
+				D0037377243B7E2000108E2E /* RouterImp.swift in Sources */,
+				D0037379243B7E3B00108E2E /* BViewController.swift in Sources */,
+				D003737D243B7E6100108E2E /* BViewModel.swift in Sources */,
+				D0037373243B7DD900108E2E /* BaseCoordinator.swift in Sources */,
+				D00373D1243B8E6D00108E2E /* WorkoutsListFactory.swift in Sources */,
+				D0037371243B7D7A00108E2E /* CoordinatorFactory+AppCoordinator.swift in Sources */,
+				D00373CF243B871000108E2E /* BCell.swift in Sources */,
+				D00373D3243B8E8B00108E2E /* WorkoutsListFactoryExtension.swift in Sources */,
+				D0037348243B794E00108E2E /* R.generated.swift in Sources */,
+				D00373E0243BA62000108E2E /* FirebaseWorkoutsProvider.swift in Sources */,
+				D0037366243B7CDC00108E2E /* AppCoordinator.swift in Sources */,
+				D003736F243B7D5800108E2E /* CoordinatorFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		D003734E243B798F00108E2E /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D003734D243B798F00108E2E /* cs */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		D0FC64C1243B6E78009D0958 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				D0FC64C2243B6E78009D0958 /* Base */,
+				D0037349243B796D00108E2E /* cs */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -256,6 +545,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -316,6 +606,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
