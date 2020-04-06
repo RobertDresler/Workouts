@@ -1,5 +1,5 @@
 //
-//  WorkoutsListContentView.swift
+//  WorkoutContentView.swift
 //  Workouts
 //
 //  Created by Robert Dresler on 06/04/2020.
@@ -10,7 +10,7 @@ import SnapKit
 import UIKit
 import WorkoutsUI
 
-final class WorkoutsListContentView: BView {
+final class WorkoutContentView: BView {
 
     let tableView: UITableView = {
         let tableView = UITableView()

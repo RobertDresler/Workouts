@@ -18,6 +18,10 @@ final class WorkoutsListViewController: BViewController<WorkoutsListViewModel, W
         return contentView.tableView
     }
 
+    func loadData() {
+        viewModel.loadData()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()

@@ -11,4 +11,5 @@ import core
 protocol CoordinatorFactory {
     func makeAppCoordinator(with rootController: NavigationController) -> AppCoordinator
     func makeWorkoutsListCoordinator(with router: Router) -> Coordinator
+    func makeWorkoutCoordinator(with router: Router) -> Coordinator & WorkoutCoordinatorOutput
 }
