@@ -12,7 +12,7 @@ extension ModuleFactoryImp: WorkoutsListFactory {
     func makeWorkoutsListView() -> WorkoutsListView {
         let viewModel = WorkoutsListViewModel(
             workoutsProvider: WorkoutsProvider(
-                realmRepository: RealmWorkoutsRepository(),
+                realmRepository: RealmWorkoutsRepository(realm: RealmProvider().realm),
                 firebaseRepository: FirebaseWorkoutsRepository()
             )
         )

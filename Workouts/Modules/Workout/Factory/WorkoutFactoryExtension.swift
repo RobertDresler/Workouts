@@ -16,10 +16,10 @@ extension ModuleFactoryImp: WorkoutFactory {
             tempWorkout: tempWorkout,
             workoutsSaver: WorkoutsSaver(
                 workoutsProvider: WorkoutsProvider(
-                    realmRepository: RealmWorkoutsRepository(),
+                    realmRepository: RealmWorkoutsRepository(realm: RealmProvider().realm),
                     firebaseRepository: FirebaseWorkoutsRepository()
                 ),
-                realmWorkoutsRepository: RealmWorkoutsRepository(),
+                realmWorkoutsRepository: RealmWorkoutsRepository(realm: RealmProvider().realm),
                 firebaseWorkoutsRepository: FirebaseWorkoutsRepository()
             )
         )

@@ -7,30 +7,32 @@
 //
 
 import core
+import RealmSwift
 import RxSwift
 
 public final class RealmWorkoutsRepository: WorkoutsRepository {
 
-    public init() {} // TODO: -RD- realm provider
+    private let realm: Realm
+
+    public init(realm: Realm) {
+        self.realm = realm
+    }
 
     public func add(_ workout: Workout) -> Single<Void> {
-        // TODO: -RD- implement
-        fatalError()
+        let realmWorkout = RealmWorkout(
+            id: workout.id,
+            title: workout.title,
+            place: workout.place,
+            duration: workout.duration
+        )
+        realm.safeWrite {
+            realm.add(realmWorkout)
+        }
+        return .just(())
     }
 
     public func getAll() -> Single<[Workout]> {
-        return Single.create(subscribe: { [weak self] single -> Disposable in
-
-            guard let self = self else { return Disposables.create {} }
-            // TODO: -RD- real providing
-            single(.success((1...15).map { _ in self.testWorkout(with: Int.random(in: 1...1000)) }))
-
-            return Disposables.create {}
-        })
-    }
-
-    private func testWorkout(with id: Int) -> Workout {
-        return RealmWorkout(id: id, title: "Realm Test", place: "Test Place", duration: 180)
+        return .just(Array(realm.objects(RealmWorkout.self)))
     }
 
 }
