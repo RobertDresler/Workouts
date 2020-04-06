@@ -10,10 +10,9 @@ import Foundation
 
 public extension DateFormatter {
 
-    /// DateFormat: **d.M.yyyy**
-    static let dMyyyy = DateFormatter(dateFormat: "d.M.yyyy")
+    /// DateFormat: **H:mm**
+    static let Hmm = DateFormatter(dateFormat: "H:mm")
 
-    /// Initializer which creates `DateFormatter` with given `dateFormat`
     convenience init(dateFormat: String) {
         self.init()
         self.dateFormat = dateFormat

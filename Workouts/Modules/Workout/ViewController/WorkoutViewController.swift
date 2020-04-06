@@ -30,9 +30,9 @@ final class WorkoutViewController: BViewController<WorkoutViewModel, WorkoutCont
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.loadData()
         setupTableView()
         addBarButtonItems()
-        viewModel.loadData()
     }
 
     override func bindViewModel() {
@@ -65,13 +65,14 @@ final class WorkoutViewController: BViewController<WorkoutViewModel, WorkoutCont
     }
 
     private func setupTableView() {
-        tableView.register(WorkoutCell.self)
+        tableView.register(
+            WorkoutPropertyTextFieldCell.self,
+            WorkoutPropertyDescriptionCell.self,
+            WorkoutPropertyDurationPickerCell.self,
+            WorkoutPropertyRepositoryCell.self
+        )
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.estimatedRowHeight = WorkoutCell.estimatedHeight
-        viewModel.dataSource.bind { [weak self] _ in
-            self?.tableView.reloadData()
-        }.disposed(by: bag)
     }
 
     private func addBarButtonItems() {
@@ -97,29 +98,66 @@ final class WorkoutViewController: BViewController<WorkoutViewModel, WorkoutCont
     }
 
     @objc private func saveBarButtonItemPressed() {
-        // TODO: -RD- save
+        viewModel.save()
     }
 
 }
 
 extension WorkoutViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return viewModel.dataSource.count
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0 // TODO: -RD- implement
-        //return viewModel.dataSource.count
+        guard let count = viewModel.dataSource[safe: section]?.count else {
+            fatalError("Bad manipulating with data source.")
+        }
+        return count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // TODO: -RD- implement
-        fatalError()
-    }
-        /*guard let viewModel = self.viewModel.dataSource[safe: indexPath.row]?.viewModel else {
+        guard let item = viewModel.dataSource[safe: indexPath.section]?[safe: indexPath.row] else {
             fatalError("Bad manipulating with data source.")
         }
-        let cell: WorkoutCell = tableView.dequeueReusableCell(for: indexPath)
-        return cell.configured(for: viewModel)
+
+        switch item {
+        case .title(let viewModel):
+            let cell: WorkoutPropertyTextFieldCell = tableView.dequeueReusableCell(for: indexPath)
+            return cell.configured(for: viewModel)
+        case .place(let viewModel):
+            let cell: WorkoutPropertyTextFieldCell = tableView.dequeueReusableCell(for: indexPath)
+            return cell.configured(for: viewModel)
+        case .duration(let viewModel):
+            let cell: WorkoutPropertyDescriptionCell = tableView.dequeueReusableCell(for: indexPath)
+            return cell.configured(for: viewModel)
+        case .durationPicker(let viewModel):
+            let cell: WorkoutPropertyDurationPickerCell = tableView.dequeueReusableCell(for: indexPath)
+            return cell.configured(for: viewModel)
+        case .repository(let viewModel):
+            let cell: WorkoutPropertyRepositoryCell = tableView.dequeueReusableCell(for: indexPath)
+            return cell.configured(for: viewModel)
+
+        }
     }
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        guard let item = viewModel.dataSource[safe: indexPath.section]?[safe: indexPath.row] else {
+            fatalError("Bad manipulating with data source.")
+        }
+        switch item {
+        case .title, .place:
+            return WorkoutPropertyTextFieldCell.estimatedHeight
+        case .duration:
+            return WorkoutPropertyDescriptionCell.estimatedHeight
+        case .durationPicker:
+            return WorkoutPropertyDurationPickerCell.estimatedHeight
+        case .repository:
+            return WorkoutPropertyRepositoryCell.estimatedHeight
+        }
+    }
+
+    // TODO: -RD- implement
+    /*func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let model = self.viewModel.dataSource[safe: indexPath.row]?.model else {
             return assertionFailure("Bad manipulating with data source.")
         }

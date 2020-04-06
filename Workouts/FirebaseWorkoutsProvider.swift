@@ -34,7 +34,7 @@ public final class FirebaseWorkoutsRepository: WorkoutsRepository {
     }
 
     private func testWorkout(with id: Int) -> Workout {
-        return FirebaseWorkout(id: id, title: "Firebase Test")
+        return FirebaseWorkout(id: id, title: "Firebase Test", place: "Test Place", duration: 180)
     }
 
 }

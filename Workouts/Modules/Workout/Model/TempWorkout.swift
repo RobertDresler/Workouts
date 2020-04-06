@@ -11,4 +11,6 @@ import core
 struct TempWorkout: Workout {
     var id: Int
     var title: String
+    var place: String
+    var duration: TimeInterval
 }

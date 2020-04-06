@@ -14,3 +14,9 @@
 
 // MARK: Workout
 "workout title" = "Nové cvičení";
+"workout title item placeholder" = "Název";
+"workout place item placeholder" = "Místo";
+"workout duration item title" = "Délka trvání";
+"workout repository type item title" = "Uložit";
+"workout repository type item realm segment" = "Lokálně";
+"workout repository type item firebase segment" = "Vzdáleně";

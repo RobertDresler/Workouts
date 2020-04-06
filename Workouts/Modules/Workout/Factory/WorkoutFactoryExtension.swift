@@ -10,7 +10,8 @@ import service
 
 extension ModuleFactoryImp: WorkoutFactory {
     func makeWorkoutView() -> WorkoutView {
-        let viewModel = WorkoutViewModel()
+        let tempWorkout = TempWorkout(id: -1, title: "", place: "", duration: 0)
+        let viewModel = WorkoutViewModel(tempWorkout: tempWorkout)
         let viewController = WorkoutViewController(viewModel: viewModel)
         return viewController
     }

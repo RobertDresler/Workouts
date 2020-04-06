@@ -23,7 +23,6 @@
 		D00373B4243B858700108E2E /* StaticDateFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373AA243B858600108E2E /* StaticDateFormatters.swift */; };
 		D00373B7243B858700108E2E /* RxSwift+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373AD243B858600108E2E /* RxSwift+Extension.swift */; };
 		D00373B8243B858700108E2E /* Realm+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373AE243B858600108E2E /* Realm+Extension.swift */; };
-		D00373B9243B858700108E2E /* CachedArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373B0243B858700108E2E /* CachedArray.swift */; };
 		D00373C3243B859200108E2E /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373BB243B859200108E2E /* UIStackView+Extension.swift */; };
 		D00373C4243B859200108E2E /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373BC243B859200108E2E /* UICollectionView+Extension.swift */; };
 		D00373C6243B859200108E2E /* Array+UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373BE243B859200108E2E /* Array+UIView+Extension.swift */; };
@@ -52,7 +51,6 @@
 		D00373AA243B858600108E2E /* StaticDateFormatters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticDateFormatters.swift; sourceTree = "<group>"; };
 		D00373AD243B858600108E2E /* RxSwift+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxSwift+Extension.swift"; sourceTree = "<group>"; };
 		D00373AE243B858600108E2E /* Realm+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Realm+Extension.swift"; sourceTree = "<group>"; };
-		D00373B0243B858700108E2E /* CachedArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CachedArray.swift; sourceTree = "<group>"; };
 		D00373BB243B859200108E2E /* UIStackView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
 		D00373BC243B859200108E2E /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
 		D00373BE243B859200108E2E /* Array+UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+UIView+Extension.swift"; sourceTree = "<group>"; };
@@ -147,15 +145,6 @@
 			path = core/Extensions;
 			sourceTree = SOURCE_ROOT;
 		};
-		D00373AF243B858700108E2E /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				D00373B0243B858700108E2E /* CachedArray.swift */,
-			);
-			name = Shared;
-			path = core/Shared;
-			sourceTree = SOURCE_ROOT;
-		};
 		D06A5044243B745D00736DFA = {
 			isa = PBXGroup;
 			children = (
@@ -179,7 +168,6 @@
 			children = (
 				D003733E243B78AC00108E2E /* Models */,
 				D003735E243B7B6400108E2E /* BaseProtocols */,
-				D00373AF243B858700108E2E /* Shared */,
 				D00373A6243B858600108E2E /* Extensions */,
 				D0037382243B808000108E2E /* UIExtensions */,
 				D06A5051243B745D00736DFA /* core.h */,
@@ -334,7 +322,6 @@
 				D003737F243B7E9100108E2E /* ViewSetupable.swift in Sources */,
 				D0037384243B809000108E2E /* UINavigationController+Extension.swift in Sources */,
 				D0037375243B7DF500108E2E /* Coordinator.swift in Sources */,
-				D00373B9243B858700108E2E /* CachedArray.swift in Sources */,
 				D0037381243B803800108E2E /* BackHandleable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

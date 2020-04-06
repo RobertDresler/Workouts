@@ -53,7 +53,7 @@ final class WorkoutCell: BCell, Configurable, DynamicHeightView {
         super.setupConstraints()
         wrapperView.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview().inset(Padding.small)
-            make.leading.trailing.equalToSuperview()
+            make.leading.trailing.equalTo(readableContentGuide)
         }
         contentStackView.snp.makeConstraints { make in
             make.edges.equalToSuperview().inset(Padding.large)

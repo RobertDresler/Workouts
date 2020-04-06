@@ -13,15 +13,11 @@ import WorkoutsUI
 final class WorkoutContentView: BView {
 
     let tableView: UITableView = {
-        let tableView = UITableView()
-        tableView.separatorStyle = .none
+        let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.allowsSelection = true
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.sectionHeaderHeight = 0
-        tableView.sectionFooterHeight = 0
-        tableView.clipsToBounds = false
-        tableView.verticalScrollIndicatorInsets.right = -Padding.large
         tableView.contentInset.bottom = Padding.xxhuge
+        tableView.cellLayoutMarginsFollowReadableWidth = true
         return tableView
     }()
 
@@ -38,8 +34,7 @@ final class WorkoutContentView: BView {
     override func setupConstraints() {
         super.setupConstraints()
         tableView.snp.makeConstraints { make in
-            make.top.bottom.equalToSuperview()
-            make.leading.trailing.equalTo(readableContentGuide)
+            make.edges.equalToSuperview()
         }
     }
 

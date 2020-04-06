@@ -30,7 +30,7 @@ public final class RealmWorkoutsRepository: WorkoutsRepository {
     }
 
     private func testWorkout(with id: Int) -> Workout {
-        return RealmWorkout(id: id, title: "Realm Test")
+        return RealmWorkout(id: id, title: "Realm Test", place: "Test Place", duration: 180)
     }
 
 }
