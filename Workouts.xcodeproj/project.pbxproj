@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D0037301243B74FB00108E2E /* core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0037300243B74FB00108E2E /* core.framework */; };
+		D0037302243B74FB00108E2E /* core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D0037300243B74FB00108E2E /* core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D003731F243B754100108E2E /* service.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D003731E243B754100108E2E /* service.framework */; };
+		D0037320243B754100108E2E /* service.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D003731E243B754100108E2E /* service.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D0FC64B7243B6E74009D0958 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FC64B6243B6E74009D0958 /* AppDelegate.swift */; };
 		D0FC64B9243B6E74009D0958 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FC64B8243B6E74009D0958 /* SceneDelegate.swift */; };
 		D0FC64BB243B6E74009D0958 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FC64BA243B6E74009D0958 /* ViewController.swift */; };
@@ -15,12 +19,29 @@
 		FD918A03D0A3D3ED65B1F50D /* Pods_Workouts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A57B442E78388C5CF5FC3D /* Pods_Workouts.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		D0037303243B74FB00108E2E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D0037320243B754100108E2E /* service.framework in Embed Frameworks */,
+				D0037302243B74FB00108E2E /* core.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0627B1070A305EA7ECB974EB /* Pods-SaveIt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaveIt.debug.xcconfig"; path = "Target Support Files/Pods-SaveIt/Pods-SaveIt.debug.xcconfig"; sourceTree = "<group>"; };
 		29A57B442E78388C5CF5FC3D /* Pods_Workouts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Workouts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4001F9F08EF3929C03CFA7B4 /* Pods-Workouts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Workouts.release.xcconfig"; path = "Target Support Files/Pods-Workouts/Pods-Workouts.release.xcconfig"; sourceTree = "<group>"; };
 		57D6661F28908E248D4431FA /* Pods-Workouts.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Workouts.debug.xcconfig"; path = "Target Support Files/Pods-Workouts/Pods-Workouts.debug.xcconfig"; sourceTree = "<group>"; };
 		6CF9034A95724AA15BC48BBD /* Pods-SaveIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaveIt.release.xcconfig"; path = "Target Support Files/Pods-SaveIt/Pods-SaveIt.release.xcconfig"; sourceTree = "<group>"; };
+		D0037300243B74FB00108E2E /* core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D003731E243B754100108E2E /* service.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = service.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0FC64B3243B6E74009D0958 /* Workouts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Workouts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0FC64B6243B6E74009D0958 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0FC64B8243B6E74009D0958 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +57,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD918A03D0A3D3ED65B1F50D /* Pods_Workouts.framework in Frameworks */,
+				D003731F243B754100108E2E /* service.framework in Frameworks */,
+				D0037301243B74FB00108E2E /* core.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +79,8 @@
 		B5E0851DECF25D57439EDB19 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D003731E243B754100108E2E /* service.framework */,
+				D0037300243B74FB00108E2E /* core.framework */,
 				29A57B442E78388C5CF5FC3D /* Pods_Workouts.framework */,
 			);
 			name = Frameworks;
@@ -104,6 +129,7 @@
 				D0FC64B0243B6E74009D0958 /* Frameworks */,
 				D0FC64B1243B6E74009D0958 /* Resources */,
 				6B3A70D1CC3CD15CE03091ED /* [CP] Embed Pods Frameworks */,
+				D0037303243B74FB00108E2E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
