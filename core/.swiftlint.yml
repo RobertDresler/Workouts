@@ -1,0 +1,110 @@
+excluded:
+  - Pods
+
+force_cast: warning
+identifier_name:
+  excluded:
+    - _self
+    - id
+
+type_name:
+  excluded:
+    - T
+
+colon:
+  severity: warning
+  flexible_right_spacing: true
+
+disabled_rules:
+  # IB is not used - this is not necessary
+  - valid_ibinspectable
+
+  # IB is not used - this is not necessary
+  - private_outlet
+
+# Complexity of function bodies should be limited
+cyclomatic_complexity:
+  ignores_case_statements: true
+
+# Explicitly calling .init() should be avoided
+explicit_init: warning
+
+# Prefer using `.first(where:)` over `.filter { }.first` in collections
+first_where: warning
+
+# `where` clauses are preferred over a single `if` inside a `for`
+for_where: warning
+
+# Computed read-only properties should avoid using the `get` keyword
+implicit_getter: warning
+
+# Prefer implicit returns in closures
+implicit_return: warning
+
+# Prefer using Set.isDisjoint(with:) over Set.intersection(_:).isEmpty
+is_disjoint: warning
+
+# MARK comment should be in valid format. e.g. '// MARK: ...' or '// MARK: - ...'
+mark: warning
+
+# Modifier order should be consistent.
+modifier_order:
+  preferred_modifier_order: [
+    override, required, convenience, acl, setterACL,
+    final, mutators, owned, lazy, typeMethods
+  ]
+
+# Functions and methods parameters should be either on the same line, or one per line
+multiline_parameters: warning
+
+# Trailing closure syntax should not be used when passing more than one closure argument
+multiple_closures_with_trailing_closure: warning
+
+# Types should be nested at most X level deep,
+# and statements should be nested at most Y levels deep.
+nesting:
+  type_level: 3
+  statement_level: 5
+
+# TODOs and FIXMEs should be resolved.
+todo: warning
+
+# Trailing commas in arrays and dictionaries should be avoided/enforced
+trailing_comma:
+  severity: warning
+  mandatory_comma: false
+
+# Files should have a single trailing newline
+trailing_newline: warning
+
+# Lines should not have trailing semicolons
+trailing_semicolon: warning
+
+# Function parameters should be aligned vertically
+# if they're in multiple lines in a declaration
+vertical_parameter_alignment: warning
+
+# Function parameters should be aligned vertically
+# if they're in multiple lines in a method call
+vertical_parameter_alignment_on_call: warning
+
+# Limit vertical whitespace to a single empty line
+vertical_whitespace:
+  severity: warning
+  max_empty_lines: 1
+
+# Delegates should be weak to avoid reference cycles
+weak_delegate: warning
+
+custom_rules:
+  no_tabs:
+    name: "No tabs"
+    regex: "\t"
+    message: "Spaces should be used instead of tabs."
+    severity: warning
+
+  no_weak_lazy:
+    name: "Keyword order"
+    regex: "weak lazy|lazy weak"
+    message: "Weak can't be used with lazy."
+    severity: error
