@@ -113,9 +113,11 @@ final class WorkoutViewModel: BViewModel {
         )
     }
 
-    init(tempWorkout: TempWorkout) {
+    private let workoutsSaver: WorkoutsSaver
+
+    init(tempWorkout: TempWorkout, workoutsSaver: WorkoutsSaver) {
         self.tempWorkout = tempWorkout
-        // TODO: -RD- saver/repository
+        self.workoutsSaver = workoutsSaver
         setupBinding()
     }
 
@@ -165,8 +167,20 @@ final class WorkoutViewModel: BViewModel {
     }
 
     func save() {
-        guard isEverythingValid.value else { return }
-        // TODO: -RD- inject id before upload
+        guard isEverythingValid.value, ![.loading, .saved].contains(state.value) else { return }
+        state.accept(.loading)
+        workoutsSaver.save(tempWorkout, to: repositoryType).subscribe(
+            onSuccess: { [weak self] in self?.processSuccess() },
+            onError: { [weak self] in self?.process(with: $0) }
+        ).disposed(by: bag)
+    }
+
+    private func processSuccess() {
+        state.accept(.saved)
+    }
+
+    private func process(with error: Error) {
+        state.accept(.errorReceived("Error")) // TODO: -RD- localize
     }
 
 }

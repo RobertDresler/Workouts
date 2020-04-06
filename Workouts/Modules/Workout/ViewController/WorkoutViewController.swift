@@ -15,7 +15,7 @@ final class WorkoutViewController: BViewController<WorkoutViewModel, WorkoutCont
 
     weak var delegate: WorkoutViewDelegate?
 
-    private let saveButtonItem = UIBarButtonItem(
+    private lazy var saveButtonItem = UIBarButtonItem(
         barButtonSystemItem: .save,
         target: self,
         action: #selector(saveBarButtonItemPressed)

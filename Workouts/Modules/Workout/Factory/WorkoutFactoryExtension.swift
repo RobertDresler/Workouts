@@ -10,8 +10,19 @@ import service
 
 extension ModuleFactoryImp: WorkoutFactory {
     func makeWorkoutView() -> WorkoutView {
+        // TODO: -RD- remove place
         let tempWorkout = TempWorkout(id: -1, title: "", place: "---", duration: 0)
-        let viewModel = WorkoutViewModel(tempWorkout: tempWorkout)
+        let viewModel = WorkoutViewModel(
+            tempWorkout: tempWorkout,
+            workoutsSaver: WorkoutsSaver(
+                workoutsProvider: WorkoutsProvider(
+                    realmRepository: RealmWorkoutsRepository(),
+                    firebaseRepository: FirebaseWorkoutsRepository()
+                ),
+                realmWorkoutsRepository: RealmWorkoutsRepository(),
+                firebaseWorkoutsRepository: FirebaseWorkoutsRepository()
+            )
+        )
         let viewController = WorkoutViewController(viewModel: viewModel)
         return viewController
     }
