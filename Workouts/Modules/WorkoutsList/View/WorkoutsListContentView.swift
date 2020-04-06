@@ -36,7 +36,8 @@ final class WorkoutsListContentView: BView {
     override func setupConstraints() {
         super.setupConstraints()
         tableView.snp.makeConstraints { make in
-            make.top.leading.trailing.equalTo(safeAreaLayoutGuide)
+            make.top.equalToSuperview()
+            make.leading.trailing.equalTo(safeAreaLayoutGuide)
             make.bottom.equalToSuperview()
         }
     }

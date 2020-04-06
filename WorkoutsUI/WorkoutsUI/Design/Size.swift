@@ -14,11 +14,11 @@ public extension Size {
     /// 0pt
     static let zero: Size = 0
     /// 2pt
-    static let xsmall: Size = 2
+    static let xxsmall: Size = 2
     /// 4pt
-    static let small: Size = 4
+    static let xsmall: Size = 4
     /// 8pt
-    static let medium: Size = 8
+    static let small: Size = 8
     /// 12pt
     static let large: Size = 12
     /// 16pt

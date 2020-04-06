@@ -25,12 +25,11 @@ final class WorkoutCell: BCell, Configurable, DynamicHeightView {
         titleLabel
     ].stacked(.vertical, spacing: .large)
 
-    // TODO: -RD- remove?
     private let wrapperView: UIView = {
         let view = UIView()
         view.backgroundColor = Color.background
-        view.layer.cornerRadius = CornerRadiusSize.small
-        view.addShadow(color: .black, opacity: 0.15, radius: 12)
+        view.layer.cornerRadius = CornerRadiusSize.large
+        view.addShadow(color: Color.shadow, opacity: 0.15, radius: 12)
         return view
     }()
 
@@ -41,8 +40,8 @@ final class WorkoutCell: BCell, Configurable, DynamicHeightView {
 
     override func addSubviews() {
         super.addSubviews()
-        contentView.addSubviews(contentStackView)
-        //wrapperView.addSubviews(contentStackView)
+        contentView.addSubviews(wrapperView)
+        wrapperView.addSubviews(contentStackView)
     }
 
     override func setupSubviews() {
@@ -52,6 +51,10 @@ final class WorkoutCell: BCell, Configurable, DynamicHeightView {
 
     override func setupConstraints() {
         super.setupConstraints()
+        wrapperView.snp.makeConstraints { make in
+            make.top.bottom.equalToSuperview().inset(Padding.small)
+            make.leading.trailing.equalToSuperview().inset(Padding.xxlarge)
+        }
         contentStackView.snp.makeConstraints { make in
             make.edges.equalToSuperview().inset(Padding.large)
         }
@@ -59,7 +62,7 @@ final class WorkoutCell: BCell, Configurable, DynamicHeightView {
 
     func configure(for viewModel: WorkoutCellViewModel) {
         titleLabel.text = viewModel.title
-        contentView.backgroundColor = viewModel.backgroundColor
+        wrapperView.backgroundColor = viewModel.backgroundColor
     }
 
 }
