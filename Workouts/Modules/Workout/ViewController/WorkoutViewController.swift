@@ -138,6 +138,7 @@ extension WorkoutViewController: UITableViewDelegate, UITableViewDataSource {
             return cell.configured(for: viewModel)
         case .repository(let viewModel):
             let cell: WorkoutPropertyRepositoryCell = tableView.dequeueReusableCell(for: indexPath)
+            bindWorkoutPropertyRepositoryCell(cell)
             return cell.configured(for: viewModel)
 
         }
@@ -161,6 +162,15 @@ extension WorkoutViewController: UITableViewDelegate, UITableViewDataSource {
             if let durationItemIndexPath = self?.viewModel.durationItemIndexPath {
                 self?.tableView.reloadRows(at: [durationItemIndexPath], with: .fade)
             }
+        }.disposed(by: cell.bag)
+    }
+
+    private func bindWorkoutPropertyRepositoryCell(_ cell: WorkoutPropertyRepositoryCell) {
+        cell.segmentedControl.rx.selectedSegmentIndex.skip(1).bind { [weak self] index in
+            guard let repositoryType = RepositoryType(rawValue: index) else {
+                return assertionFailure("Index should represent RepositoryType.")
+            }
+            self?.viewModel.repositoryType = repositoryType
         }.disposed(by: cell.bag)
     }
 

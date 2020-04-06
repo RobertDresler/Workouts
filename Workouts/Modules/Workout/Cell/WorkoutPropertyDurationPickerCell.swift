@@ -7,11 +7,10 @@
 //
 
 import core
-import RxSwift
 import UIKit
 import WorkoutsUI
 
-final class WorkoutPropertyDurationPickerCell: BCell, Configurable, DynamicHeightView {
+final class WorkoutPropertyDurationPickerCell: WorkoutPropertyCell, Configurable, DynamicHeightView {
 
     static var estimatedHeight: CGFloat = 144
 
@@ -21,32 +20,13 @@ final class WorkoutPropertyDurationPickerCell: BCell, Configurable, DynamicHeigh
         return datePicker
     }()
 
-    var bag = DisposeBag()
-
-    private let wrapperView = UIView()
-
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        bag = DisposeBag()
-    }
-
     override func addSubviews() {
         super.addSubviews()
-        contentView.addSubview(wrapperView)
         wrapperView.addSubview(datePicker)
-    }
-
-    override func setupSubviews() {
-        super.setupSubviews()
-        contentView.backgroundColor = Color.cellBackground
     }
 
     override func setupConstraints() {
         super.setupConstraints()
-        wrapperView.snp.makeConstraints { make in
-            make.top.bottom.equalToSuperview().inset(Padding.large)
-            make.leading.trailing.equalTo(readableContentGuide)
-        }
         datePicker.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }

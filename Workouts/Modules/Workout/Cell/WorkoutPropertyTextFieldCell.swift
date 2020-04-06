@@ -7,11 +7,10 @@
 //
 
 import core
-import RxSwift
 import UIKit
 import WorkoutsUI
 
-final class WorkoutPropertyTextFieldCell: BCell, Configurable, DynamicHeightView {
+final class WorkoutPropertyTextFieldCell: WorkoutPropertyCell, Configurable, DynamicHeightView {
 
     static var estimatedHeight: CGFloat = 64
 
@@ -21,32 +20,13 @@ final class WorkoutPropertyTextFieldCell: BCell, Configurable, DynamicHeightView
         return textField
     }()
 
-    var bag = DisposeBag()
-
-    private let wrapperView = UIView()
-
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        bag = DisposeBag()
-    }
-
     override func addSubviews() {
         super.addSubviews()
-        contentView.addSubview(wrapperView)
         wrapperView.addSubview(textField)
-    }
-
-    override func setupSubviews() {
-        super.setupSubviews()
-        contentView.backgroundColor = Color.cellBackground
     }
 
     override func setupConstraints() {
         super.setupConstraints()
-        wrapperView.snp.makeConstraints { make in
-            make.top.bottom.equalToSuperview().inset(Padding.large)
-            make.leading.trailing.equalTo(readableContentGuide)
-        }
         textField.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }

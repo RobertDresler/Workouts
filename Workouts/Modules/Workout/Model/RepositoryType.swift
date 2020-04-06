@@ -6,7 +6,18 @@
 //  Copyright © 2020 Robert Dresler. All rights reserved.
 //
 
-enum RepositoryType: Int {
+enum RepositoryType: Int, CaseIterable {
+    
     case realm
     case firebase
+
+    var title: String {
+        switch self {
+        case .realm:
+            return R.string.localizable.workoutRepositoryTypeItemRealmSegment()
+        case .firebase:
+            return R.string.localizable.workoutRepositoryTypeItemFirebaseSegment()
+        }
+    }
+
 }

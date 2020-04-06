@@ -10,7 +10,7 @@ import core
 import UIKit
 import WorkoutsUI
 
-final class WorkoutPropertyDescriptionCell: BCell, Configurable, DynamicHeightView {
+final class WorkoutPropertyDescriptionCell: WorkoutPropertyCell, Configurable, DynamicHeightView {
 
     static var estimatedHeight: CGFloat = 64
 
@@ -35,19 +35,13 @@ final class WorkoutPropertyDescriptionCell: BCell, Configurable, DynamicHeightVi
 
     override func addSubviews() {
         super.addSubviews()
-        contentView.addSubview(contentStackView)
-    }
-
-    override func setupSubviews() {
-        super.setupSubviews()
-        contentView.backgroundColor = Color.cellBackground
+        wrapperView.addSubview(contentStackView)
     }
 
     override func setupConstraints() {
         super.setupConstraints()
         contentStackView.snp.makeConstraints { make in
-            make.top.bottom.equalToSuperview().inset(Padding.large)
-            make.leading.trailing.equalTo(readableContentGuide)
+            make.edges.equalToSuperview()
         }
     }
 
