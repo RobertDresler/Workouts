@@ -36,7 +36,7 @@ final class WorkoutViewModel: BViewModel {
     let bag = DisposeBag()
     let state = BehaviorRelay<State>(value: .initial)
     var dataSource = [[DataSourceItem]]()
-    
+
     let isActivityIndicatorLoading = BehaviorRelay<Bool>(value: false)
     let isViewUserInteractionEnabled = BehaviorRelay<Bool>(value: true)
     let isSaveButtonEnabled = BehaviorRelay<Bool>(value: false)
@@ -58,7 +58,8 @@ final class WorkoutViewModel: BViewModel {
         return .title(
             WorkoutPropertyTextFieldCellViewModel(
                 title: tempWorkout.title,
-                placeholder: R.string.localizable.workoutTitleItemPlaceholder()
+                placeholder: R.string.localizable.workoutTitleItemPlaceholder(),
+                isTextFieldEnabled: true
             )
         )
     }
@@ -67,7 +68,8 @@ final class WorkoutViewModel: BViewModel {
         return .place(
             WorkoutPropertyTextFieldCellViewModel(
                 title: tempWorkout.place,
-                placeholder: R.string.localizable.workoutPlaceItemPlaceholder()
+                placeholder: R.string.localizable.workoutPlaceItemPlaceholder(),
+                isTextFieldEnabled: false
             )
         )
     }

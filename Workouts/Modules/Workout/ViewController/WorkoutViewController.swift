@@ -123,9 +123,15 @@ extension WorkoutViewController: UITableViewDelegate, UITableViewDataSource {
         switch item {
         case .title(let viewModel):
             let cell: WorkoutPropertyTextFieldCell = tableView.dequeueReusableCell(for: indexPath)
+            cell.textField.rx.text.orEmpty.bind { [weak self] title in
+                self?.viewModel.tempWorkout.title = title
+            }.disposed(by: cell.bag)
             return cell.configured(for: viewModel)
         case .place(let viewModel):
             let cell: WorkoutPropertyTextFieldCell = tableView.dequeueReusableCell(for: indexPath)
+            cell.textField.rx.text.orEmpty.bind { [weak self] place in
+                self?.viewModel.tempWorkout.place = place
+            }.disposed(by: cell.bag)
             return cell.configured(for: viewModel)
         case .duration(let viewModel):
             let cell: WorkoutPropertyDescriptionCell = tableView.dequeueReusableCell(for: indexPath)
