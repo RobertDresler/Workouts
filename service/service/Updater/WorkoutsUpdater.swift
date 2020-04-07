@@ -1,5 +1,5 @@
 //
-//  WorkoutsDeleter.swift
+//  WorkoutsUpdater.swift
 //  service
 //
 //  Created by Robert Dresler on 07/04/2020.
@@ -9,7 +9,7 @@
 import core
 import RxSwift
 
-public final class WorkoutsDeleter {
+public final class WorkoutsUpdater {
 
     private let realmRepository: WorkoutsRepository
     private let firebaseRepository: WorkoutsRepository
@@ -20,30 +20,30 @@ public final class WorkoutsDeleter {
         self.firebaseRepository = firebaseRepository
     }
 
-    public func delete(_ workout: Workout, from repositoryType: RepositoryType) -> Single<Void> {
+    public func update(_ workout: Workout, in repositoryType: RepositoryType) -> Single<Void> {
         return Single.create(subscribe: { [weak self] single -> Disposable in
-            self?.subscribeDeleteWorkout(with: single, workout: workout, repositoryType: repositoryType)
+            self?.subscribeUpdateWorkout(with: single, workout: workout, repositoryType: repositoryType)
             return Disposables.create {}
         })
     }
 
-    private func subscribeDeleteWorkout(
+    private func subscribeUpdateWorkout(
         with singleEvent: @escaping (SingleEvent<Void>) -> Void,
         workout: Workout,
         repositoryType: RepositoryType
     ) {
-        deleteSingle(with: workout, for: repositoryType).subscribe(
+        updateSingle(with: workout, for: repositoryType).subscribe(
             onSuccess: { singleEvent(.success(())) },
             onError: { singleEvent(.error($0)) }
         ).disposed(by: bag)
     }
 
-    private func deleteSingle(with workout: Workout, for repositoryType: RepositoryType) -> Single<Void> {
+    private func updateSingle(with workout: Workout, for repositoryType: RepositoryType) -> Single<Void> {
         switch repositoryType {
         case .realm:
-            return realmRepository.delete(workout)
+            return realmRepository.update(workout)
         case .firebase:
-            return firebaseRepository.delete(workout)
+            return firebaseRepository.update(workout)
         }
     }
 

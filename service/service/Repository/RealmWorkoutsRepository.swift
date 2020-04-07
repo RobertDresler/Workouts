@@ -35,6 +35,19 @@ public final class RealmWorkoutsRepository: WorkoutsRepository {
         return .just(Array(realm.objects(RealmWorkout.self)))
     }
 
+    public func update(_ workout: Workout) -> Single<Void> {
+        let realmWorkout = RealmWorkout(
+            id: workout.id,
+            title: workout.title,
+            place: workout.place,
+            duration: workout.duration
+        )
+        realm.safeWrite {
+            realm.add(realmWorkout, update: .modified)
+        }
+        return .just(())
+    }
+
     public func delete(_ workout: Workout) -> Single<Void> {
         if let realmWorkout = realm.object(ofType: RealmWorkout.self, forPrimaryKey: workout.id) {
             realm.safeWrite {

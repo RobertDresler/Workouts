@@ -20,21 +20,7 @@ public final class FirebaseWorkoutsRepository: WorkoutsRepository {
     }
 
     public func add(_ workout: Workout) -> Single<Void> {
-        let firebaseWorkout = FirebaseWorkout(
-            id: workout.id,
-            title: workout.title,
-            place: workout.place,
-            duration: workout.duration
-        )
-        let documentData: [String: Any]
-        do {
-            let data = try JSONEncoder().encode(firebaseWorkout)
-            let jsonObject = try JSONSerialization.jsonObject(with: data, options: [])
-            guard let jsonData = jsonObject as? [String: Any] else {
-                return .error(FirebaseWorkoutsRepositoryError.cantSaveWorkoutToFirebase)
-            }
-            documentData = jsonData
-        } catch {
+        guard let documentData = self.documentData(for: workout) else {
             return .error(FirebaseWorkoutsRepositoryError.cantSaveWorkoutToFirebase)
         }
         return Single.create(subscribe: { [weak self] single -> Disposable in
@@ -71,6 +57,34 @@ public final class FirebaseWorkoutsRepository: WorkoutsRepository {
         })
     }
 
+    public func update(_ workout: Workout) -> Single<Void> {
+        guard let documentData = self.documentData(for: workout) else {
+            return .error(FirebaseWorkoutsRepositoryError.cantSaveWorkoutToFirebase)
+        }
+
+        return Single.create(subscribe: { [weak self] single -> Disposable in
+
+            self?.database.collection(Constants.firestoreWorkoutsCollection)
+                .whereField("id", isEqualTo: workout.id)
+                .getDocuments { snapshot, _ in
+                    guard let snapshot = snapshot else {
+                        single(.error(FirebaseWorkoutsRepositoryError.cantDeleteWorkoutFromFirebase))
+                        return
+                    }
+                    snapshot.documents.forEach { document in
+                        document.reference.updateData(documentData) { error in
+                            guard error == nil else {
+                                single(.error(FirebaseWorkoutsRepositoryError.cantDeleteWorkoutFromFirebase))
+                                return
+                            }
+                            single(.success(()))
+                        }
+                    }
+                }
+            return Disposables.create {}
+        })
+    }
+
     public func delete(_ workout: Workout) -> Single<Void> {
         return Single.create(subscribe: { [weak self] single -> Disposable in
 
@@ -93,6 +107,22 @@ public final class FirebaseWorkoutsRepository: WorkoutsRepository {
                 }
             return Disposables.create {}
         })
+    }
+
+    private func documentData(for workout: Workout) -> [String: Any]? {
+        let firebaseWorkout = FirebaseWorkout(
+            id: workout.id,
+            title: workout.title,
+            place: workout.place,
+            duration: workout.duration
+        )
+        do {
+            let data = try JSONEncoder().encode(firebaseWorkout)
+            let jsonObject = try JSONSerialization.jsonObject(with: data, options: [])
+            return jsonObject as? [String: Any]
+        } catch {
+            return nil
+        }
     }
 
 }

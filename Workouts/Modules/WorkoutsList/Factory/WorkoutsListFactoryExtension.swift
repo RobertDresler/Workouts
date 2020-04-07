@@ -16,8 +16,8 @@ extension ModuleFactoryImp: WorkoutsListFactory {
                 firebaseRepository: FirebaseWorkoutsRepository(database: .firestore())
             ),
             workoutsDeleter: WorkoutsDeleter(
-                realmWorkoutsRepository: RealmWorkoutsRepository(realm: RealmProvider().realm),
-                firebaseWorkoutsRepository: FirebaseWorkoutsRepository(database: .firestore())
+                realmRepository: RealmWorkoutsRepository(realm: RealmProvider().realm),
+                firebaseRepository: FirebaseWorkoutsRepository(database: .firestore())
             )
         )
         let viewController = WorkoutsListViewController(viewModel: viewModel)

@@ -49,6 +49,7 @@
 		D0055B14243C053E0088D6C4 /* PlaceSelectorFactoryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0055B0C243C053E0088D6C4 /* PlaceSelectorFactoryExtension.swift */; };
 		D0055B17243C0CB30088D6C4 /* PlaceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0055B16243C0CB30088D6C4 /* PlaceCell.swift */; };
 		D0055B19243C0CBE0088D6C4 /* PlaceCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0055B18243C0CBE0088D6C4 /* PlaceCellViewModel.swift */; };
+		D0055B21243C1C710088D6C4 /* WorkoutViewUsage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0055B20243C1C710088D6C4 /* WorkoutViewUsage.swift */; };
 		D03F3E16243BAEB600AEEFEC /* WorkoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03F3E0A243BAEB600AEEFEC /* WorkoutViewModel.swift */; };
 		D03F3E17243BAEB600AEEFEC /* CoordinatorFactory+Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03F3E0C243BAEB600AEEFEC /* CoordinatorFactory+Workout.swift */; };
 		D03F3E18243BAEB600AEEFEC /* WorkoutCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03F3E0D243BAEB600AEEFEC /* WorkoutCoordinator.swift */; };
@@ -137,6 +138,7 @@
 		D0055B0C243C053E0088D6C4 /* PlaceSelectorFactoryExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceSelectorFactoryExtension.swift; sourceTree = "<group>"; };
 		D0055B16243C0CB30088D6C4 /* PlaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCell.swift; sourceTree = "<group>"; };
 		D0055B18243C0CBE0088D6C4 /* PlaceCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCellViewModel.swift; sourceTree = "<group>"; };
+		D0055B20243C1C710088D6C4 /* WorkoutViewUsage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewUsage.swift; sourceTree = "<group>"; };
 		D03F3E0A243BAEB600AEEFEC /* WorkoutViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutViewModel.swift; sourceTree = "<group>"; };
 		D03F3E0C243BAEB600AEEFEC /* CoordinatorFactory+Workout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoordinatorFactory+Workout.swift"; sourceTree = "<group>"; };
 		D03F3E0D243BAEB600AEEFEC /* WorkoutCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutCoordinator.swift; sourceTree = "<group>"; };
@@ -471,6 +473,7 @@
 			isa = PBXGroup;
 			children = (
 				D03F3E1E243BB2D000AEEFEC /* TempWorkout.swift */,
+				D0055B20243C1C710088D6C4 /* WorkoutViewUsage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -744,6 +747,7 @@
 				D0055B13243C053E0088D6C4 /* PlaceSelectorFactory.swift in Sources */,
 				D03F3E2B243BCA1A00AEEFEC /* WorkoutPropertyDurationPickerCellViewModel.swift in Sources */,
 				D03F3E1F243BB2D000AEEFEC /* TempWorkout.swift in Sources */,
+				D0055B21243C1C710088D6C4 /* WorkoutViewUsage.swift in Sources */,
 				D0037366243B7CDC00108E2E /* AppCoordinator.swift in Sources */,
 				D003736F243B7D5800108E2E /* CoordinatorFactory.swift in Sources */,
 				D0055B17243C0CB30088D6C4 /* PlaceCell.swift in Sources */,

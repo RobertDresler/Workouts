@@ -10,8 +10,6 @@ import core
 import RxCocoa
 import RxSwift
 
-// TODO: -RD- error handling
-
 public final class WorkoutsProvider {
 
     public enum Mode: CaseIterable {

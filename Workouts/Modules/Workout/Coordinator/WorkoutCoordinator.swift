@@ -30,12 +30,19 @@ final class WorkoutCoordinator: BaseCoordinator, WorkoutCoordinatorOutput {
     private var workoutRouter: Router?
     private let factory: WorkoutFactory
     private let coordinatorFactory: CoordinatorFactory
+    private let usage: WorkoutViewUsage
     private var actionStorage: ActionStorage
 
-    init(router: Router, factory: WorkoutFactory, coordinatorFactory: CoordinatorFactory) {
+    init(
+        router: Router,
+        factory: WorkoutFactory,
+        coordinatorFactory: CoordinatorFactory,
+        usage: WorkoutViewUsage
+    ) {
         self.router = router
         self.factory = factory
         self.coordinatorFactory = coordinatorFactory
+        self.usage = usage
         self.actionStorage = ActionStorage()
     }
 
@@ -47,7 +54,7 @@ final class WorkoutCoordinator: BaseCoordinator, WorkoutCoordinatorOutput {
         let navigationController = NavigationController()
         workoutRouter = RouterImp(rootController: navigationController)
 
-        let workoutView = factory.makeWorkoutView()
+        let workoutView = factory.makeWorkoutView(usage: usage)
         workoutView.delegate = self
         actionStorage.didSelectPlace = { [weak workoutView] place in
             workoutView?.selectPlace(place)

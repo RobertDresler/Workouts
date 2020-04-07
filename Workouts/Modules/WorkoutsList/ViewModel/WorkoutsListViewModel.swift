@@ -55,7 +55,10 @@ final class WorkoutsListViewModel: BViewModel {
     }
 
     private func setupBinding() {
-        state.map { [.loading, .loadingWithChangeMode].contains($0) }.bind(to: isActivityIndicatorLoading).disposed(by: bag)
+        state.map { [.loading, .loadingWithChangeMode].contains($0) }
+            .bind(to: isActivityIndicatorLoading)
+            .disposed(by: bag)
+        
         state.map { $0 != .loading }.bind(to: isModeBarButtonItemEnabled).disposed(by: bag)
 
         workoutsProvider.workouts.bind { [weak self] workouts in

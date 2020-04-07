@@ -15,7 +15,12 @@ import WorkoutsUI
 final class WorkoutViewModel: BViewModel {
 
     var title: String {
-        return R.string.localizable.workoutTitle()
+        switch usage {
+        case .create:
+            return R.string.localizable.createWorkoutTitle()
+        case .edit:
+            return R.string.localizable.editWorkoutTitle()
+        }
     }
 
     enum State: Equatable {
@@ -42,13 +47,13 @@ final class WorkoutViewModel: BViewModel {
     let isSaveButtonEnabled = BehaviorRelay<Bool>(value: false)
     private let isEverythingValid = BehaviorRelay<Bool>(value: false)
 
-    var tempWorkout: TempWorkout {
+    var tempWorkout: Workout {
         didSet {
             loadData()
         }
     }
 
-    var repositoryType: RepositoryType = .realm
+    lazy var repositoryType: RepositoryType = (tempWorkout is FirebaseWorkout) ? .firebase : .realm
 
     var durationAsDate: Date {
         return Date(timeIntervalSince1970: tempWorkout.duration)
@@ -124,11 +129,23 @@ final class WorkoutViewModel: BViewModel {
         )
     }
 
-    private let workoutsSaver: WorkoutsSaver
+    private let saver: WorkoutsSaver
+    private let updater: WorkoutsUpdater
+    private let deleter: WorkoutsDeleter
+    private let usage: WorkoutViewUsage
 
-    init(tempWorkout: TempWorkout, workoutsSaver: WorkoutsSaver) {
+    init(
+        tempWorkout: Workout,
+        saver: WorkoutsSaver,
+        updater: WorkoutsUpdater,
+        deleter: WorkoutsDeleter,
+        usage: WorkoutViewUsage
+    ) {
         self.tempWorkout = tempWorkout
-        self.workoutsSaver = workoutsSaver
+        self.saver = saver
+        self.updater = updater
+        self.deleter = deleter
+        self.usage = usage
         setupBinding()
     }
 
@@ -180,10 +197,55 @@ final class WorkoutViewModel: BViewModel {
     func save() {
         guard isEverythingValid.value, ![.loading, .saved].contains(state.value) else { return }
         state.accept(.loading)
-        workoutsSaver.save(tempWorkout, to: repositoryType).subscribe(
+
+        switch usage {
+        case .create:
+            saveCreatedWorkout()
+        case .edit(let workout):
+            saveEditedWorkout(workout)
+        }
+    }
+
+    private func saveCreatedWorkout() {
+        saver.save(tempWorkout, to: repositoryType).subscribe(
             onSuccess: { [weak self] in self?.processSuccess() },
             onError: { [weak self] in self?.process(with: $0) }
         ).disposed(by: bag)
+    }
+
+    private func saveEditedWorkout(_ workout: Workout) {
+        if workout is RealmWorkout && repositoryType == .realm {
+            updateTempWorkout(in: .realm)
+
+        } else if workout is FirebaseWorkout && repositoryType == .firebase {
+            updateTempWorkout(in: .firebase)
+
+        } else if workout is RealmWorkout && repositoryType == .firebase {
+            deleter.delete(tempWorkout, from: .realm).subscribe(
+                onSuccess: { [weak self] in self?.saveTempWorkoutAfterDeletion(to: .firebase) },
+                onError: { [weak self] in self?.process(with: $0) }
+            ).disposed(by: bag)
+
+        } else {
+            deleter.delete(tempWorkout, from: .firebase).subscribe(
+                onSuccess: { [weak self] in self?.saveTempWorkoutAfterDeletion(to: .realm) },
+                onError: { [weak self] in self?.process(with: $0) }
+            ).disposed(by: bag)
+        }
+    }
+
+    private func updateTempWorkout(in repositoryType: RepositoryType) {
+        updater.update(tempWorkout, in: repositoryType).subscribe(
+            onSuccess: { [weak self] in self?.processSuccess() },
+            onError: { [weak self] in self?.process(with: $0) }
+        ).disposed(by: self.bag)
+    }
+
+    private func saveTempWorkoutAfterDeletion(to repositoryType: RepositoryType) {
+        saver.save(tempWorkout, to: repositoryType).subscribe(
+            onSuccess: { [weak self] in self?.processSuccess() },
+            onError: { [weak self] in self?.process(with: $0) }
+        ).disposed(by: self.bag)
     }
 
     private func processSuccess() {

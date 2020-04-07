@@ -48,11 +48,11 @@ final class WorkoutsListCoordinator: BaseCoordinator {
 
 extension WorkoutsListCoordinator: WorkoutsListViewDelegate {
     func newWorkoutButtonPressed() {
-        runNewWorkoutCoordinator()
+        runCreateWorkoutCoordinator()
     }
 
-    private func runNewWorkoutCoordinator() {
-        var coordinator = coordinatorFactory.makeWorkoutCoordinator(with: router)
+    private func runCreateWorkoutCoordinator() {
+        var coordinator = coordinatorFactory.makeWorkoutCoordinator(with: router, usage: .create)
         coordinator.delegate = self
         addChild(coordinator)
         coordinator.start()
@@ -70,8 +70,19 @@ extension WorkoutsListCoordinator: WorkoutsListViewDelegate {
             style: .destructive,
             handler: { [weak self] _ in self?.actionStorage.didChooseDeleteWorkout?(workout) }
         )
-        [cancelAction, deleteAction].forEach(alertController.addAction(_:))
+        let editAction = UIAlertAction(
+            title: R.string.localizable.workoutActionSheetEdit(),
+            style: .default,
+            handler: { [weak self] _ in self?.runEditWorkoutCoordinator(with: workout) })
+        [editAction, deleteAction, cancelAction].forEach(alertController.addAction(_:))
         router.presentOverFullScreen(alertController)
+    }
+
+    private func runEditWorkoutCoordinator(with workout: Workout) {
+        var coordinator = coordinatorFactory.makeWorkoutCoordinator(with: router, usage: .edit(workout))
+        coordinator.delegate = self
+        addChild(coordinator)
+        coordinator.start()
     }
 }
 

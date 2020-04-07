@@ -18,12 +18,12 @@ public final class WorkoutsSaver {
 
     public init(
         workoutsProvider: WorkoutsProvider,
-        realmWorkoutsRepository: WorkoutsRepository,
-        firebaseWorkoutsRepository: WorkoutsRepository
+        realmRepository: WorkoutsRepository,
+        firebaseRepository: WorkoutsRepository
     ) {
         self.workoutsProvider = workoutsProvider
-        self.realmRepository = realmWorkoutsRepository
-        self.firebaseRepository = firebaseWorkoutsRepository
+        self.realmRepository = realmRepository
+        self.firebaseRepository = firebaseRepository
     }
 
     public func save(_ workout: Workout, to repositoryType: RepositoryType) -> Single<Void> {

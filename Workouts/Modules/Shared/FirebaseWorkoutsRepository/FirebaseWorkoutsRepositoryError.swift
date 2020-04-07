@@ -12,6 +12,7 @@ enum FirebaseWorkoutsRepositoryError: LocalizedError {
 
     case cantSaveWorkoutToFirebase
     case noDataReceivedFromFirebase
+    case cantUpdateWorkoutInFirebase
     case cantDeleteWorkoutFromFirebase
 
     var errorDescription: String? {
@@ -20,6 +21,8 @@ enum FirebaseWorkoutsRepositoryError: LocalizedError {
             return R.string.localizable.cantSaveWorkoutToFirebase()
         case .noDataReceivedFromFirebase:
             return R.string.localizable.noDataReceivedFromFirebase()
+        case .cantUpdateWorkoutInFirebase:
+            return R.string.localizable.cantUpdateWorkoutInFirebase()
         case .cantDeleteWorkoutFromFirebase:
             return R.string.localizable.cantDeleteWorkoutFromFirebase()
         }

@@ -7,6 +7,5 @@
 //
 
 protocol WorkoutFactory {
-    func makeWorkoutView() -> WorkoutView
-    // TODO: -RD- makeEditWorkoutView(for:) if needed
+    func makeWorkoutView(usage: WorkoutViewUsage) -> WorkoutView
 }
