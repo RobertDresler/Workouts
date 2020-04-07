@@ -18,6 +18,7 @@ public enum Color {
     public static let highlightedText = resolveColor(light: blueRegular, dark: blueRegular)
     public static let standardText = resolveColor(light: black, dark: whiteRegular)
     public static let shadow = resolveColor(light: grayDarker, dark: grayLight)
+    public static let placeSelectorHighlight = UIColor.systemYellow
 
     public static let clear = UIColor.clear
 

@@ -29,6 +29,11 @@ final class WorkoutViewController: BViewController<WorkoutViewModel, WorkoutCont
         delegate?.workoutViewWillBeDeinitialized()
     }
 
+    func selectPlace(_ place: String) {
+        viewModel.tempWorkout.place = place
+        tableView.reloadRows(at: [viewModel.placeItemIndexPath].compactMap { $0 }, with: .fade)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.loadData()
@@ -181,7 +186,7 @@ extension WorkoutViewController: UITableViewDelegate, UITableViewDataSource {
         }
         switch item {
         case .place:
-            break // TODO: -RD- show search table view controller
+            delegate?.didSelectPlaceItem()
         case .duration:
             if let durationPickerItemIndexPath = viewModel.durationPickerItemIndexPath {
                 viewModel.toogleDurationPickerItem()

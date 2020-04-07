@@ -64,6 +64,17 @@ final class WorkoutViewModel: BViewModel {
         )
     }
 
+    var placeItemIndexPath: IndexPath? {
+        var indexPath: IndexPath?
+        dataSource.enumerated().forEach { sectionIndex, section in
+            section.enumerated().forEach { rowIndex, item in
+                guard case .place = item else { return }
+                indexPath = IndexPath(row: rowIndex, section: sectionIndex)
+            }
+        }
+        return indexPath
+    }
+
     private var placeItem: DataSourceItem {
         return .place(
             WorkoutPropertyTextFieldCellViewModel(

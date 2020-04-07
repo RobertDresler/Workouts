@@ -10,7 +10,11 @@ import core
 
 extension CoordinatorFactoryImp {
     func makeWorkoutCoordinator(with router: Router) -> Coordinator & WorkoutCoordinatorOutput {
-        let coordinator = WorkoutCoordinator(router: router, factory: ModuleFactoryImp())
+        let coordinator = WorkoutCoordinator(
+            router: router,
+            factory: ModuleFactoryImp(),
+            coordinatorFactory: CoordinatorFactoryImp()
+        )
         return coordinator
     }
 }

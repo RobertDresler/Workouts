@@ -20,15 +20,23 @@ protocol WorkoutCoordinatorOutput {
 
 final class WorkoutCoordinator: BaseCoordinator, WorkoutCoordinatorOutput {
 
+    private struct ActionStorage {
+        var didSelectPlace: ((String) -> Void)?
+    }
+
     weak var delegate: WorkoutCoordinatorOutputDelegate?
 
     private let router: Router
     private var workoutRouter: Router?
     private let factory: WorkoutFactory
+    private let coordinatorFactory: CoordinatorFactory
+    private var actionStorage: ActionStorage
 
-    init(router: Router, factory: WorkoutFactory) {
+    init(router: Router, factory: WorkoutFactory, coordinatorFactory: CoordinatorFactory) {
         self.router = router
         self.factory = factory
+        self.coordinatorFactory = coordinatorFactory
+        self.actionStorage = ActionStorage()
     }
 
     override func start() {
@@ -36,13 +44,15 @@ final class WorkoutCoordinator: BaseCoordinator, WorkoutCoordinatorOutput {
     }
 
     private func showWorkoutView() {
-        // TODO: -RD-
-        //let navigationController = NavigationControllerAssembly.initNavigationController()
         let navigationController = NavigationController()
         workoutRouter = RouterImp(rootController: navigationController)
 
         let workoutView = factory.makeWorkoutView()
         workoutView.delegate = self
+        actionStorage.didSelectPlace = { [weak workoutView] place in
+            workoutView?.selectPlace(place)
+        }
+
         workoutRouter?.push(workoutView)
         router.present(navigationController)
     }
@@ -55,6 +65,18 @@ extension WorkoutCoordinator: WorkoutViewDelegate {
         delegate?.workoutCoordinatorDidFinishSuccessfully(self)
     }
 
+    func didSelectPlaceItem() {
+        runPlaceSelectorCoordinator()
+    }
+
+    private func runPlaceSelectorCoordinator() {
+        guard let router = workoutRouter else { return }
+        var coordinator = coordinatorFactory.makePlaceSelectorCoordinator(with: router)
+        coordinator.delegate = self
+        addChild(coordinator)
+        coordinator.start()
+    }
+
     func workoutViewDidTapCancelButton() {
         router.dismissModule()
         delegate?.workoutCoordinatorDidFinish(self)
@@ -62,5 +84,16 @@ extension WorkoutCoordinator: WorkoutViewDelegate {
 
     func workoutViewWillBeDeinitialized() {
         delegate?.workoutCoordinatorDidFinish(self)
+    }
+}
+
+extension WorkoutCoordinator: PlaceSelectorCoordinatorOutputDelegate {
+    func placeSelectorCoordinatorDidFinish(_ coordinator: PlaceSelectorCoordinator, with place: String) {
+        actionStorage.didSelectPlace?(place)
+        removeChild(coordinator)
+    }
+
+    func placeSelectorCoordinatorDidFinish(_ coordinator: PlaceSelectorCoordinator) {
+        removeChild(coordinator)
     }
 }

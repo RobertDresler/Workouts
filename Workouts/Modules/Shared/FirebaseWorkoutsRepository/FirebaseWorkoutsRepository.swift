@@ -40,7 +40,7 @@ public final class FirebaseWorkoutsRepository: WorkoutsRepository {
         return Single.create(subscribe: { [weak self] single -> Disposable in
             self?.database.collection(Constants.firestoreWorkoutsCollection).addDocument(data: documentData) { error in
                 guard error == nil else {
-                    single(.error(FirebaseWorkoutsRepositoryError.noDataReceivedFromFirebase))
+                    single(.error(FirebaseWorkoutsRepositoryError.cantSaveWorkoutToFirebase))
                     return
                 }
                 single(.success(()))
@@ -51,11 +51,9 @@ public final class FirebaseWorkoutsRepository: WorkoutsRepository {
 
     public func getAll() -> Single<[Workout]> {
         return Single.create(subscribe: { [weak self] single -> Disposable in
-            self?.database.collection(Constants.firestoreWorkoutsCollection).getDocuments { snapshot, error in
+            self?.database.collection(Constants.firestoreWorkoutsCollection).getDocuments { snapshot, _ in
                 guard let snapshot = snapshot else {
-                    if let error = error {
-                        single(.error(error))
-                    }
+                    single(.error(FirebaseWorkoutsRepositoryError.noDataReceivedFromFirebase))
                     return
                 }
                 let workouts = snapshot.documents.compactMap { (document: QueryDocumentSnapshot) -> Workout? in

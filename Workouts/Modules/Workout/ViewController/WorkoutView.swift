@@ -10,10 +10,12 @@ import core
 
 protocol WorkoutViewDelegate: class {
     func didSaveWorkout()
+    func didSelectPlaceItem()
     func workoutViewDidTapCancelButton()
     func workoutViewWillBeDeinitialized()
 }
 
 protocol WorkoutView: BaseView {
     var delegate: WorkoutViewDelegate? { get set }
+    func selectPlace(_ place: String)
 }
