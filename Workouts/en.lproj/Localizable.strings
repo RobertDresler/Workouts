@@ -14,7 +14,9 @@
 "workout cell duration" = "Duration: %@";
 
 "empty workouts list placeholder title" = "No workouts";
-"empty workouts list placeholder message" = "There are not any workouts yet.\nAdd some! 🏀";
+"empty workouts list placeholder description" = "There are not any workouts yet.\nAdd some! 🏀";
+
+"error workouts list placeholder title" = "Ups...";
 
 "workout action sheet edit" = "Edit";
 "workout action sheet delete" = "Delete";

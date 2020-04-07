@@ -14,7 +14,9 @@
 "workout cell duration" = "Délka trvání: %@";
 
 "empty workouts list placeholder title" = "Žádné cvičení";
-"empty workouts list placeholder message" = "Zatím zde nejsou žádné cvičení.\nPřidejte nějaké! 🏀";
+"empty workouts list placeholder description" = "Zatím zde nejsou žádné cvičení.\nPřidejte nějaké! 🏀";
+
+"error workouts list placeholder title" = "Ups...";
 
 "workout action sheet edit" = "Upravit";
 "workout action sheet delete" = "Smazat";

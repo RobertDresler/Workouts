@@ -1,22 +1,22 @@
 //
-//  EmptyWorkoutsListPlaceholder.swift
+//  TableViewPlaceholderView.swift
 //  Workouts
 //
 //  Created by Robert Dresler on 07/04/2020.
 //  Copyright © 2020 Robert Dresler. All rights reserved.
 //
 
+import core
 import UIKit
 import WorkoutsUI
 
-final class EmptyWorkoutsListPlaceholder: BView {
+final class TableViewPlaceholderView: BView, Configurable {
 
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.preferredFont(forTextStyle: .headline).withSize(20)
         label.numberOfLines = 0
         label.textAlignment = .center
-        label.text = R.string.localizable.emptyWorkoutsListPlaceholderTitle()
         return label
     }()
 
@@ -25,13 +25,12 @@ final class EmptyWorkoutsListPlaceholder: BView {
         label.font = .preferredFont(forTextStyle: .subheadline)
         label.numberOfLines = 0
         label.textAlignment = .center
-        label.text = R.string.localizable.emptyWorkoutsListPlaceholderMessage()
         return label
     }()
 
     private lazy var contentStackView = [
         titleLabel, descriptionLabel
-    ].stacked(.vertical, spacing: .huge)
+    ].stacked(.vertical, spacing: .xxlarge)
 
     override func addSubviews() {
         super.addSubviews()
@@ -46,6 +45,11 @@ final class EmptyWorkoutsListPlaceholder: BView {
             make.centerY.equalToSuperview()
             make.leading.trailing.equalTo(readableContentGuide)
         }
+    }
+
+    func configure(for viewModel: TableViewPlaceholderViewModel) {
+        titleLabel.text = viewModel.title
+        descriptionLabel.text = viewModel.description
     }
 
 }

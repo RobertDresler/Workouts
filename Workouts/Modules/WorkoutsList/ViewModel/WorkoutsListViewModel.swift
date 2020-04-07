@@ -33,7 +33,7 @@ final class WorkoutsListViewModel: BViewModel {
     var dataSource = [DataSourceItem]()
     let isActivityIndicatorLoading = BehaviorRelay<Bool>(value: false)
     let isModeBarButtonItemEnabled = BehaviorRelay<Bool>(value: false)
-    let isEmptyPlaceholderViewHidden = BehaviorRelay<Bool>(value: true)
+    let placeholderViewModel = BehaviorRelay<TableViewPlaceholderViewModel?>(value: nil)
 
     var modeBarButtonTitle: String {
         switch workoutsProvider.mode {
@@ -63,8 +63,22 @@ final class WorkoutsListViewModel: BViewModel {
         state.map { $0 != .loading }.bind(to: isModeBarButtonItemEnabled).disposed(by: bag)
 
         Observable.combineLatest(state, workoutsProvider.workouts)
-            .map { state, workouts in state != .loaded || !workouts.isEmpty }
-            .bind(to: isEmptyPlaceholderViewHidden)
+            .map { (state, workouts) -> TableViewPlaceholderViewModel? in
+                if case let .errorReceived(message) = state {
+                    return TableViewPlaceholderViewModel(
+                        title: R.string.localizable.errorWorkoutsListPlaceholderTitle(),
+                        description: message
+                    )
+                } else if state == .loaded && workouts.isEmpty {
+                    return TableViewPlaceholderViewModel(
+                        title: R.string.localizable.emptyWorkoutsListPlaceholderTitle(),
+                        description: R.string.localizable.emptyWorkoutsListPlaceholderDescription()
+                    )
+                } else {
+                    return nil
+                }
+            }
+            .bind(to: placeholderViewModel)
             .disposed(by: bag)
 
         workoutsProvider.workouts.bind { [weak self] workouts in
