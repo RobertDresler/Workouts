@@ -82,7 +82,8 @@ public final class WorkoutsProvider {
     private func processAfterCompletedOperation() {
         guard completedOperations == operations else { return }
         error.accept(tempError)
-        workouts.accept(tempWorkouts.sorted { $0.id < $1.id })
+        // NOTE: -1 is here because of Firebase model which cannout be deleted.
+        workouts.accept(tempWorkouts.sorted { $0.id < $1.id }.filter { $0.id != -1 })
         onWorkoutsLoaded?(workouts.value)
     }
 
