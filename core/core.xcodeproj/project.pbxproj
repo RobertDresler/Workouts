@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C98B7427A39FD9DB33989E4B /* Pods_core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 141D8AB5E4AA2023663F0A96 /* Pods_core.framework */; };
+		D0033321243BFE2F00A302DF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0033320243BFE2F00A302DF /* Constants.swift */; };
 		D0037340243B78B400108E2E /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D003733F243B78B400108E2E /* Workout.swift */; };
 		D0037356243B7A2700108E2E /* RealmWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0037355243B7A2700108E2E /* RealmWorkout.swift */; };
 		D0037358243B7A2F00108E2E /* FirebaseWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0037357243B7A2F00108E2E /* FirebaseWorkout.swift */; };
@@ -37,6 +38,7 @@
 /* Begin PBXFileReference section */
 		141D8AB5E4AA2023663F0A96 /* Pods_core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDCE52F9366373369D8DE26F /* Pods-core.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-core.debug.xcconfig"; path = "Target Support Files/Pods-core/Pods-core.debug.xcconfig"; sourceTree = "<group>"; };
+		D0033320243BFE2F00A302DF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D003733F243B78B400108E2E /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		D0037355243B7A2700108E2E /* RealmWorkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmWorkout.swift; sourceTree = "<group>"; };
 		D0037357243B7A2F00108E2E /* FirebaseWorkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseWorkout.swift; sourceTree = "<group>"; };
@@ -94,6 +96,14 @@
 				141D8AB5E4AA2023663F0A96 /* Pods_core.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D003331F243BFE2100A302DF /* Keys */ = {
+			isa = PBXGroup;
+			children = (
+				D0033320243BFE2F00A302DF /* Constants.swift */,
+			);
+			path = Keys;
 			sourceTree = "<group>";
 		};
 		D003733E243B78AC00108E2E /* Models */ = {
@@ -169,6 +179,7 @@
 		D06A5050243B745D00736DFA /* core */ = {
 			isa = PBXGroup;
 			children = (
+				D003331F243BFE2100A302DF /* Keys */,
 				D003733E243B78AC00108E2E /* Models */,
 				D003735E243B7B6400108E2E /* BaseProtocols */,
 				D00373A6243B858600108E2E /* Extensions */,
@@ -327,6 +338,7 @@
 				D0037384243B809000108E2E /* UINavigationController+Extension.swift in Sources */,
 				D0037375243B7DF500108E2E /* Coordinator.swift in Sources */,
 				D0037381243B803800108E2E /* BackHandleable.swift in Sources */,
+				D0033321243BFE2F00A302DF /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

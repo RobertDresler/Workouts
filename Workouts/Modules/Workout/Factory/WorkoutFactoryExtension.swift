@@ -17,10 +17,10 @@ extension ModuleFactoryImp: WorkoutFactory {
             workoutsSaver: WorkoutsSaver(
                 workoutsProvider: WorkoutsProvider(
                     realmRepository: RealmWorkoutsRepository(realm: RealmProvider().realm),
-                    firebaseRepository: FirebaseWorkoutsRepository()
+                    firebaseRepository: FirebaseWorkoutsRepository(database: .firestore())
                 ),
                 realmWorkoutsRepository: RealmWorkoutsRepository(realm: RealmProvider().realm),
-                firebaseWorkoutsRepository: FirebaseWorkoutsRepository()
+                firebaseWorkoutsRepository: FirebaseWorkoutsRepository(database: .firestore())
             )
         )
         let viewController = WorkoutViewController(viewModel: viewModel)
