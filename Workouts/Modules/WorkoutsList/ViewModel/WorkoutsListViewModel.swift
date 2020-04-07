@@ -33,6 +33,7 @@ final class WorkoutsListViewModel: BViewModel {
     var dataSource = [DataSourceItem]()
     let isActivityIndicatorLoading = BehaviorRelay<Bool>(value: false)
     let isModeBarButtonItemEnabled = BehaviorRelay<Bool>(value: false)
+    let isEmptyPlaceholderViewHidden = BehaviorRelay<Bool>(value: true)
 
     var modeBarButtonTitle: String {
         switch workoutsProvider.mode {
@@ -60,6 +61,11 @@ final class WorkoutsListViewModel: BViewModel {
             .disposed(by: bag)
 
         state.map { $0 != .loading }.bind(to: isModeBarButtonItemEnabled).disposed(by: bag)
+
+        Observable.combineLatest(state, workoutsProvider.workouts)
+            .map { state, workouts in state != .loaded || !workouts.isEmpty }
+            .bind(to: isEmptyPlaceholderViewHidden)
+            .disposed(by: bag)
 
         workoutsProvider.workouts.bind { [weak self] workouts in
             guard let self = self else { return }

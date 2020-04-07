@@ -22,6 +22,8 @@ final class WorkoutsListViewController: BViewController<WorkoutsListViewModel, W
         action: #selector(modeBarButtonItemPressed)
     )
 
+    private let emptyPlaceholderView = EmptyWorkoutsListPlaceholder()
+
     private var tableView: UITableView {
         return contentView.tableView
     }
@@ -58,6 +60,10 @@ final class WorkoutsListViewController: BViewController<WorkoutsListViewModel, W
                 }
             }
             .disposed(by: bag)
+
+        viewModel.isEmptyPlaceholderViewHidden.bind { [weak self] isHidden in
+            self?.tableView.backgroundView = isHidden ? nil : self?.emptyPlaceholderView
+        }.disposed(by: bag)
 
         viewModel.isModeBarButtonItemEnabled.bind(to: modeBarButtonItem.rx.isEnabled).disposed(by: bag)
     }

@@ -13,6 +13,8 @@
 "workouts list mode firebase" = "Remote";
 "workout cell duration" = "Duration: %@";
 
+"empty workouts list placeholder title" = "Nothing is here... add something! 🥎";
+
 "workout action sheet edit" = "Edit";
 "workout action sheet delete" = "Delete";
 "workout action sheet cancel" = "Cancel";
