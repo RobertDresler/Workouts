@@ -13,46 +13,31 @@ public enum Color {
     public static let globalTint = resolveColor(light: blueRegular, dark: blueRegular)
     public static let background = resolveColor(light: whiteRegular, dark: black)
     public static let cellBackground = resolveColor(light: whiteRegular, dark: blackRegular)
+    public static let cellHighlightedBackground = resolveColor(light: whiteRegular.darker, dark: blackRegular.lighter)
     public static let realmWorkoutCellBackground = resolveColor(light: greenLight, dark: greenDark)
     public static let firebaseWorkoutCellBackground = resolveColor(light: blueLight, dark: blueDark)
-    public static let highlightedText = resolveColor(light: blueRegular, dark: blueRegular)
+    public static let realmWorkoutCellHighlightedBackground = resolveColor(
+        light: greenLight.darker, dark: greenDark.lighter
+    )
+    public static let firebaseWorkoutCellHighlightedBackground = resolveColor(
+        light: blueLight.darker, dark: blueDark.lighter
+    )
     public static let standardText = resolveColor(light: black, dark: whiteRegular)
     public static let shadow = resolveColor(light: grayDarker, dark: grayLight)
     public static let placeSelectorHighlight = UIColor.systemYellow
-
     public static let clear = UIColor.clear
 
-    // Hex: #FFFFFF
     private static let whiteRegular = UIColor(hex: "#FFFFFF")
-    // Hex: #000000
+
     private static let black = UIColor(hex: "#000000")
-    // Hex: #212121
-    private static let blackDark = UIColor(hex: "#212121")
-    // Hex: #2C2C2C
     private static let blackRegular = UIColor(hex: "#2C2C2C")
-    // Hex: #3A3A3A
-    private static let blackLight = UIColor(hex: "#3A3A3A")
-    // Hex: #3C3C3C
-    private static let blackLighter = UIColor(hex: "#3C3C3C")
-    // Hex: #4A4A4A
-    private static let blackLightest = UIColor(hex: "#4A4A4A")
-    /// Hex: #F0F0F0
-    private static let whiteDark = UIColor(hex: "#F0F0F0")
-    /// Hex: #A7A8AA
-    private static let grayRegular = UIColor(hex: "#A7A8AA")
-    /// Hex: #787878
-    private static let grayDark = UIColor(hex: "#808080")
-    /// Hex: #505050
+
     private static let grayDarker = UIColor(hex: "#505050")
-    /// Hex: #DCDCDC
     private static let grayLight = UIColor(hex: "#DCDCDC")
-    /// Hex: #F0F0F0
-    private static let grayExtraLight = UIColor(hex: "#F0F0F0")
-    /// Hex: #FBFBFB
-    private static let grayExtraExtraLight = UIColor(hex: "#FBFBFB")
 
     private static let greenLight = UIColor(hex: "#D4EFDF")
     private static let greenDark = UIColor(hex: "#297A3F")
+
     private static let blueLight = UIColor(hex: "#A4E2FB")
     private static let blueRegular = UIColor(hex: "#1C80FF")
     private static let blueDark = UIColor(hex: "#1F7A9F")

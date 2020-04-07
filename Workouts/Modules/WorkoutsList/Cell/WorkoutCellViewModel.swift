@@ -13,4 +13,5 @@ struct WorkoutCellViewModel {
     let place: String
     let duration: String
     let backgroundColor: UIColor?
+    let highlightedBackgroundColor: UIColor?
 }

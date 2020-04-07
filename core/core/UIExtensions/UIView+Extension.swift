@@ -13,14 +13,6 @@ public extension UIView {
         views.forEach(addSubview(_:))
     }
 
-    func addGradient(with colors: [UIColor]) {
-        guard layer.sublayers?.allSatisfy({ ($0 is CAGradientLayer) == false }) == true else { return }
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = bounds
-        gradientLayer.colors = colors.map { $0.cgColor }
-        layer.insertSublayer(gradientLayer, at: 0)
-    }
-
     func addShadow(
         color: UIColor,
         opacity: Float,

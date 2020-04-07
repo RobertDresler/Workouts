@@ -35,6 +35,7 @@ final class WorkoutPropertyDurationPickerCell: WorkoutPropertyCell, Configurable
 
     func configure(for viewModel: WorkoutPropertyDurationPickerCellViewModel) {
         datePicker.setDate(viewModel.date, animated: true)
+        canBeHighlighted = viewModel.canBeHighlighted
     }
 
 }

@@ -19,12 +19,10 @@
 		D003737F243B7E9100108E2E /* ViewSetupable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D003737E243B7E9100108E2E /* ViewSetupable.swift */; };
 		D0037381243B803800108E2E /* BackHandleable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0037380243B803800108E2E /* BackHandleable.swift */; };
 		D0037384243B809000108E2E /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0037383243B809000108E2E /* UINavigationController+Extension.swift */; };
-		D00373B2243B858700108E2E /* Optional+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373A8243B858600108E2E /* Optional+Extension.swift */; };
 		D00373B3243B858700108E2E /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373A9243B858600108E2E /* Collection+Extension.swift */; };
 		D00373B4243B858700108E2E /* StaticDateFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373AA243B858600108E2E /* StaticDateFormatters.swift */; };
 		D00373B7243B858700108E2E /* RxSwift+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373AD243B858600108E2E /* RxSwift+Extension.swift */; };
 		D00373B8243B858700108E2E /* Realm+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373AE243B858600108E2E /* Realm+Extension.swift */; };
-		D00373C3243B859200108E2E /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373BB243B859200108E2E /* UIStackView+Extension.swift */; };
 		D00373C4243B859200108E2E /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373BC243B859200108E2E /* UICollectionView+Extension.swift */; };
 		D00373C6243B859200108E2E /* Array+UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373BE243B859200108E2E /* Array+UIView+Extension.swift */; };
 		D00373C8243B859200108E2E /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373C0243B859200108E2E /* UIView+Extension.swift */; };
@@ -49,12 +47,10 @@
 		D003737E243B7E9100108E2E /* ViewSetupable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewSetupable.swift; sourceTree = "<group>"; };
 		D0037380243B803800108E2E /* BackHandleable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackHandleable.swift; sourceTree = "<group>"; };
 		D0037383243B809000108E2E /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
-		D00373A8243B858600108E2E /* Optional+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Optional+Extension.swift"; sourceTree = "<group>"; };
 		D00373A9243B858600108E2E /* Collection+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
 		D00373AA243B858600108E2E /* StaticDateFormatters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticDateFormatters.swift; sourceTree = "<group>"; };
 		D00373AD243B858600108E2E /* RxSwift+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxSwift+Extension.swift"; sourceTree = "<group>"; };
 		D00373AE243B858600108E2E /* Realm+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Realm+Extension.swift"; sourceTree = "<group>"; };
-		D00373BB243B859200108E2E /* UIStackView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
 		D00373BC243B859200108E2E /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
 		D00373BE243B859200108E2E /* Array+UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+UIView+Extension.swift"; sourceTree = "<group>"; };
 		D00373C0243B859200108E2E /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
@@ -137,7 +133,6 @@
 			children = (
 				D00373BE243B859200108E2E /* Array+UIView+Extension.swift */,
 				D00373BC243B859200108E2E /* UICollectionView+Extension.swift */,
-				D00373BB243B859200108E2E /* UIStackView+Extension.swift */,
 				D00373C1243B859200108E2E /* UITableView+Extension.swift */,
 				D00373C0243B859200108E2E /* UIView+Extension.swift */,
 				D0037383243B809000108E2E /* UINavigationController+Extension.swift */,
@@ -148,7 +143,6 @@
 		D00373A6243B858600108E2E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				D00373A8243B858600108E2E /* Optional+Extension.swift */,
 				D00373A9243B858600108E2E /* Collection+Extension.swift */,
 				D00373AA243B858600108E2E /* StaticDateFormatters.swift */,
 				D00373AD243B858600108E2E /* RxSwift+Extension.swift */,
@@ -317,14 +311,12 @@
 			files = (
 				D0037360243B7B7000108E2E /* Router.swift in Sources */,
 				D03F3E3C243BEFCB00AEEFEC /* RepositoryType.swift in Sources */,
-				D00373B2243B858700108E2E /* Optional+Extension.swift in Sources */,
 				D00373B4243B858700108E2E /* StaticDateFormatters.swift in Sources */,
 				D00373B8243B858700108E2E /* Realm+Extension.swift in Sources */,
 				D0037340243B78B400108E2E /* Workout.swift in Sources */,
 				D0037358243B7A2F00108E2E /* FirebaseWorkout.swift in Sources */,
 				D00373CD243B86D600108E2E /* DynamicHeightView.swift in Sources */,
 				D0037364243B7C9E00108E2E /* BaseView.swift in Sources */,
-				D00373C3243B859200108E2E /* UIStackView+Extension.swift in Sources */,
 				D00373C6243B859200108E2E /* Array+UIView+Extension.swift in Sources */,
 				D00373C9243B859200108E2E /* UITableView+Extension.swift in Sources */,
 				D00373B7243B858700108E2E /* RxSwift+Extension.swift in Sources */,

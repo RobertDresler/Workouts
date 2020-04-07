@@ -10,4 +10,5 @@ import core
 
 struct WorkoutPropertyRepositoryCellViewModel {
     let repositoryType: RepositoryType
+    let canBeHighlighted: Bool
 }

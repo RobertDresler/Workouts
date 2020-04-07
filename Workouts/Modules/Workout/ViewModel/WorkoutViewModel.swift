@@ -64,7 +64,8 @@ final class WorkoutViewModel: BViewModel {
             WorkoutPropertyTextFieldCellViewModel(
                 title: tempWorkout.title,
                 placeholder: R.string.localizable.workoutTitleItemPlaceholder(),
-                isTextFieldEnabled: true
+                isTextFieldEnabled: true,
+                canBeHighlighted: false
             )
         )
     }
@@ -85,7 +86,8 @@ final class WorkoutViewModel: BViewModel {
             WorkoutPropertyTextFieldCellViewModel(
                 title: tempWorkout.place,
                 placeholder: R.string.localizable.workoutPlaceItemPlaceholder(),
-                isTextFieldEnabled: false
+                isTextFieldEnabled: false,
+                canBeHighlighted: true
             )
         )
     }
@@ -105,7 +107,8 @@ final class WorkoutViewModel: BViewModel {
         return .duration(
             WorkoutPropertyDescriptionCellViewModel(
                 title: R.string.localizable.workoutDurationItemTitle(),
-                description: "\(DateFormatter.HmmInterval.string(from: durationAsDate))"
+                description: "\(DateFormatter.HmmInterval.string(from: durationAsDate))",
+                canBeHighlighted: true
             )
         )
     }
@@ -125,7 +128,10 @@ final class WorkoutViewModel: BViewModel {
 
     private var repositoryTypeItem: DataSourceItem {
         return .repository(
-            WorkoutPropertyRepositoryCellViewModel(repositoryType: repositoryType)
+            WorkoutPropertyRepositoryCellViewModel(
+                repositoryType: repositoryType,
+                canBeHighlighted: false
+            )
         )
     }
 
@@ -165,7 +171,7 @@ final class WorkoutViewModel: BViewModel {
 
     private func makeDurationPickerItem() -> DataSourceItem {
         return .durationPicker(
-            WorkoutPropertyDurationPickerCellViewModel(date: durationAsDate)
+            WorkoutPropertyDurationPickerCellViewModel(date: durationAsDate, canBeHighlighted: false)
         )
     }
 

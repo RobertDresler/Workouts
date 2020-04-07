@@ -14,6 +14,9 @@ final class WorkoutCell: BCell, Configurable, DynamicHeightView {
 
     static var estimatedHeight: CGFloat = 128
 
+    private var normalBackgroundColor: UIColor?
+    private var highlightedBackgroundColor: UIColor?
+
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
@@ -50,7 +53,7 @@ final class WorkoutCell: BCell, Configurable, DynamicHeightView {
 
     override func setupView() {
         super.setupView()
-        backgroundColor = .clear
+        backgroundColor = Color.clear
     }
 
     override func addSubviews() {
@@ -61,7 +64,12 @@ final class WorkoutCell: BCell, Configurable, DynamicHeightView {
 
     override func setupSubviews() {
         super.setupSubviews()
-        contentView.backgroundColor = .clear
+        contentView.backgroundColor = Color.clear
+    }
+
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        super.setHighlighted(highlighted, animated: animated)
+        wrapperView.backgroundColor = isHighlighted ? highlightedBackgroundColor : normalBackgroundColor
     }
 
     override func setupConstraints() {
@@ -80,6 +88,8 @@ final class WorkoutCell: BCell, Configurable, DynamicHeightView {
         placeLabel.text = viewModel.place
         durationLabel.text = viewModel.duration
         wrapperView.backgroundColor = viewModel.backgroundColor
+        normalBackgroundColor = viewModel.backgroundColor
+        highlightedBackgroundColor = viewModel.highlightedBackgroundColor
     }
 
 }
