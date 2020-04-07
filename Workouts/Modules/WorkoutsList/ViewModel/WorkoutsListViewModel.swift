@@ -22,6 +22,7 @@ final class WorkoutsListViewModel: BViewModel {
         case initial
         case loading
         case loaded
+        case errorReceived(String)
     }
 
     typealias DataSourceItem = (model: Workout, viewModel: WorkoutCellViewModel)
@@ -56,6 +57,11 @@ final class WorkoutsListViewModel: BViewModel {
             guard let self = self else { return }
             self.dataSource = workouts.map { ($0, self.viewModel(for: $0)) }
             self.state.accept(.loaded)
+        }.disposed(by: bag)
+
+        workoutsProvider.error.bind { [weak self] error in
+            guard let error = error else { return }
+            self?.state.accept(.errorReceived((error as? LocalizedError)?.errorDescription ?? "Error"))
         }.disposed(by: bag)
     }
 

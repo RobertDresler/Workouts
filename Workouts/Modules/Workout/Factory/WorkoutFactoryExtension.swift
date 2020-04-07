@@ -10,8 +10,7 @@ import service
 
 extension ModuleFactoryImp: WorkoutFactory {
     func makeWorkoutView() -> WorkoutView {
-        // TODO: -RD- remove place
-        let tempWorkout = TempWorkout(id: -1, title: "", place: "---", duration: 0)
+        let tempWorkout = TempWorkout(id: -1, title: "", place: "", duration: 0)
         let viewModel = WorkoutViewModel(
             tempWorkout: tempWorkout,
             workoutsSaver: WorkoutsSaver(

@@ -22,6 +22,7 @@ public final class WorkoutsProvider {
 
     public var mode: Mode = .all
     public let workouts = BehaviorRelay<[Workout]>(value: [])
+    public let error = BehaviorRelay<Error?>(value: nil)
 
     private var operations = 0
     private var completedOperations = 0
@@ -71,6 +72,7 @@ public final class WorkoutsProvider {
 
     private func process(with error: Error) {
         completedOperations += 1
+        self.error.accept(error)
         processAfterCompletedOperation()
 
     }

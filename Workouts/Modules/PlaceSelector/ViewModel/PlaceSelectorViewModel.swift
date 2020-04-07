@@ -31,7 +31,6 @@ extension PlaceSelectorViewModel: UISearchResultsUpdating {
     }
 }
 
-
 extension PlaceSelectorViewModel: MKLocalSearchCompleterDelegate {
     func completerDidUpdateResults(_ completer: MKLocalSearchCompleter) {
         process(with: completer.results)

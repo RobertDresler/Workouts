@@ -31,6 +31,11 @@ final class WorkoutsListViewController: BViewController<WorkoutsListViewModel, W
 
     override func bindViewModel() {
         super.bindViewModel()
+        viewModel.state.bind { [weak self] state in
+            guard case let .errorReceived(message) = state else { return }
+            self?.view.makeToast(message)
+        }.disposed(by: bag)
+
         viewModel.isActivityIndicatorLoading
             .bind { [weak self] in $0 ? self?.view.makeToastActivity(.center) : self?.view.hideToastActivity() }
             .disposed(by: bag)

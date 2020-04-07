@@ -54,14 +54,10 @@ final class WorkoutViewController: BViewController<WorkoutViewModel, WorkoutCont
             .disposed(by: bag)
 
         viewModel.state.bind { [weak self] state in
-            guard let self = self else { return }
-            switch state {
-            case .saved:
-                self.delegate?.didSaveWorkout()
-            case .errorReceived(let message):
-                self.view.makeToast(message)
-            default:
-                break
+            if case .saved = state {
+                self?.delegate?.didSaveWorkout()
+            } else if case let .errorReceived(message) = state {
+                self?.view.makeToast(message)
             }
         }.disposed(by: bag)
 
