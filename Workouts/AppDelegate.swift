@@ -6,6 +6,7 @@
 //  Copyright © 2020 Robert Dresler. All rights reserved.
 //
 
+import Firebase
 import IQKeyboardManagerSwift
 import UIKit
 import WorkoutsUI
@@ -35,6 +36,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         appCoordinator = CoordinatorFactoryImp().makeAppCoordinator(with: rootController)
         appCoordinator?.start()
+
+        FirebaseApp.configure()
 
         return true
     }

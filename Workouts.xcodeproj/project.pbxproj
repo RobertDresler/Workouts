@@ -57,6 +57,7 @@
 		D03F3E31243BCA6F00AEEFEC /* WorkoutPropertyRepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03F3E30243BCA6F00AEEFEC /* WorkoutPropertyRepositoryCell.swift */; };
 		D03F3E35243BE6C100AEEFEC /* WorkoutPropertyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03F3E34243BE6C100AEEFEC /* WorkoutPropertyCell.swift */; };
 		D03F3E3F243BF02500AEEFEC /* RepositoryType+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03F3E3E243BF02400AEEFEC /* RepositoryType+Extension.swift */; };
+		D03F3E4B243BF91700AEEFEC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D03F3E4A243BF91700AEEFEC /* GoogleService-Info.plist */; };
 		D0FC64B7243B6E74009D0958 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FC64B6243B6E74009D0958 /* AppDelegate.swift */; };
 		D0FC64C0243B6E78009D0958 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0FC64BF243B6E78009D0958 /* Assets.xcassets */; };
 		D0FC64C3243B6E78009D0958 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0FC64C1243B6E78009D0958 /* LaunchScreen.storyboard */; };
@@ -133,6 +134,7 @@
 		D03F3E30243BCA6F00AEEFEC /* WorkoutPropertyRepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutPropertyRepositoryCell.swift; sourceTree = "<group>"; };
 		D03F3E34243BE6C100AEEFEC /* WorkoutPropertyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutPropertyCell.swift; sourceTree = "<group>"; };
 		D03F3E3E243BF02400AEEFEC /* RepositoryType+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RepositoryType+Extension.swift"; sourceTree = "<group>"; };
+		D03F3E4A243BF91700AEEFEC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D0FC64B3243B6E74009D0958 /* Workouts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Workouts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0FC64B6243B6E74009D0958 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0FC64BF243B6E78009D0958 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -467,6 +469,7 @@
 				D0FC64BF243B6E78009D0958 /* Assets.xcassets */,
 				D0FC64C1243B6E78009D0958 /* LaunchScreen.storyboard */,
 				D0FC64C4243B6E78009D0958 /* Info.plist */,
+				D03F3E4A243BF91700AEEFEC /* GoogleService-Info.plist */,
 				D003734F243B79D100108E2E /* Modules */,
 				D0037367243B7CED00108E2E /* Factory */,
 				D003733C243B782100108E2E /* Supporting files */,
@@ -539,6 +542,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0FC64C3243B6E78009D0958 /* LaunchScreen.storyboard in Resources */,
+				D03F3E4B243BF91700AEEFEC /* GoogleService-Info.plist in Resources */,
 				D003734C243B798F00108E2E /* Localizable.strings in Resources */,
 				D0FC64C0243B6E78009D0958 /* Assets.xcassets in Resources */,
 			);

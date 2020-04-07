@@ -33,6 +33,8 @@ target 'Workouts' do
   pod 'RxGesture', '~> 3'
   pod 'Toast-Swift', '~> 5.0.1'
   pod 'IQKeyboardManagerSwift', '6.5.0'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Firestore'
 end
 
 target 'core' do
