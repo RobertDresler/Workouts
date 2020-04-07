@@ -35,4 +35,13 @@ public final class RealmWorkoutsRepository: WorkoutsRepository {
         return .just(Array(realm.objects(RealmWorkout.self)))
     }
 
+    public func delete(_ workout: Workout) -> Single<Void> {
+        if let realmWorkout = realm.object(ofType: RealmWorkout.self, forPrimaryKey: workout.id) {
+            realm.safeWrite {
+                realm.delete(realmWorkout)
+            }
+        }
+        return .just(())
+    }
+
 }

@@ -12,8 +12,8 @@ import RxSwift
 public final class WorkoutsSaver {
 
     private let workoutsProvider: WorkoutsProvider
-    private let realmWorkoutsRepository: WorkoutsRepository
-    private let firebaseWorkoutsRepository: WorkoutsRepository
+    private let realmRepository: WorkoutsRepository
+    private let firebaseRepository: WorkoutsRepository
     private let bag = DisposeBag()
 
     public init(
@@ -22,8 +22,8 @@ public final class WorkoutsSaver {
         firebaseWorkoutsRepository: WorkoutsRepository
     ) {
         self.workoutsProvider = workoutsProvider
-        self.realmWorkoutsRepository = realmWorkoutsRepository
-        self.firebaseWorkoutsRepository = firebaseWorkoutsRepository
+        self.realmRepository = realmWorkoutsRepository
+        self.firebaseRepository = firebaseWorkoutsRepository
     }
 
     public func save(_ workout: Workout, to repositoryType: RepositoryType) -> Single<Void> {
@@ -41,7 +41,7 @@ public final class WorkoutsSaver {
         getMaxId()
             .map { id in
                 var temp = workout
-                temp.id = id
+                temp.id = id + 1
                 return temp
             }
             .subscribe(
@@ -77,9 +77,9 @@ public final class WorkoutsSaver {
     private func addSingle(with workout: Workout, for repositoryType: RepositoryType) -> Single<Void> {
         switch repositoryType {
         case .realm:
-            return realmWorkoutsRepository.add(workout)
+            return realmRepository.add(workout)
         case .firebase:
-            return firebaseWorkoutsRepository.add(workout)
+            return firebaseRepository.add(workout)
         }
     }
 

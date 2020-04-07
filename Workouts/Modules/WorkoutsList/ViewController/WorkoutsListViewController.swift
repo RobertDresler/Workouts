@@ -6,6 +6,7 @@
 //  Copyright © 2020 Robert Dresler. All rights reserved.
 //
 
+import core
 import Toast_Swift
 import UIKit
 
@@ -14,12 +15,23 @@ final class WorkoutsListViewController: BViewController<WorkoutsListViewModel, W
 
     weak var delegate: WorkoutsListViewDelegate?
 
+    private lazy var modeBarButtonItem = UIBarButtonItem(
+        title: viewModel.modeBarButtonTitle,
+        style: .plain,
+        target: self,
+        action: #selector(modeBarButtonItemPressed)
+    )
+
     private var tableView: UITableView {
         return contentView.tableView
     }
 
     func loadData() {
         viewModel.loadData()
+    }
+
+    func deleteWorkout(_ workout: Workout) {
+        viewModel.deleteWorkout(workout)
     }
 
     override func viewDidLoad() {
@@ -46,6 +58,8 @@ final class WorkoutsListViewController: BViewController<WorkoutsListViewModel, W
                 }
             }
             .disposed(by: bag)
+
+        viewModel.isModeBarButtonItemEnabled.bind(to: modeBarButtonItem.rx.isEnabled).disposed(by: bag)
     }
 
     private func setupTableView() {

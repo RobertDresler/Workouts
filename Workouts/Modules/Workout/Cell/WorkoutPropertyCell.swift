@@ -22,14 +22,14 @@ class WorkoutPropertyCell: BCell {
         bag = DisposeBag()
     }
 
+    override func setupView() {
+        super.setupView()
+        backgroundColor = Color.cellBackground
+    }
+
     override func addSubviews() {
         super.addSubviews()
         contentView.addSubview(wrapperView)
-    }
-
-    override func setupSubviews() {
-        super.setupSubviews()
-        contentView.backgroundColor = Color.cellBackground
     }
 
     override func setupConstraints() {

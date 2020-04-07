@@ -13,6 +13,10 @@
 "workouts list mode firebase" = "Vzdálené";
 "workout cell duration" = "Délka trvání: %@";
 
+"workout action sheet edit" = "Upravit";
+"workout action sheet delete" = "Smazat";
+"workout action sheet cancel" = "Zrušit";
+
 // MARK: Workout
 "workout title" = "Nové cvičení";
 "workout title item placeholder" = "Název";
@@ -25,3 +29,4 @@
 // MARK: Error messages
 "cant save workout to Firebase" = "Nepodařilo se uložit cvičení do Firebase";
 "no data received from Firebase" = "Nepodařilo se načíst data z Firebase";
+"cant delete workout from Firebase" = "Nepodařilo se smazat cvičení do Firebase";

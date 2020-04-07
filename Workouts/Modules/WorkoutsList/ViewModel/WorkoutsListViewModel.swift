@@ -21,6 +21,7 @@ final class WorkoutsListViewModel: BViewModel {
     enum State: Equatable {
         case initial
         case loading
+        case loadingWithChangeMode
         case loaded
         case errorReceived(String)
     }
@@ -31,6 +32,7 @@ final class WorkoutsListViewModel: BViewModel {
     let state = BehaviorRelay<State>(value: .initial)
     var dataSource = [DataSourceItem]()
     let isActivityIndicatorLoading = BehaviorRelay<Bool>(value: false)
+    let isModeBarButtonItemEnabled = BehaviorRelay<Bool>(value: false)
 
     var modeBarButtonTitle: String {
         switch workoutsProvider.mode {
@@ -44,14 +46,17 @@ final class WorkoutsListViewModel: BViewModel {
     }
 
     private let workoutsProvider: WorkoutsProvider
+    private let workoutsDeleter: WorkoutsDeleter
 
-    init(workoutsProvider: WorkoutsProvider) {
+    init(workoutsProvider: WorkoutsProvider, workoutsDeleter: WorkoutsDeleter) {
         self.workoutsProvider = workoutsProvider
+        self.workoutsDeleter = workoutsDeleter
         setupBinding()
     }
 
     private func setupBinding() {
-        state.map { $0 == .loading }.bind(to: isActivityIndicatorLoading).disposed(by: bag)
+        state.map { [.loading, .loadingWithChangeMode].contains($0) }.bind(to: isActivityIndicatorLoading).disposed(by: bag)
+        state.map { $0 != .loading }.bind(to: isModeBarButtonItemEnabled).disposed(by: bag)
 
         workoutsProvider.workouts.bind { [weak self] workouts in
             guard let self = self else { return }
@@ -61,18 +66,27 @@ final class WorkoutsListViewModel: BViewModel {
 
         workoutsProvider.error.bind { [weak self] error in
             guard let error = error else { return }
-            self?.state.accept(.errorReceived((error as? LocalizedError)?.errorDescription ?? "Error"))
+            self?.process(with: error)
         }.disposed(by: bag)
     }
 
     func loadData() {
+        guard ![.loading, .loadingWithChangeMode].contains(state.value) else { return }
         state.accept(.loading)
         workoutsProvider.loadData()
     }
 
     func changeMode() {
-        state.accept(.loading)
+        state.accept(.loadingWithChangeMode)
         workoutsProvider.changeMode()
+    }
+
+    func deleteWorkout(_ workout: Workout) {
+        guard ![.loading, .loadingWithChangeMode].contains(state.value) else { return }
+        workoutsDeleter.delete(workout, from: (workout is RealmWorkout) ? .realm : .firebase).subscribe(
+            onSuccess: { [weak self] in self?.workoutsProvider.loadData() },
+            onError: { [weak self] in self?.process(with: $0) }
+        ).disposed(by: bag)
     }
 
     private func viewModel(for workout: Workout) -> WorkoutCellViewModel {
@@ -86,6 +100,10 @@ final class WorkoutsListViewModel: BViewModel {
                 ? Color.realmWorkoutCellBackground
                 : Color.firebaseWorkoutCellBackground
         )
+    }
+
+    private func process(with error: Error) {
+        state.accept(.errorReceived((error as? LocalizedError)?.errorDescription ?? "Error"))
     }
 
 }

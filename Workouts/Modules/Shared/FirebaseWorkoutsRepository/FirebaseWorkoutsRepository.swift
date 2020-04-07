@@ -71,4 +71,28 @@ public final class FirebaseWorkoutsRepository: WorkoutsRepository {
         })
     }
 
+    public func delete(_ workout: Workout) -> Single<Void> {
+        return Single.create(subscribe: { [weak self] single -> Disposable in
+
+            self?.database.collection(Constants.firestoreWorkoutsCollection)
+                .whereField("id", isEqualTo: workout.id)
+                .getDocuments { snapshot, _ in
+                    guard let snapshot = snapshot else {
+                        single(.error(FirebaseWorkoutsRepositoryError.cantDeleteWorkoutFromFirebase))
+                        return
+                    }
+                    snapshot.documents.forEach { document in
+                        document.reference.delete { error in
+                            guard error == nil else {
+                                single(.error(FirebaseWorkoutsRepositoryError.cantDeleteWorkoutFromFirebase))
+                                return
+                            }
+                            single(.success(()))
+                        }
+                    }
+                }
+            return Disposables.create {}
+        })
+    }
+
 }

@@ -12,4 +12,5 @@ import RxSwift
 public protocol WorkoutsRepository {
     func add(_ workout: Workout) -> Single<Void>
     func getAll() -> Single<[Workout]>
+    func delete(_ workout: Workout) -> Single<Void>
 }

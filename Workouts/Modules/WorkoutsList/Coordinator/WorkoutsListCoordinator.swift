@@ -13,6 +13,7 @@ final class WorkoutsListCoordinator: BaseCoordinator {
 
     private struct ActionStorage {
         var didSaveWorkout: (() -> Void)?
+        var didChooseDeleteWorkout: ((Workout) -> Void)?
     }
 
     private let router: Router
@@ -37,6 +38,9 @@ final class WorkoutsListCoordinator: BaseCoordinator {
         actionStorage.didSaveWorkout = { [weak workoutsListView] in
             workoutsListView?.loadData()
         }
+        actionStorage.didChooseDeleteWorkout = { [weak workoutsListView] workout in
+            workoutsListView?.deleteWorkout(workout)
+        }
         router.setRootModule(workoutsListView)
     }
 
@@ -55,7 +59,19 @@ extension WorkoutsListCoordinator: WorkoutsListViewDelegate {
     }
 
     func didSelectWorkout(_ workout: Workout) {
-        // TODO: -RD- implement if needed
+        showActionSheet(with: workout)
+    }
+
+    private func showActionSheet(with workout: Workout) {
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let cancelAction = UIAlertAction(title: R.string.localizable.workoutActionSheetCancel(), style: .cancel)
+        let deleteAction = UIAlertAction(
+            title: R.string.localizable.workoutActionSheetDelete(),
+            style: .destructive,
+            handler: { [weak self] _ in self?.actionStorage.didChooseDeleteWorkout?(workout) }
+        )
+        [cancelAction, deleteAction].forEach(alertController.addAction(_:))
+        router.presentOverFullScreen(alertController)
     }
 }
 

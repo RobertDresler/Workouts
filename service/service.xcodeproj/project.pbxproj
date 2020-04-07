@@ -13,6 +13,7 @@
 		D0037345243B78E000108E2E /* WorkoutsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0037344243B78E000108E2E /* WorkoutsProvider.swift */; };
 		D00373DB243BA14300108E2E /* WorkoutsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373DA243BA14300108E2E /* WorkoutsRepository.swift */; };
 		D00373DD243BA4DC00108E2E /* RealmWorkoutsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373DC243BA4DC00108E2E /* RealmWorkoutsRepository.swift */; };
+		D0055B1C243C16AF0088D6C4 /* WorkoutsDeleter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0055B1B243C16AF0088D6C4 /* WorkoutsDeleter.swift */; };
 		D03F3E42243BF08E00AEEFEC /* WorkoutsSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03F3E41243BF08E00AEEFEC /* WorkoutsSaver.swift */; };
 		D03F3E45243BF6BB00AEEFEC /* RealmProvideable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03F3E44243BF6BB00AEEFEC /* RealmProvideable.swift */; };
 		D03F3E47243BF6C700AEEFEC /* RealmProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03F3E46243BF6C700AEEFEC /* RealmProvider.swift */; };
@@ -44,6 +45,7 @@
 		D0037344243B78E000108E2E /* WorkoutsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsProvider.swift; sourceTree = "<group>"; };
 		D00373DA243BA14300108E2E /* WorkoutsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsRepository.swift; sourceTree = "<group>"; };
 		D00373DC243BA4DC00108E2E /* RealmWorkoutsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmWorkoutsRepository.swift; sourceTree = "<group>"; };
+		D0055B1B243C16AF0088D6C4 /* WorkoutsDeleter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsDeleter.swift; sourceTree = "<group>"; };
 		D03F3E41243BF08E00AEEFEC /* WorkoutsSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsSaver.swift; sourceTree = "<group>"; };
 		D03F3E44243BF6BB00AEEFEC /* RealmProvideable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmProvideable.swift; sourceTree = "<group>"; };
 		D03F3E46243BF6C700AEEFEC /* RealmProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmProvider.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				D03F3E40243BF07C00AEEFEC /* Saver */,
+				D0055B1A243C169A0088D6C4 /* Deleter */,
 				D0037343243B78CF00108E2E /* Provider */,
 				D0037341243B78B900108E2E /* Repository */,
 				D03F3E43243BF69700AEEFEC /* Realm */,
@@ -127,6 +130,14 @@
 				D0037344243B78E000108E2E /* WorkoutsProvider.swift */,
 			);
 			path = Provider;
+			sourceTree = "<group>";
+		};
+		D0055B1A243C169A0088D6C4 /* Deleter */ = {
+			isa = PBXGroup;
+			children = (
+				D0055B1B243C16AF0088D6C4 /* WorkoutsDeleter.swift */,
+			);
+			path = Deleter;
 			sourceTree = "<group>";
 		};
 		D03F3E40243BF07C00AEEFEC /* Saver */ = {
@@ -276,6 +287,7 @@
 				D0037345243B78E000108E2E /* WorkoutsProvider.swift in Sources */,
 				D03F3E47243BF6C700AEEFEC /* RealmProvider.swift in Sources */,
 				D03F3E42243BF08E00AEEFEC /* WorkoutsSaver.swift in Sources */,
+				D0055B1C243C16AF0088D6C4 /* WorkoutsDeleter.swift in Sources */,
 				D00373DD243BA4DC00108E2E /* RealmWorkoutsRepository.swift in Sources */,
 				D00373DB243BA14300108E2E /* WorkoutsRepository.swift in Sources */,
 			);
