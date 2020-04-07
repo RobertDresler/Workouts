@@ -139,6 +139,7 @@
 		D0055B16243C0CB30088D6C4 /* PlaceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCell.swift; sourceTree = "<group>"; };
 		D0055B18243C0CBE0088D6C4 /* PlaceCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCellViewModel.swift; sourceTree = "<group>"; };
 		D0055B20243C1C710088D6C4 /* WorkoutViewUsage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutViewUsage.swift; sourceTree = "<group>"; };
+		D0055B22243C257E0088D6C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D03F3E0A243BAEB600AEEFEC /* WorkoutViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutViewModel.swift; sourceTree = "<group>"; };
 		D03F3E0C243BAEB600AEEFEC /* CoordinatorFactory+Workout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoordinatorFactory+Workout.swift"; sourceTree = "<group>"; };
 		D03F3E0D243BAEB600AEEFEC /* WorkoutCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutCoordinator.swift; sourceTree = "<group>"; };
@@ -761,6 +762,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				D003734D243B798F00108E2E /* cs */,
+				D0055B22243C257E0088D6C4 /* en */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

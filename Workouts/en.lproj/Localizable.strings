@@ -1,0 +1,34 @@
+/* 
+  Localizable.strings
+  Workouts
+
+  Created by Robert Dresler on 06/04/2020.
+  Copyright © 2020 Robert Dresler. All rights reserved.
+*/
+
+// MARK: WorkoutsList
+"workouts list title" = "Workout";
+"workouts list mode all" = "All";
+"workouts list mode realm" = "Local";
+"workouts list mode firebase" = "Remote";
+"workout cell duration" = "Duration: %@";
+
+"workout action sheet edit" = "Edit";
+"workout action sheet delete" = "Delete";
+"workout action sheet cancel" = "Cancel";
+
+// MARK: Workout
+"create workout title" = "New workout";
+"edit workout title" = "Edit";
+"workout title item placeholder" = "Title";
+"workout place item placeholder" = "Place";
+"workout duration item title" = "Duration";
+"workout repository type item title" = "Save";
+"workout repository type item realm segment" = "Locally";
+"workout repository type item firebase segment" = "Remotely";
+
+// MARK: Error messages
+"cant save workout to Firebase" = "Workout couldn't be saved to Firebase";
+"no data received from Firebase" = "No data received from Firebase";
+"cant update workout in Firebase" = "Workout couldn't be updated in Firebase";
+"cant delete workout from Firebase" = "Workout couldn't be deleted from Firebase";
