@@ -19,7 +19,9 @@ final class WorkoutsListContentView: BView {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.sectionHeaderHeight = 0
         tableView.sectionFooterHeight = 0
+        tableView.clipsToBounds = false
         tableView.contentInset.bottom = Padding.xxhuge
+        tableView.cellLayoutMarginsFollowReadableWidth = true
         return tableView
     }()
 
@@ -36,9 +38,7 @@ final class WorkoutsListContentView: BView {
     override func setupConstraints() {
         super.setupConstraints()
         tableView.snp.makeConstraints { make in
-            make.top.equalToSuperview()
-            make.leading.trailing.equalTo(safeAreaLayoutGuide)
-            make.bottom.equalToSuperview()
+            make.edges.equalToSuperview()
         }
     }
 

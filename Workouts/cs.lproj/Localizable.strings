@@ -6,7 +6,29 @@
   Copyright © 2020 Robert Dresler. All rights reserved.
 */
 
+// MARK: WorkoutsList
 "workouts list title" = "Cvičení";
 "workouts list mode all" = "Vše";
 "workouts list mode realm" = "Lokální";
 "workouts list mode firebase" = "Vzdálené";
+"workout cell duration" = "Délka trvání: %@";
+
+"workout action sheet edit" = "Upravit";
+"workout action sheet delete" = "Smazat";
+"workout action sheet cancel" = "Zrušit";
+
+// MARK: Workout
+"create workout title" = "Nové cvičení";
+"edit workout title" = "Editovat";
+"workout title item placeholder" = "Název";
+"workout place item placeholder" = "Místo";
+"workout duration item title" = "Délka trvání";
+"workout repository type item title" = "Uložit";
+"workout repository type item realm segment" = "Lokálně";
+"workout repository type item firebase segment" = "Vzdáleně";
+
+// MARK: Error messages
+"cant save workout to Firebase" = "Nepodařilo se uložit cvičení do Firebase";
+"no data received from Firebase" = "Nepodařilo se načíst data z Firebase";
+"cant update workout in Firebase" = "Nepodařilo se editovat cvičení v Firebase";
+"cant delete workout from Firebase" = "Nepodařilo se smazat cvičení z Firebase";

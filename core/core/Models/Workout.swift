@@ -9,4 +9,6 @@
 public protocol Workout {
     var id: Int { get set }
     var title: String { get set }
+    var place: String { get set }
+    var duration: TimeInterval { get set }
 }

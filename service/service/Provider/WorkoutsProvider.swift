@@ -10,8 +10,6 @@ import core
 import RxCocoa
 import RxSwift
 
-// TODO: -RD- error handling
-
 public final class WorkoutsProvider {
 
     public enum Mode: CaseIterable {
@@ -22,10 +20,12 @@ public final class WorkoutsProvider {
 
     public var mode: Mode = .all
     public let workouts = BehaviorRelay<[Workout]>(value: [])
+    public let error = BehaviorRelay<Error?>(value: nil)
 
     private var operations = 0
     private var completedOperations = 0
     private var bag = DisposeBag()
+    private var tempError: Error?
     private var tempWorkouts = [Workout]()
 
     private let realmRepository: WorkoutsRepository
@@ -46,6 +46,7 @@ public final class WorkoutsProvider {
         bag = DisposeBag()
         operations = mode == .all ? 2 : 1
         completedOperations = 0
+        tempError = nil
         tempWorkouts = []
 
         if [.all, .realm].contains(mode) {
@@ -71,12 +72,14 @@ public final class WorkoutsProvider {
 
     private func process(with error: Error) {
         completedOperations += 1
+        tempError = error
         processAfterCompletedOperation()
 
     }
 
     private func processAfterCompletedOperation() {
         guard completedOperations == operations else { return }
+        error.accept(tempError)
         workouts.accept(tempWorkouts.sorted { $0.id < $1.id })
     }
 

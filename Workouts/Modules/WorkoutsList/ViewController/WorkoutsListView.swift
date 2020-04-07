@@ -15,4 +15,6 @@ protocol WorkoutsListViewDelegate: class {
 
 protocol WorkoutsListView: BaseView {
     var delegate: WorkoutsListViewDelegate? { get set }
+    func loadData()
+    func deleteWorkout(_ workout: Workout)
 }

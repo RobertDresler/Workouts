@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C98B7427A39FD9DB33989E4B /* Pods_core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 141D8AB5E4AA2023663F0A96 /* Pods_core.framework */; };
+		D0033321243BFE2F00A302DF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0033320243BFE2F00A302DF /* Constants.swift */; };
 		D0037340243B78B400108E2E /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D003733F243B78B400108E2E /* Workout.swift */; };
 		D0037356243B7A2700108E2E /* RealmWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0037355243B7A2700108E2E /* RealmWorkout.swift */; };
 		D0037358243B7A2F00108E2E /* FirebaseWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0037357243B7A2F00108E2E /* FirebaseWorkout.swift */; };
@@ -23,7 +24,6 @@
 		D00373B4243B858700108E2E /* StaticDateFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373AA243B858600108E2E /* StaticDateFormatters.swift */; };
 		D00373B7243B858700108E2E /* RxSwift+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373AD243B858600108E2E /* RxSwift+Extension.swift */; };
 		D00373B8243B858700108E2E /* Realm+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373AE243B858600108E2E /* Realm+Extension.swift */; };
-		D00373B9243B858700108E2E /* CachedArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373B0243B858700108E2E /* CachedArray.swift */; };
 		D00373C3243B859200108E2E /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373BB243B859200108E2E /* UIStackView+Extension.swift */; };
 		D00373C4243B859200108E2E /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373BC243B859200108E2E /* UICollectionView+Extension.swift */; };
 		D00373C6243B859200108E2E /* Array+UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373BE243B859200108E2E /* Array+UIView+Extension.swift */; };
@@ -31,12 +31,14 @@
 		D00373C9243B859200108E2E /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373C1243B859200108E2E /* UITableView+Extension.swift */; };
 		D00373CB243B86CC00108E2E /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373CA243B86CC00108E2E /* Configurable.swift */; };
 		D00373CD243B86D600108E2E /* DynamicHeightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373CC243B86D600108E2E /* DynamicHeightView.swift */; };
+		D03F3E3C243BEFCB00AEEFEC /* RepositoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03F3E3B243BEFCB00AEEFEC /* RepositoryType.swift */; };
 		D06A5053243B745D00736DFA /* core.h in Headers */ = {isa = PBXBuildFile; fileRef = D06A5051243B745D00736DFA /* core.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		141D8AB5E4AA2023663F0A96 /* Pods_core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDCE52F9366373369D8DE26F /* Pods-core.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-core.debug.xcconfig"; path = "Target Support Files/Pods-core/Pods-core.debug.xcconfig"; sourceTree = "<group>"; };
+		D0033320243BFE2F00A302DF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D003733F243B78B400108E2E /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		D0037355243B7A2700108E2E /* RealmWorkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmWorkout.swift; sourceTree = "<group>"; };
 		D0037357243B7A2F00108E2E /* FirebaseWorkout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseWorkout.swift; sourceTree = "<group>"; };
@@ -52,7 +54,6 @@
 		D00373AA243B858600108E2E /* StaticDateFormatters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticDateFormatters.swift; sourceTree = "<group>"; };
 		D00373AD243B858600108E2E /* RxSwift+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RxSwift+Extension.swift"; sourceTree = "<group>"; };
 		D00373AE243B858600108E2E /* Realm+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Realm+Extension.swift"; sourceTree = "<group>"; };
-		D00373B0243B858700108E2E /* CachedArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CachedArray.swift; sourceTree = "<group>"; };
 		D00373BB243B859200108E2E /* UIStackView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
 		D00373BC243B859200108E2E /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
 		D00373BE243B859200108E2E /* Array+UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+UIView+Extension.swift"; sourceTree = "<group>"; };
@@ -60,6 +61,7 @@
 		D00373C1243B859200108E2E /* UITableView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		D00373CA243B86CC00108E2E /* Configurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurable.swift; sourceTree = "<group>"; };
 		D00373CC243B86D600108E2E /* DynamicHeightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightView.swift; sourceTree = "<group>"; };
+		D03F3E3B243BEFCB00AEEFEC /* RepositoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryType.swift; sourceTree = "<group>"; };
 		D06A504E243B745D00736DFA /* core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D06A5051243B745D00736DFA /* core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = core.h; sourceTree = "<group>"; };
 		D06A5052243B745D00736DFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -96,12 +98,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D003331F243BFE2100A302DF /* Keys */ = {
+			isa = PBXGroup;
+			children = (
+				D0033320243BFE2F00A302DF /* Constants.swift */,
+			);
+			path = Keys;
+			sourceTree = "<group>";
+		};
 		D003733E243B78AC00108E2E /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				D003733F243B78B400108E2E /* Workout.swift */,
 				D0037355243B7A2700108E2E /* RealmWorkout.swift */,
 				D0037357243B7A2F00108E2E /* FirebaseWorkout.swift */,
+				D03F3E3B243BEFCB00AEEFEC /* RepositoryType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -147,15 +158,6 @@
 			path = core/Extensions;
 			sourceTree = SOURCE_ROOT;
 		};
-		D00373AF243B858700108E2E /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				D00373B0243B858700108E2E /* CachedArray.swift */,
-			);
-			name = Shared;
-			path = core/Shared;
-			sourceTree = SOURCE_ROOT;
-		};
 		D06A5044243B745D00736DFA = {
 			isa = PBXGroup;
 			children = (
@@ -177,9 +179,9 @@
 		D06A5050243B745D00736DFA /* core */ = {
 			isa = PBXGroup;
 			children = (
+				D003331F243BFE2100A302DF /* Keys */,
 				D003733E243B78AC00108E2E /* Models */,
 				D003735E243B7B6400108E2E /* BaseProtocols */,
-				D00373AF243B858700108E2E /* Shared */,
 				D00373A6243B858600108E2E /* Extensions */,
 				D0037382243B808000108E2E /* UIExtensions */,
 				D06A5051243B745D00736DFA /* core.h */,
@@ -314,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0037360243B7B7000108E2E /* Router.swift in Sources */,
+				D03F3E3C243BEFCB00AEEFEC /* RepositoryType.swift in Sources */,
 				D00373B2243B858700108E2E /* Optional+Extension.swift in Sources */,
 				D00373B4243B858700108E2E /* StaticDateFormatters.swift in Sources */,
 				D00373B8243B858700108E2E /* Realm+Extension.swift in Sources */,
@@ -334,8 +337,8 @@
 				D003737F243B7E9100108E2E /* ViewSetupable.swift in Sources */,
 				D0037384243B809000108E2E /* UINavigationController+Extension.swift in Sources */,
 				D0037375243B7DF500108E2E /* Coordinator.swift in Sources */,
-				D00373B9243B858700108E2E /* CachedArray.swift in Sources */,
 				D0037381243B803800108E2E /* BackHandleable.swift in Sources */,
+				D0033321243BFE2F00A302DF /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

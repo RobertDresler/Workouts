@@ -18,11 +18,12 @@ final class NavigationController: UINavigationController {
 
     weak var customDelegate: NavigationControllerDelegate?
 
+    var navigationBarPrefersLargeTitles = true
     private var duringPushAnimation = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationBar.prefersLargeTitles = true
+        navigationBar.prefersLargeTitles = navigationBarPrefersLargeTitles
         delegate = self
         interactivePopGestureRecognizer?.delegate = self
     }

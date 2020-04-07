@@ -88,7 +88,6 @@ class BViewController<ViewModel: BViewModel, ContentView: BView>: UIViewControll
         view.addGestureRecognizer(hideGesture)
     }
 
-    // TODO: -RD- check if it is private if it works
     @objc private func hideKeyboard() {
         view.endEditing(true)
     }

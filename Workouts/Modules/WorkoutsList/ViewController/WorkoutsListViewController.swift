@@ -6,6 +6,7 @@
 //  Copyright © 2020 Robert Dresler. All rights reserved.
 //
 
+import core
 import Toast_Swift
 import UIKit
 
@@ -14,8 +15,23 @@ final class WorkoutsListViewController: BViewController<WorkoutsListViewModel, W
 
     weak var delegate: WorkoutsListViewDelegate?
 
+    private lazy var modeBarButtonItem = UIBarButtonItem(
+        title: viewModel.modeBarButtonTitle,
+        style: .plain,
+        target: self,
+        action: #selector(modeBarButtonItemPressed)
+    )
+
     private var tableView: UITableView {
         return contentView.tableView
+    }
+
+    func loadData() {
+        viewModel.loadData()
+    }
+
+    func deleteWorkout(_ workout: Workout) {
+        viewModel.deleteWorkout(workout)
     }
 
     override func viewDidLoad() {
@@ -27,19 +43,44 @@ final class WorkoutsListViewController: BViewController<WorkoutsListViewModel, W
 
     override func bindViewModel() {
         super.bindViewModel()
+        viewModel.state.bind { [weak self] state in
+            guard case let .errorReceived(message) = state else { return }
+            self?.view.makeToast(message)
+        }.disposed(by: bag)
+
         viewModel.isActivityIndicatorLoading
-            .bind { [weak self] in $0 ? self?.view.makeToastActivity(.center) : self?.view.hideToastActivity() }
+            .bind { [weak self] isLoading in
+                if isLoading && self?.tableView.refreshControl?.isRefreshing == false {
+                    self?.view.makeToastActivity(.center)
+                } else {
+                    self?.view.hideToastActivity()
+                    self?.tableView.refreshControl?.endRefreshing()
+                }
+            }
             .disposed(by: bag)
+
+        viewModel.isModeBarButtonItemEnabled.bind(to: modeBarButtonItem.rx.isEnabled).disposed(by: bag)
     }
 
     private func setupTableView() {
         tableView.register(WorkoutCell.self)
         tableView.delegate = self
         tableView.dataSource = self
+        addRefreshControl()
         tableView.estimatedRowHeight = WorkoutCell.estimatedHeight
         viewModel.state.filter { $0 == .loaded }.bind { [weak self] _ in
             self?.tableView.reloadData()
         }.disposed(by: bag)
+    }
+
+    private func addRefreshControl() {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refreshControlChanged), for: .valueChanged)
+        tableView.refreshControl = refreshControl
+    }
+
+    @objc private func refreshControlChanged() {
+        viewModel.loadData()
     }
 
     private func addBarButtonItems() {

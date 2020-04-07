@@ -15,7 +15,6 @@ class BCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         callSetups()
         selectionStyle = .none
-        backgroundColor = .clear
     }
 
     required init?(coder aDecoder: NSCoder) {
