@@ -30,6 +30,7 @@ public final class WorkoutsProvider {
 
     private let realmRepository: WorkoutsRepository
     private let firebaseRepository: WorkoutsRepository
+    private var onWorkoutsLoaded: (([Workout]) -> Void)?
 
     public init(realmRepository: WorkoutsRepository, firebaseRepository: WorkoutsRepository) {
         self.realmRepository = realmRepository
@@ -42,7 +43,8 @@ public final class WorkoutsProvider {
         loadData()
     }
 
-    public func loadData() {
+    public func loadData(onWorkoutsLoaded: (([Workout]) -> Void)? = nil) {
+        self.onWorkoutsLoaded = onWorkoutsLoaded
         bag = DisposeBag()
         operations = mode == .all ? 2 : 1
         completedOperations = 0
@@ -81,6 +83,7 @@ public final class WorkoutsProvider {
         guard completedOperations == operations else { return }
         error.accept(tempError)
         workouts.accept(tempWorkouts.sorted { $0.id < $1.id })
+        onWorkoutsLoaded?(workouts.value)
     }
 
 }

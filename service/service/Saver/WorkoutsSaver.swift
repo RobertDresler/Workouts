@@ -58,9 +58,13 @@ public final class WorkoutsSaver {
     }
 
     private func getMaxId() -> Single<Int> {
-        workoutsProvider.loadData()
-        return workoutsProvider.workouts.filter { !$0.isEmpty }.first()
-            .map { workouts in workouts?.map { workout in workout.id }.max() ?? 0 }
+        return Single.create(subscribe: { [weak self] single -> Disposable in
+            self?.workoutsProvider.loadData(onWorkoutsLoaded: { workouts in
+                let maxId = workouts.map { $0.id }.max() ?? 0
+                single(.success(maxId))
+            })
+            return Disposables.create {}
+        })
     }
 
     private func subscribeAddWorkout(

@@ -7,7 +7,7 @@
 //
 
 import core
-import Firebase
+import FirebaseFirestore
 import RxSwift
 import service
 

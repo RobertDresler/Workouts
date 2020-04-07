@@ -6,6 +6,7 @@
 //  Copyright © 2020 Robert Dresler. All rights reserved.
 //
 
+import FirebaseFirestore
 import service
 
 extension ModuleFactoryImp: WorkoutsListFactory {

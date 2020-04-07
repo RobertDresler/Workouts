@@ -7,7 +7,6 @@
 //
 
 import Firebase
-import IQKeyboardManagerSwift
 import UIKit
 import WorkoutsUI
 
@@ -34,18 +33,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         FirebaseApp.configure()
 
-        setupIQKeyboardManager()
-
         appCoordinator = CoordinatorFactoryImp().makeAppCoordinator(with: rootController)
         appCoordinator?.start()
 
         return true
-    }
-
-    private func setupIQKeyboardManager() {
-        IQKeyboardManager.shared.enable = true
-        IQKeyboardManager.shared.shouldResignOnTouchOutside = true
-        IQKeyboardManager.shared.toolbarTintColor = Color.globalTint
     }
 
 }
