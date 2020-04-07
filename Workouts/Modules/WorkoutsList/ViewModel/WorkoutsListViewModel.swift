@@ -101,7 +101,10 @@ final class WorkoutsListViewModel: BViewModel {
             ),
             backgroundColor: (workout is RealmWorkout)
                 ? Color.realmWorkoutCellBackground
-                : Color.firebaseWorkoutCellBackground
+                : Color.firebaseWorkoutCellBackground,
+            highlightedBackgroundColor: (workout is RealmWorkout)
+                ? Color.realmWorkoutCellHighlightedBackground
+                : Color.firebaseWorkoutCellHighlightedBackground
         )
     }
 

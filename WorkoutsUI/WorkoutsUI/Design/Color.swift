@@ -16,6 +16,12 @@ public enum Color {
     public static let cellHighlightedBackground = resolveColor(light: whiteRegular.darker, dark: blackRegular.lighter)
     public static let realmWorkoutCellBackground = resolveColor(light: greenLight, dark: greenDark)
     public static let firebaseWorkoutCellBackground = resolveColor(light: blueLight, dark: blueDark)
+    public static let realmWorkoutCellHighlightedBackground = resolveColor(
+        light: greenLight.darker, dark: greenDark.lighter
+    )
+    public static let firebaseWorkoutCellHighlightedBackground = resolveColor(
+        light: blueLight.darker, dark: blueDark.lighter
+    )
     public static let standardText = resolveColor(light: black, dark: whiteRegular)
     public static let shadow = resolveColor(light: grayDarker, dark: grayLight)
     public static let placeSelectorHighlight = UIColor.systemYellow
