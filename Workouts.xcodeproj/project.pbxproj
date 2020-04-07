@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D0033325243C015500A302DF /* FirebaseWorkoutsRepositoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0033324243C015500A302DF /* FirebaseWorkoutsRepositoryError.swift */; };
 		D0037301243B74FB00108E2E /* core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0037300243B74FB00108E2E /* core.framework */; };
 		D0037302243B74FB00108E2E /* core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D0037300243B74FB00108E2E /* core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D003731F243B754100108E2E /* service.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D003731E243B754100108E2E /* service.framework */; };
@@ -37,7 +38,7 @@
 		D00373D3243B8E8B00108E2E /* WorkoutsListFactoryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373D2243B8E8B00108E2E /* WorkoutsListFactoryExtension.swift */; };
 		D00373D5243B8ED400108E2E /* CoordinatorFactory+WorkoutsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373D4243B8ED400108E2E /* CoordinatorFactory+WorkoutsList.swift */; };
 		D00373D7243B8F0A00108E2E /* WorkoutsListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373D6243B8F0A00108E2E /* WorkoutsListCoordinator.swift */; };
-		D00373E0243BA62000108E2E /* FirebaseWorkoutsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373DF243BA62000108E2E /* FirebaseWorkoutsProvider.swift */; };
+		D00373E0243BA62000108E2E /* FirebaseWorkoutsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00373DF243BA62000108E2E /* FirebaseWorkoutsRepository.swift */; };
 		D03F3E16243BAEB600AEEFEC /* WorkoutViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03F3E0A243BAEB600AEEFEC /* WorkoutViewModel.swift */; };
 		D03F3E17243BAEB600AEEFEC /* CoordinatorFactory+Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03F3E0C243BAEB600AEEFEC /* CoordinatorFactory+Workout.swift */; };
 		D03F3E18243BAEB600AEEFEC /* WorkoutCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03F3E0D243BAEB600AEEFEC /* WorkoutCoordinator.swift */; };
@@ -86,6 +87,7 @@
 		4001F9F08EF3929C03CFA7B4 /* Pods-Workouts.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Workouts.release.xcconfig"; path = "Target Support Files/Pods-Workouts/Pods-Workouts.release.xcconfig"; sourceTree = "<group>"; };
 		57D6661F28908E248D4431FA /* Pods-Workouts.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Workouts.debug.xcconfig"; path = "Target Support Files/Pods-Workouts/Pods-Workouts.debug.xcconfig"; sourceTree = "<group>"; };
 		6CF9034A95724AA15BC48BBD /* Pods-SaveIt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SaveIt.release.xcconfig"; path = "Target Support Files/Pods-SaveIt/Pods-SaveIt.release.xcconfig"; sourceTree = "<group>"; };
+		D0033324243C015500A302DF /* FirebaseWorkoutsRepositoryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseWorkoutsRepositoryError.swift; sourceTree = "<group>"; };
 		D0037300243B74FB00108E2E /* core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D003731E243B754100108E2E /* service.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = service.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0037336243B773B00108E2E /* WorkoutsUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WorkoutsUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -114,7 +116,7 @@
 		D00373D2243B8E8B00108E2E /* WorkoutsListFactoryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsListFactoryExtension.swift; sourceTree = "<group>"; };
 		D00373D4243B8ED400108E2E /* CoordinatorFactory+WorkoutsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoordinatorFactory+WorkoutsList.swift"; sourceTree = "<group>"; };
 		D00373D6243B8F0A00108E2E /* WorkoutsListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutsListCoordinator.swift; sourceTree = "<group>"; };
-		D00373DF243BA62000108E2E /* FirebaseWorkoutsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseWorkoutsProvider.swift; sourceTree = "<group>"; };
+		D00373DF243BA62000108E2E /* FirebaseWorkoutsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseWorkoutsRepository.swift; sourceTree = "<group>"; };
 		D03F3E0A243BAEB600AEEFEC /* WorkoutViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutViewModel.swift; sourceTree = "<group>"; };
 		D03F3E0C243BAEB600AEEFEC /* CoordinatorFactory+Workout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CoordinatorFactory+Workout.swift"; sourceTree = "<group>"; };
 		D03F3E0D243BAEB600AEEFEC /* WorkoutCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutCoordinator.swift; sourceTree = "<group>"; };
@@ -177,6 +179,15 @@
 				29A57B442E78388C5CF5FC3D /* Pods_Workouts.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D0033326243C01CC00A302DF /* FirebaseWorkoutsRepository */ = {
+			isa = PBXGroup;
+			children = (
+				D00373DF243BA62000108E2E /* FirebaseWorkoutsRepository.swift */,
+				D0033324243C015500A302DF /* FirebaseWorkoutsRepositoryError.swift */,
+			);
+			path = FirebaseWorkoutsRepository;
 			sourceTree = "<group>";
 		};
 		D003733C243B782100108E2E /* Supporting files */ = {
@@ -437,7 +448,7 @@
 		D03F3E3D243BEFDF00AEEFEC /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				D00373DF243BA62000108E2E /* FirebaseWorkoutsProvider.swift */,
+				D0033326243C01CC00A302DF /* FirebaseWorkoutsRepository */,
 				D03F3E3E243BF02400AEEFEC /* RepositoryType+Extension.swift */,
 			);
 			path = Shared;
@@ -658,6 +669,7 @@
 				D0037377243B7E2000108E2E /* RouterImp.swift in Sources */,
 				D03F3E23243BC76000AEEFEC /* WorkoutPropertyTextFieldCell.swift in Sources */,
 				D03F3E18243BAEB600AEEFEC /* WorkoutCoordinator.swift in Sources */,
+				D0033325243C015500A302DF /* FirebaseWorkoutsRepositoryError.swift in Sources */,
 				D03F3E16243BAEB600AEEFEC /* WorkoutViewModel.swift in Sources */,
 				D03F3E35243BE6C100AEEFEC /* WorkoutPropertyCell.swift in Sources */,
 				D03F3E27243BC9C500AEEFEC /* WorkoutPropertyDescriptionCell.swift in Sources */,
@@ -673,7 +685,7 @@
 				D03F3E17243BAEB600AEEFEC /* CoordinatorFactory+Workout.swift in Sources */,
 				D00373D3243B8E8B00108E2E /* WorkoutsListFactoryExtension.swift in Sources */,
 				D0037348243B794E00108E2E /* R.generated.swift in Sources */,
-				D00373E0243BA62000108E2E /* FirebaseWorkoutsProvider.swift in Sources */,
+				D00373E0243BA62000108E2E /* FirebaseWorkoutsRepository.swift in Sources */,
 				D03F3E1D243BAEB600AEEFEC /* WorkoutFactoryExtension.swift in Sources */,
 				D03F3E2B243BCA1A00AEEFEC /* WorkoutPropertyDurationPickerCellViewModel.swift in Sources */,
 				D03F3E1F243BB2D000AEEFEC /* TempWorkout.swift in Sources */,

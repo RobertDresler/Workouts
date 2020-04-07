@@ -180,7 +180,7 @@ final class WorkoutViewModel: BViewModel {
     }
 
     private func process(with error: Error) {
-        state.accept(.errorReceived("Error")) // TODO: -RD- localize
+        state.accept(.errorReceived((error as? LocalizedError)?.errorDescription ?? "Error"))
     }
 
 }

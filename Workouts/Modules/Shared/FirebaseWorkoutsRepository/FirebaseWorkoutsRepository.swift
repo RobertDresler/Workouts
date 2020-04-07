@@ -1,5 +1,5 @@
 //
-//  FirebaseWorkoutsProvider.swift
+//  FirebaseWorkoutsRepository.swift
 //  Workouts
 //
 //  Created by Robert Dresler on 06/04/2020.
@@ -20,8 +20,33 @@ public final class FirebaseWorkoutsRepository: WorkoutsRepository {
     }
 
     public func add(_ workout: Workout) -> Single<Void> {
-        // TODO: -RD- implement
-        fatalError()
+        let firebaseWorkout = FirebaseWorkout(
+            id: workout.id,
+            title: workout.title,
+            place: workout.place,
+            duration: workout.duration
+        )
+        let documentData: [String: Any]
+        do {
+            let data = try JSONEncoder().encode(firebaseWorkout)
+            let jsonObject = try JSONSerialization.jsonObject(with: data, options: [])
+            guard let jsonData = jsonObject as? [String: Any] else {
+                return .error(FirebaseWorkoutsRepositoryError.cantSaveWorkoutToFirebase)
+            }
+            documentData = jsonData
+        } catch {
+            return .error(FirebaseWorkoutsRepositoryError.cantSaveWorkoutToFirebase)
+        }
+        return Single.create(subscribe: { [weak self] single -> Disposable in
+            self?.database.collection(Constants.firestoreWorkoutsCollection).addDocument(data: documentData) { error in
+                guard error == nil else {
+                    single(.error(FirebaseWorkoutsRepositoryError.noDataReceivedFromFirebase))
+                    return
+                }
+                single(.success(()))
+            }
+            return Disposables.create {}
+        })
     }
 
     public func getAll() -> Single<[Workout]> {
