@@ -37,7 +37,14 @@ final class WorkoutsListViewController: BViewController<WorkoutsListViewModel, W
         }.disposed(by: bag)
 
         viewModel.isActivityIndicatorLoading
-            .bind { [weak self] in $0 ? self?.view.makeToastActivity(.center) : self?.view.hideToastActivity() }
+            .bind { [weak self] isLoading in
+                if isLoading && self?.tableView.refreshControl?.isRefreshing == false {
+                    self?.view.makeToastActivity(.center)
+                } else {
+                    self?.view.hideToastActivity()
+                    self?.tableView.refreshControl?.endRefreshing()
+                }
+            }
             .disposed(by: bag)
     }
 
@@ -45,10 +52,21 @@ final class WorkoutsListViewController: BViewController<WorkoutsListViewModel, W
         tableView.register(WorkoutCell.self)
         tableView.delegate = self
         tableView.dataSource = self
+        addRefreshControl()
         tableView.estimatedRowHeight = WorkoutCell.estimatedHeight
         viewModel.state.filter { $0 == .loaded }.bind { [weak self] _ in
             self?.tableView.reloadData()
         }.disposed(by: bag)
+    }
+
+    private func addRefreshControl() {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refreshControlChanged), for: .valueChanged)
+        tableView.refreshControl = refreshControl
+    }
+
+    @objc private func refreshControlChanged() {
+        viewModel.loadData()
     }
 
     private func addBarButtonItems() {
