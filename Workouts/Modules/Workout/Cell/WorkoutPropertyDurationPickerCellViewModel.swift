@@ -10,4 +10,5 @@ import Foundation
 
 struct WorkoutPropertyDurationPickerCellViewModel {
     let date: Date
+    let canBeHighlighted: Bool
 }

@@ -50,7 +50,7 @@ final class WorkoutCell: BCell, Configurable, DynamicHeightView {
 
     override func setupView() {
         super.setupView()
-        backgroundColor = .clear
+        backgroundColor = Color.clear
     }
 
     override func addSubviews() {
@@ -61,7 +61,7 @@ final class WorkoutCell: BCell, Configurable, DynamicHeightView {
 
     override func setupSubviews() {
         super.setupSubviews()
-        contentView.backgroundColor = .clear
+        contentView.backgroundColor = Color.clear
     }
 
     override func setupConstraints() {

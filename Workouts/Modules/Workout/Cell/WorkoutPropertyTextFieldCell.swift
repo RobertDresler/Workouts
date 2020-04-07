@@ -37,6 +37,7 @@ final class WorkoutPropertyTextFieldCell: WorkoutPropertyCell, Configurable, Dyn
         textField.sendActions(for: .editingChanged)
         textField.placeholder = viewModel.placeholder
         textField.isEnabled = viewModel.isTextFieldEnabled
+        canBeHighlighted = viewModel.canBeHighlighted
     }
 
 }

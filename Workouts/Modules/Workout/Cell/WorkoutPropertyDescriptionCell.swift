@@ -48,6 +48,7 @@ final class WorkoutPropertyDescriptionCell: WorkoutPropertyCell, Configurable, D
     func configure(for viewModel: WorkoutPropertyDescriptionCellViewModel) {
         titleLabel.text = viewModel.title
         descriptionLabel.text = viewModel.description
+        canBeHighlighted = viewModel.canBeHighlighted
     }
 
 }

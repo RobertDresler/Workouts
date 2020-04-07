@@ -60,9 +60,3 @@ extension NavigationController: UIGestureRecognizerDelegate {
             && (topViewController?.shouldPopBack ?? true) == true
     }
 }
-
-extension UIViewController {
-    var customNavigationController: NavigationController? {
-        return navigationController as? NavigationController
-    }
-}

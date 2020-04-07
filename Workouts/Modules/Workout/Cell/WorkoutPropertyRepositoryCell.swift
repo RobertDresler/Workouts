@@ -41,6 +41,7 @@ final class WorkoutPropertyRepositoryCell: WorkoutPropertyCell, Configurable, Dy
 
     func configure(for viewModel: WorkoutPropertyRepositoryCellViewModel) {
         segmentedControl.selectedSegmentIndex = viewModel.repositoryType.rawValue
+        canBeHighlighted = viewModel.canBeHighlighted
     }
 
 }

@@ -10,4 +10,5 @@ struct WorkoutPropertyTextFieldCellViewModel {
     let title: String
     let placeholder: String
     let isTextFieldEnabled: Bool
+    let canBeHighlighted: Bool
 }

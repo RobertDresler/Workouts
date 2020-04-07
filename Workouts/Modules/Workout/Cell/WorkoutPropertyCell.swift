@@ -13,6 +13,7 @@ import WorkoutsUI
 
 class WorkoutPropertyCell: BCell {
 
+    var canBeHighlighted = false
     var bag = DisposeBag()
 
     let wrapperView = UIView()
@@ -30,6 +31,11 @@ class WorkoutPropertyCell: BCell {
     override func addSubviews() {
         super.addSubviews()
         contentView.addSubview(wrapperView)
+    }
+
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        super.setHighlighted(highlighted, animated: animated)
+        contentView.backgroundColor = isHighlighted && canBeHighlighted ? Color.cellHighlightedBackground : Color.clear
     }
 
     override func setupConstraints() {
