@@ -11,24 +11,39 @@ import WorkoutsUI
 
 final class EmptyWorkoutsListPlaceholder: BView {
 
-    private let textLabel: UILabel = {
+    private let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = .preferredFont(forTextStyle: .subheadline)
+        label.font = UIFont.preferredFont(forTextStyle: .headline).withSize(20)
         label.numberOfLines = 0
         label.textAlignment = .center
         label.text = R.string.localizable.emptyWorkoutsListPlaceholderTitle()
         return label
     }()
 
+    private let descriptionLabel: UILabel = {
+        let label = UILabel()
+        label.font = .preferredFont(forTextStyle: .subheadline)
+        label.numberOfLines = 0
+        label.textAlignment = .center
+        label.text = R.string.localizable.emptyWorkoutsListPlaceholderMessage()
+        return label
+    }()
+
+    private lazy var contentStackView = [
+        titleLabel, descriptionLabel
+    ].stacked(.vertical, spacing: .huge)
+
     override func addSubviews() {
         super.addSubviews()
-        addSubview(textLabel)
+        addSubview(contentStackView)
     }
 
     override func setupConstraints() {
         super.setupConstraints()
-        textLabel.snp.makeConstraints { make in
-            make.top.bottom.equalToSuperview().inset(Padding.huge)
+        contentStackView.snp.makeConstraints { make in
+            make.top.greaterThanOrEqualToSuperview().offset(Padding.huge)
+            make.bottom.lessThanOrEqualToSuperview().offset(-Padding.huge)
+            make.centerY.equalToSuperview()
             make.leading.trailing.equalTo(readableContentGuide)
         }
     }
