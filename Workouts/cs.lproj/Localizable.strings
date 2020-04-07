@@ -13,6 +13,8 @@
 "workouts list mode firebase" = "Vzdálené";
 "workout cell duration" = "Délka trvání: %@";
 
+"empty workouts list placeholder title" = "Nic tady není... přidej něco! 🥎";
+
 "workout action sheet edit" = "Upravit";
 "workout action sheet delete" = "Smazat";
 "workout action sheet cancel" = "Zrušit";
