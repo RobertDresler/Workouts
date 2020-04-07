@@ -22,7 +22,7 @@ final class WorkoutsListViewController: BViewController<WorkoutsListViewModel, W
         action: #selector(modeBarButtonItemPressed)
     )
 
-    private let emptyPlaceholderView = EmptyWorkoutsListPlaceholder()
+    private let placeholderView = TableViewPlaceholderView()
 
     private var tableView: UITableView {
         return contentView.tableView
@@ -45,11 +45,6 @@ final class WorkoutsListViewController: BViewController<WorkoutsListViewModel, W
 
     override func bindViewModel() {
         super.bindViewModel()
-        viewModel.state.bind { [weak self] state in
-            guard case let .errorReceived(message) = state else { return }
-            self?.view.makeToast(message)
-        }.disposed(by: bag)
-
         viewModel.isActivityIndicatorLoading
             .bind { [weak self] isLoading in
                 if isLoading && self?.tableView.refreshControl?.isRefreshing == false {
@@ -61,8 +56,13 @@ final class WorkoutsListViewController: BViewController<WorkoutsListViewModel, W
             }
             .disposed(by: bag)
 
-        viewModel.isEmptyPlaceholderViewHidden.bind { [weak self] isHidden in
-            self?.tableView.backgroundView = isHidden ? nil : self?.emptyPlaceholderView
+        viewModel.placeholderViewModel.bind { [weak self] viewModel in
+            if let viewModel = viewModel {
+                self?.placeholderView.configure(for: viewModel)
+                self?.tableView.backgroundView = self?.placeholderView
+            } else {
+                self?.tableView.backgroundView = nil
+            }
         }.disposed(by: bag)
 
         viewModel.isModeBarButtonItemEnabled.bind(to: modeBarButtonItem.rx.isEnabled).disposed(by: bag)
